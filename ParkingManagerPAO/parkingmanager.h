@@ -9,15 +9,14 @@ class ParkingManager;
 }
 QT_END_NAMESPACE
 
-class ParkingManager : public QMainWindow
-{
-    Q_OBJECT
+class ParkingManager : public QMainWindow {
+  Q_OBJECT
 
 public:
-    ParkingManager(QWidget *parent = nullptr);
-    ~ParkingManager();
+  ParkingManager(QWidget *parent = nullptr);
+  ~ParkingManager();
 
 private:
-    Ui::ParkingManager *ui;
+  Ui::ParkingManager *ui;
 };
 #endif // PARKINGMANAGER_H
