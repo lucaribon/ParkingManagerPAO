@@ -2729,7 +2729,7 @@ existing classes or even new classes with specific responsibilities.</val>
 </reflist>
 </clientDependency>
 <name>
-<val>SensoreQualita</val>
+<val>SensoreQualitaAria</val>
 </name>
 <presentation>
 <reflist>
@@ -2739,13 +2739,13 @@ existing classes or even new classes with specific responsibilities.</val>
 </Class>
 <ClassItem id="db345567-dbba-11ee-b87f-6fe649a41c00">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 344.87876179675897, 608.0418042348283)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 341.9991610823738, 608.0418042348285)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
 </top-left>
 <width>
-<val>128.0</val>
+<val>160.0</val>
 </width>
 <height>
 <val>57.0</val>
@@ -2774,7 +2774,7 @@ existing classes or even new classes with specific responsibilities.</val>
 </Class>
 <ClassItem id="e7bfa7da-dbba-11ee-b028-6fe649a41c00">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 711.6810852119877, 608.0418042348284)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 700.4188358857066, 608.0418042348284)</val>
 </matrix>
 <top-left>
 <val>(-5.0, 0.0)</val>
@@ -3015,7 +3015,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>(1.0, 0.0, 0.0, 1.0, 517.1545001236134, 607.7765172112638)</val>
 </matrix>
 <points>
-<val>[(72.78818330644901, -96.14761096126375), (72.78818330644901, -53.929672687603784), (-110.83261440748475, -53.929672687603784), (-110.83261440748475, 0.2652870235647242)]</val>
+<val>[(72.78818330644901, -96.14761096126375), (72.78818330644901, -53.929672687603784), (-98.35143414202753, -53.929672687603784), (-98.35143414202753, 0.2652870235647242)]</val>
 </points>
 <head-connection>
 <ref refid="ce546bb8-dbba-11ee-9b87-6fe649a41c00"/>
@@ -3059,7 +3059,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>(1.0, 0.0, 0.0, 1.0, 823.5539041261984, 575.2651315241749)</val>
 </matrix>
 <points>
-<val>[(-233.611220696136, -63.63622527417505), (-233.611220696136, -21.418287000514965), (-59.993170924217566, -21.418287000514965), (-59.993170924217566, 32.77667271065343)]</val>
+<val>[(-233.611220696136, -63.63622527417505), (-233.611220696136, -21.418287000514965), (-71.25542025049867, -21.418287000514965), (-71.25542025049867, 32.77667271065343)]</val>
 </points>
 <head-connection>
 <ref refid="5d31e164-dbc2-11ee-938d-6fe649a41c00"/>
