@@ -1,9 +1,5 @@
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
-
-#evito cartella build
-build/ 
-
 *~
 *.autosave
 *.a
@@ -74,4 +70,8 @@ CMakeLists.txt.user*
 # --------
 *.dll
 *.exe
+
+# Cartella Build
+# --------------
+build/
 
