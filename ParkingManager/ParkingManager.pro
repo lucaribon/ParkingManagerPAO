@@ -12,14 +12,19 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     sensorbar.cpp \
-    sensorinfo.cpp
+    sensorinfo.cpp \
+    sidemenu.cpp
 
 HEADERS += \
     mainwindow.h \
     sensorbar.h \
-    sensorinfo.h
+    sensorinfo.h \
+    sidemenu.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    resources.qrc

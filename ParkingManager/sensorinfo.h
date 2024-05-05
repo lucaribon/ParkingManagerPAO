@@ -1,14 +1,19 @@
 #ifndef SENSORINFO_H
 #define SENSORINFO_H
 
-#include <QObject>
 #include <QWidget>
+#include <QLabel>
 
-class SensorInfo
+class SensorInfo : public QWidget
 {
     Q_OBJECT
+private:
+    QLabel* icon;
+    QLabel* name;
+    QLabel* status;
 public:
-    SensorInfo();
+    SensorInfo(QWidget* parent = 0);
+    void show();
 };
 
 #endif // SENSORINFO_H
