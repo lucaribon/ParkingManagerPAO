@@ -1,19 +1,19 @@
 .DS_STORE
 **/.vscode/
 
-ParkingManagerPAO/.cache
-ParkingManagerPAO/.qt
-ParkingManagerPAO/.rcc
-ParkingManagerPAO/CMakeFiles
-ParkingManagerPAO/SensorFlow.app
-ParkingManagerPAO/cmake_install.cmake
-ParkingManagerPAO/CMakeCache.txt
-ParkingManagerPAO/CMakeLists.txt
-ParkingManagerPAO/compile_commands.json
-ParkingManagerPAO/Makefile
-ParkingManagerPAO/.qmake.stash
-ParkingManagerPAO/**/*.o
-ParkingManagerPAO/**/moc_*
-ParkingManagerPAO/ParkingManagerPAO
+ParkingManager/.cache
+ParkingManager/.qt
+ParkingManager/.rcc
+ParkingManager/CMakeFiles
+ParkingManager/SensorFlow.app
+ParkingManager/cmake_install.cmake
+ParkingManager/CMakeCache.txt
+ParkingManager/CMakeLists.txt
+ParkingManager/compile_commands.json
+ParkingManager/Makefile
+ParkingManager/.qmake.stash
+ParkingManager/**/*.o
+ParkingManager/**/moc_*
+ParkingManager/ParkingManager
 
 build-*
