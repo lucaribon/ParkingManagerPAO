@@ -3,5 +3,6 @@
         <file>icons/temperature.png</file>
         <file>icons/temperature.svg</file>
         <file>icons/temperature-mini.svg</file>
+        <file>icons/parking-app-icon.svg</file>
     </qresource>
 </RCC>
