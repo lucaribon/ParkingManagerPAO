@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
     layout->addWidget(sidemenu);
     layout->addWidget(sensorbar);
     //sensorbar->setStyleSheet("background-color: red;");
+    sidemenu->setStyleSheet("padding: 5px;");
     setCentralWidget(central);
     setWindowTitle("Parking Manager");
 }
