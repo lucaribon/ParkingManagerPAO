@@ -2,15 +2,17 @@
 #define SIDEMENU_H
 
 #include <QObject>
-#include <QWidget>
 #include <QLabel>
+#include <QListWidget>
+#include <QListWidgetItem>
 
-class SideMenu : public QWidget
+class SideMenu : public QListWidget
 {
     Q_OBJECT
 private:
-    QLabel* icon;
-    QLabel* menuName;
+    QListWidgetItem* dashboard;
+    QListWidgetItem* reports;
+    QListWidgetItem* graphs;
 public:
     SideMenu(QWidget* parent = 0);
     void show();

@@ -2,13 +2,16 @@
 #include <QVBoxLayout>
 
 
-SideMenu::SideMenu(QWidget* parent) : QWidget(parent){
-    QVBoxLayout* layout = new QVBoxLayout(this);
-    layout->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+SideMenu::SideMenu(QWidget* parent): QListWidget(parent) {
 
-    icon = new QLabel();
-    menuName = new QLabel();
+    //QPixmap dashP();
+    QIcon dashIcon(":/assets/icons/dashboard.svg");
+    dashboard = new QListWidgetItem(dashIcon, "Dashboard");
+    addItem(dashboard);
 
-    layout->addWidget(icon);
-    layout->addWidget(menuName);
+    graphs = new QListWidgetItem(dashIcon, "Graphs");
+    addItem(dashboard);
+
+    //layout->addWidget(icon);
+    //layout->addWidget(menuName);
 }

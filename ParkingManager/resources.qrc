@@ -4,5 +4,6 @@
         <file>assets/icons/temperature.png</file>
         <file>assets/icons/temperature.svg</file>
         <file>assets/icons/temperature-mini.svg</file>
+        <file>assets/icons/dashboard.svg</file>
     </qresource>
 </RCC>
