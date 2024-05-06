@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
     SensorBar* sensorbar = new SensorBar();
-    sensorbar->setStyleSheet("background-color: red;");
+    //sensorbar->setStyleSheet("background-color: red;");
     setCentralWidget(sensorbar);
 }
 

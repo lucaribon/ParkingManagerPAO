@@ -10,7 +10,7 @@ class SensorInfo : public QWidget
 private:
     QLabel* icon;
     QLabel* name;
-    QLabel* status;
+    QLabel* value;
 public:
     SensorInfo(QWidget* parent = 0);
     void show();

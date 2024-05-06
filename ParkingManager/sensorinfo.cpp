@@ -2,8 +2,8 @@
 
 #include <QHBoxLayout>
 #include <QPixmap>
-#include <QFile>
-#include <QDir>
+#include <QWidget>
+
 
 SensorInfo::SensorInfo(QWidget* parent) : QWidget(parent){
     QHBoxLayout* layout = new QHBoxLayout(this);
@@ -11,18 +11,19 @@ SensorInfo::SensorInfo(QWidget* parent) : QWidget(parent){
 
     icon = new QLabel();
     name = new QLabel();
-    status = new QLabel();
+    value = new QLabel();
 
     layout->addWidget(icon);
     layout->addWidget(name);
-    layout->addWidget(status);
+    layout->addWidget(value);
 }
 
 void SensorInfo::show(){
-    QPixmap pixIcon(":/assets/icons/temperature.png");
+    QPixmap pixIcon(":/assets/icons/temperature-mini.svg");
+    //icon->setAttribute(Qt.AA_UseHighDpiPixmaps, true);
     icon->setPixmap(pixIcon);
 
     name->setText("Temperature");
 
-    status->setText("50 °C");
+    value->setText("50 °C");
 }
