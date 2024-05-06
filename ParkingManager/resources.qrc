@@ -1,8 +1,8 @@
 <RCC>
-    <qresource prefix="/assets">
-        <file>icons/temperature.png</file>
-        <file>icons/temperature.svg</file>
-        <file>icons/temperature-mini.svg</file>
-        <file>icons/parking-app-icon.svg</file>
+    <qresource prefix="/">
+        <file>assets/icons/parking-app-icon.svg</file>
+        <file>assets/icons/temperature.png</file>
+        <file>assets/icons/temperature.svg</file>
+        <file>assets/icons/temperature-mini.svg</file>
     </qresource>
 </RCC>
