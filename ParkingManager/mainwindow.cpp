@@ -1,19 +1,31 @@
+#include <QHBoxLayout>
 #include "mainwindow.h"
-#include "sensorbar.h"
-#include "sidemenu.h"
-#include <QVBoxLayout>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
     QWidget* central = new QWidget();
     QHBoxLayout* layout = new QHBoxLayout(central);
-    SideMenu* sidemenu = new SideMenu();
-    SensorBar* sensorbar = new SensorBar();
-    layout->addWidget(sidemenu);
-    layout->addWidget(sensorbar);
-    //sensorbar->setStyleSheet("background-color: red;");
-    sidemenu->setStyleSheet("padding: 5px;");
+    sensorBar = new SensorBar();
+    sideMenu = new SideMenu();
+    contentWindow = new QStackedWidget();
+
+    dashWindow = new DashboardWindow();
+    contentWindow->addWidget(dashWindow);
+    dashWindow->show();
+    dashWindow->setStyleSheet("background:orange;");
+
+    graphWindow = new GraphWindow();
+    contentWindow->addWidget(graphWindow);
+
+    reportWindow = new ReportWindow();
+    contentWindow->addWidget(reportWindow);
+
+    contentWindow->setCurrentIndex(0);
+
+    layout->addWidget(sideMenu);
+    layout->addWidget(contentWindow);
+
     setCentralWidget(central);
     setWindowTitle("Parking Manager");
 }

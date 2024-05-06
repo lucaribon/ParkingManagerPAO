@@ -4,13 +4,16 @@
 #include <QWidget>
 #include <QLabel>
 
-class dashboardWindow : public QWidget
+#include "sensorbar.h"
+
+class DashboardWindow : public QWidget
 {
     Q_OBJECT
 private:
     QLabel* tempTxt;
+    SensorBar* sensorBar;
 public:
-    dashboardWindow(QWidget* parent = 0);
+    DashboardWindow(QWidget* parent = 0);
     void show();
 };
 

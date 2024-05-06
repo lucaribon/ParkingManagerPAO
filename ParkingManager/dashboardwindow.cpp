@@ -1,10 +1,15 @@
 #include "dashboardwindow.h"
 #include <QLabel>
+#include <QVBoxLayout>
 
-dashboardWindow::dashboardWindow(QWidget* parent) : QWidget(parent){
+DashboardWindow::DashboardWindow(QWidget* parent) : QWidget(parent){
+    QVBoxLayout* layout = new QVBoxLayout();
     tempTxt = new QLabel();
+    sensorBar = new SensorBar();
+    layout->addWidget(tempTxt);
+    layout->addWidget(sensorBar);
 }
 
-void dashboardWindow::show(){
+void DashboardWindow::show(){
     tempTxt->setText("dashboard");
 }

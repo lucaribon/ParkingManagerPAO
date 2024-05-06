@@ -1,5 +1,5 @@
-#include "sensorbar.h"
 #include <QHBoxLayout>
+#include "sensorbar.h"
 
 SensorBar::SensorBar(QWidget* parent) : QWidget(parent){
     QHBoxLayout* layout = new QHBoxLayout(this);

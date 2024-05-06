@@ -1,5 +1,5 @@
-#include "reportwindows.h"
+#include "reportwindow.h"
 
-reportWindows::reportWindows(QWidget* parent) : QWidget(parent){
+ReportWindow::ReportWindow(QWidget* parent) : QWidget(parent){
     //QLabel tempTxt(QString &text="report",QWidget *parent=this);
 }

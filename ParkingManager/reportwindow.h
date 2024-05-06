@@ -3,11 +3,11 @@
 
 #include <QWidget>
 
-class reportWindows : public QWidget
+class ReportWindow : public QWidget
 {
     Q_OBJECT
 public:
-    reportWindows(QWidget* parent = 0);
+    ReportWindow(QWidget* parent = 0);
 };
 
 #endif // REPORTWINDOW_H

@@ -3,11 +3,11 @@
 
 #include <QWidget>
 
-class graphWindow : public QWidget
+class GraphWindow : public QWidget
 {
     Q_OBJECT
 public:
-    graphWindow(QWidget* parent = 0);
+    GraphWindow(QWidget* parent = 0);
 };
 
 #endif // GRAPHWINDOW_H
