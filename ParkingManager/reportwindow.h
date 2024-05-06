@@ -1,5 +1,5 @@
-#ifndef REPORTWINDOWS_H
-#define REPORTWINDOWS_H
+#ifndef REPORTWINDOW_H
+#define REPORTWINDOW_H
 
 #include <QWidget>
 
@@ -10,4 +10,4 @@ public:
     reportWindows(QWidget* parent = 0);
 };
 
-#endif // REPORTWINDOWS_H
+#endif // REPORTWINDOW_H

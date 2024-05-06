@@ -13,7 +13,7 @@ SOURCES += \
     graphwindow.cpp \
     main.cpp \
     mainwindow.cpp \
-    reportwindows.cpp \
+    reportwindow.cpp \
     sensorbar.cpp \
     sensorinfo.cpp \
     sidemenu.cpp
@@ -22,7 +22,7 @@ HEADERS += \
     dashboardwindow.h \
     graphwindow.h \
     mainwindow.h \
-    reportwindows.h \
+    reportwindow.h \
     sensorbar.h \
     sensorinfo.h \
     sidemenu.h
