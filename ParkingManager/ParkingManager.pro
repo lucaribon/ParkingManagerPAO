@@ -9,14 +9,20 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    dashboardwindow.cpp \
+    graphwindow.cpp \
     main.cpp \
     mainwindow.cpp \
+    reportwindows.cpp \
     sensorbar.cpp \
     sensorinfo.cpp \
     sidemenu.cpp
 
 HEADERS += \
+    dashboardwindow.h \
+    graphwindow.h \
     mainwindow.h \
+    reportwindows.h \
     sensorbar.h \
     sensorinfo.h \
     sidemenu.h
