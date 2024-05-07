@@ -5,7 +5,7 @@
 
 DashboardWindow::DashboardWindow(QWidget* parent) : QWidget(parent){
     QVBoxLayout* layout = new QVBoxLayout();
-    layout->setAlignment(Qt::AlignCenter | Qt::AlignTop);
+    layout->setAlignment(Qt::AlignLeft | Qt::AlignTop);
 
     sensorBar = new SensorBar();
     layout->addWidget(sensorBar);
