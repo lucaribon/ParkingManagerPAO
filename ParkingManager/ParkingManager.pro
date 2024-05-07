@@ -14,6 +14,7 @@ SOURCES += \
     View/graphwindow.cpp \
     View/main.cpp \
     View/mainwindow.cpp \
+    View/parkingspace.cpp \
     View/reportwindow.cpp \
     View/sensorbar.cpp \
     View/sensorinfo.cpp \
@@ -23,6 +24,7 @@ HEADERS += \
     View/dashboardwindow.h \
     View/graphwindow.h \
     View/mainwindow.h \
+    View/parkingspace.h \
     View/reportwindow.h \
     View/sensorbar.h \
     View/sensorinfo.h \
