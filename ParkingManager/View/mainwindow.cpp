@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     contentWindow->insertWidget(1, graphWindow);
     contentWindow->insertWidget(2, reportWindow);
 
-    qDebug() << contentWindow->currentWidget();
+    //qDebug() << contentWindow->currentWidget();
 
     //QFrame* temp2 = new QFrame();
     //temp2->setFixedWidth(100);

@@ -10,7 +10,6 @@ class DashboardWindow : public QWidget
 {
     Q_OBJECT
 private:
-    QLabel* tempTxt;
     SensorBar* sensorBar;
 public:
     DashboardWindow(QWidget* parent = 0);
