@@ -7,4 +7,7 @@
         <file>assets/icons/report.svg</file>
         <file>assets/icons/chart.svg</file>
     </qresource>
+    <qresource prefix="/style">
+        <file>style.qss</file>
+    </qresource>
 </RCC>
