@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
     QWidget* central = new QWidget();
 
     sideMenu = new SideMenu();
+    sideMenu->setFixedWidth(200);
     contentWindow = new QStackedWidget(central);
 
     QHBoxLayout* layoutCentral = new QHBoxLayout(central);
@@ -17,9 +18,12 @@ MainWindow::MainWindow(QWidget *parent)
     //dashWindow->show();
     //dashWindow->setStyleSheet("background:orange;");
 
-    contentWindow->addWidget(dashWindow);
-    contentWindow->addWidget(graphWindow);
-    contentWindow->addWidget(reportWindow);
+    contentWindow->setCurrentIndex(0);
+    contentWindow->insertWidget(0, dashWindow);
+    contentWindow->insertWidget(1, graphWindow);
+    contentWindow->insertWidget(2, reportWindow);
+
+    qDebug() << contentWindow->currentWidget();
 
     //QFrame* temp2 = new QFrame();
     //temp2->setFixedWidth(100);
@@ -32,9 +36,8 @@ MainWindow::MainWindow(QWidget *parent)
     //temp->setStyleSheet("background: orange;");
     //layoutCentral->addWidget(temp);
 
-    contentWindow->setCurrentIndex(0);
-
-    QObject::connect(sideMenu, &SideMenu::currentRowChanged, contentWindow, &QStackedWidget::setCurrentIndex);
+    qDebug() << sideMenu->connect(sideMenu, &SideMenu::currentRowChanged, contentWindow, &QStackedWidget::setCurrentIndex);
+    //QObject::connect(sideMenu, &SideMenu::currentRowChanged, contentWindow, &QStackedWidget::setCurrentIndex);
 
     this->setCentralWidget(central);
     setWindowTitle("Parking Manager");
