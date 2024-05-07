@@ -16,6 +16,7 @@ SideMenu::SideMenu(QWidget* parent): QListWidget(parent) {
     reports = new QListWidgetItem(reportIcon, "Reports");
     addItem(reports);
 
+    setSpacing(11);
     //layout->addWidget(icon);
     //layout->addWidget(menuName);
 }

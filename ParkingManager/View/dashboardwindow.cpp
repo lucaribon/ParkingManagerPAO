@@ -8,6 +8,10 @@ DashboardWindow::DashboardWindow(QWidget* parent) : QWidget(parent){
     layout->setAlignment(Qt::AlignCenter | Qt::AlignTop);
 
     sensorBar = new SensorBar();
+    sensorBar->setObjectName("sensorBar");
+    //sensorBar->setStyleSheet("background: pink;");
+    //this->setObjectName("sensorBar");
+
     layout->addWidget(sensorBar);
 
     setLayout(layout);
