@@ -3,6 +3,9 @@ MainWindow {
     background: white;
 }
 */
+* {
+    font-family: 'Inter', 'Cantarell', sans-serif;
+}
 
 QStackedWidget {
     border: none;
@@ -11,6 +14,7 @@ QStackedWidget {
 }
 
 QListWidget {
+    padding: 4px;
     background: white;
     border: none;
     border-radius: 8px;

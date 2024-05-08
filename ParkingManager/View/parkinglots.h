@@ -6,6 +6,7 @@
 class ParkingLots : public QWidget
 {
     Q_OBJECT
+private:
 public:
     explicit ParkingLots(QWidget *parent = nullptr);
 

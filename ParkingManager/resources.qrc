@@ -6,6 +6,7 @@
         <file>assets/icons/dashboard.svg</file>
         <file>assets/icons/report.svg</file>
         <file>assets/icons/chart.svg</file>
+        <file>assets/images/car.png</file>
     </qresource>
     <qresource prefix="/style">
         <file>style.qss</file>

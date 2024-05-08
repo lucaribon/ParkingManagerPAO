@@ -8,19 +8,19 @@ MainWindow::MainWindow(QWidget *parent)
     QWidget* central = new QWidget();
 
     // PANNELLO LATERALE
-    QWidget* sidePanel = new QWidget(); //++
+    QWidget* sidePanel = new QWidget();
     sidePanel->setObjectName("sidePanel");
-    QVBoxLayout* layoutSidePanel = new QVBoxLayout(sidePanel); //++
-    layoutSidePanel->setContentsMargins(0, 0, 0, 0);           //++
+    QVBoxLayout* layoutSidePanel = new QVBoxLayout(sidePanel);
+    layoutSidePanel->setContentsMargins(0, 0, 0, 0);
 
-    appLogo = new AppLogo(); //++
+    appLogo = new AppLogo();
     sideMenu = new SideMenu();
     //sideMenu->setFixedWidth(200);
 
-    layoutSidePanel->addWidget(appLogo);         //++
-    layoutSidePanel->addWidget(sideMenu);        //++
-    layoutSidePanel->setAlignment(Qt::AlignTop); //++
-    sidePanel->setFixedWidth(200);               //++
+    layoutSidePanel->addWidget(appLogo);
+    layoutSidePanel->addWidget(sideMenu);
+    layoutSidePanel->setAlignment(Qt::AlignTop);
+    sidePanel->setFixedWidth(200);
 
     // STACKED WIDGET
     contentWindow = new QStackedWidget(central);
@@ -39,8 +39,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // LAYOUT WIDGET GENERALE CENTRALE
     QHBoxLayout* layoutCentral = new QHBoxLayout(central);
-    //layoutCentral->addWidget(sideMenu);
-    layoutCentral->addWidget(sidePanel); //++
+    layoutCentral->addWidget(sidePanel);
     layoutCentral->addWidget(contentWindow);
 
     // CONNESSIONE SIDEMENU -> STACKED WIDGET

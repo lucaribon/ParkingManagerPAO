@@ -1,7 +1,8 @@
 #include "dashboardwindow.h"
+#include <QFrame>
 #include <QLabel>
 #include <QVBoxLayout>
-#include <QFrame>
+#include "parkingslot.h"
 
 DashboardWindow::DashboardWindow(QWidget* parent) : QWidget(parent){
     QVBoxLayout* layout = new QVBoxLayout();
@@ -12,7 +13,21 @@ DashboardWindow::DashboardWindow(QWidget* parent) : QWidget(parent){
     //sensorBar->setStyleSheet("background: pink;");
     //this->setObjectName("sensorBar");
 
+    //TEST
+    QWidget* park = new QWidget();
+    QHBoxLayout* parkLayout = new QHBoxLayout(park);
+    parkLayout->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+    parkLayout->setSpacing(0);
+    parkLayout->setContentsMargins(0, 0, 0, 0);
+    ParkingSlot* parkingSlot = new ParkingSlot();
+    parkingSlot->setFixedSize(60, 100);
+    ParkingSlot* parkingSlot1 = new ParkingSlot();
+    parkingSlot1->setFixedSize(60, 100);
+    parkLayout->addWidget(parkingSlot);
+    parkLayout->addWidget(parkingSlot1);
+
     layout->addWidget(sensorBar);
+    layout->addWidget(park);
 
     setLayout(layout);
 
