@@ -1,22 +1,57 @@
+/*
+MainWindow {
+    background: white;
+}
+*/
+
 QStackedWidget {
-    border: 1px solid white;
+    border: none;
     border-radius: 8px;
     background: white;
 }
 
 QListWidget {
-    border: 1px solid lightgray;
+    background: white;
+    border: none;
     border-radius: 8px;
-    background: lightgray;
+    outline: 0;
 }
 
 QListWidget::item {
     padding: 10px;
     background: white;
     border-radius: 8px;
+
 }
 
 QListWidget::item:selected{
     background: lightblue;
     color: black;
+    border: none;
+}
+
+QListWidget::item:hover{
+    background: lightgray;
+    color: black;
+    border: none;
+}
+
+QListWidget::item:top:hover{
+    background: white;
+    color: black;
+    border: none;
+}
+
+QListWidget::item:disabled
+{
+    background: transparent;
+}
+
+AppLogo {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    background: white;
+    border: none;
+    border-radius: 8px;
 }

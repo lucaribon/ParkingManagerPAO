@@ -3,7 +3,13 @@
 
 
 SideMenu::SideMenu(QWidget* parent): QListWidget(parent) {
-    //QPixmap dashP();
+    /*
+    QIcon parkingLogo(":/assets/icons/parking-app-icon.svg");
+    parkingApp = new QListWidgetItem(parkingLogo, "Parking\nManager");
+    parkingApp->setFlags(parkingApp->flags() & ~Qt::ItemIsSelectable);
+    addItem(parkingApp);
+    */
+
     QIcon dashIcon(":/assets/icons/dashboard.svg");
     dashboard = new QListWidgetItem(dashIcon, "Dashboard");
     addItem(dashboard);
@@ -16,7 +22,8 @@ SideMenu::SideMenu(QWidget* parent): QListWidget(parent) {
     reports = new QListWidgetItem(reportIcon, "Reports");
     addItem(reports);
 
-    setSpacing(11);
+    setSpacing(12);
+    setCurrentItem(dashboard);
     //layout->addWidget(icon);
     //layout->addWidget(menuName);
 }

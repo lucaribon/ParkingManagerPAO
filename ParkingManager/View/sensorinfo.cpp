@@ -20,7 +20,7 @@ SensorInfo::SensorInfo(QWidget* parent) : QWidget(parent){
 void SensorInfo::show(){
     // QPixmap pixIcon(":/assets/icons/temperature-mini.svg");
     //icon->setAttribute(Qt.AA_UseHighDpiPixmaps, true);
-    icon->setFixedSize(18,18);
+    icon->setFixedSize(20,20);
 
     name->setText("Temperature");
 

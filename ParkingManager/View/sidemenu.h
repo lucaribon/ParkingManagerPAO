@@ -10,6 +10,7 @@ class SideMenu : public QListWidget
 {
     Q_OBJECT
 private:
+    QListWidgetItem* parkingApp;
     QListWidgetItem* dashboard;
     QListWidgetItem* reports;
     QListWidgetItem* graphs;

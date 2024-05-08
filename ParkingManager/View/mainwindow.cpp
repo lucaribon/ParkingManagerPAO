@@ -4,40 +4,47 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
+    // WIDGET CENTRALE
     QWidget* central = new QWidget();
 
+    // PANNELLO LATERALE
+    QWidget* sidePanel = new QWidget(); //++
+    sidePanel->setObjectName("sidePanel");
+    QVBoxLayout* layoutSidePanel = new QVBoxLayout(sidePanel); //++
+    layoutSidePanel->setContentsMargins(0, 0, 0, 0);           //++
+
+    appLogo = new AppLogo(); //++
     sideMenu = new SideMenu();
-    sideMenu->setFixedWidth(200);
+    //sideMenu->setFixedWidth(200);
+
+    layoutSidePanel->addWidget(appLogo);         //++
+    layoutSidePanel->addWidget(sideMenu);        //++
+    layoutSidePanel->setAlignment(Qt::AlignTop); //++
+    sidePanel->setFixedWidth(200);               //++
+
+    // STACKED WIDGET
     contentWindow = new QStackedWidget(central);
 
-    QHBoxLayout* layoutCentral = new QHBoxLayout(central);
     dashWindow = new DashboardWindow();
     graphWindow = new GraphWindow();
     reportWindow = new ReportWindow();
 
-    //dashWindow->show();
-    //dashWindow->setStyleSheet("background:orange;");
-
-    contentWindow->setCurrentIndex(0);
     contentWindow->insertWidget(0, dashWindow);
     contentWindow->insertWidget(1, graphWindow);
     contentWindow->insertWidget(2, reportWindow);
 
+    contentWindow->setCurrentIndex(0); // finestra di default
+
     //qDebug() << contentWindow->currentWidget();
 
-    //QFrame* temp2 = new QFrame();
-    //temp2->setFixedWidth(100);
-    //temp2->setStyleSheet("background: green;");
-    //layoutCentral->addWidget(temp2);
-    layoutCentral->addWidget(sideMenu);
+    // LAYOUT WIDGET GENERALE CENTRALE
+    QHBoxLayout* layoutCentral = new QHBoxLayout(central);
+    //layoutCentral->addWidget(sideMenu);
+    layoutCentral->addWidget(sidePanel); //++
     layoutCentral->addWidget(contentWindow);
-    //QFrame* temp = new QFrame();
-    //temp->setFixedWidth(100);
-    //temp->setStyleSheet("background: orange;");
-    //layoutCentral->addWidget(temp);
 
-    qDebug() << sideMenu->connect(sideMenu, &SideMenu::currentRowChanged, contentWindow, &QStackedWidget::setCurrentIndex);
-    //QObject::connect(sideMenu, &SideMenu::currentRowChanged, contentWindow, &QStackedWidget::setCurrentIndex);
+    // CONNESSIONE SIDEMENU -> STACKED WIDGET
+    sideMenu->connect(sideMenu, &SideMenu::currentRowChanged, contentWindow, &QStackedWidget::setCurrentIndex);
 
     this->setCentralWidget(central);
     setWindowTitle("Parking Manager");

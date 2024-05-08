@@ -10,21 +10,25 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    View/applogo.cpp \
     View/dashboardwindow.cpp \
     View/graphwindow.cpp \
     View/main.cpp \
     View/mainwindow.cpp \
-    View/parkingspace.cpp \
+    View/parkinglots.cpp \
+    View/parkingslot.cpp \
     View/reportwindow.cpp \
     View/sensorbar.cpp \
     View/sensorinfo.cpp \
     View/sidemenu.cpp
 
 HEADERS += \
+    View/applogo.h \
     View/dashboardwindow.h \
     View/graphwindow.h \
     View/mainwindow.h \
-    View/parkingspace.h \
+    View/parkinglots.h \
+    View/parkingslot.h \
     View/reportwindow.h \
     View/sensorbar.h \
     View/sensorinfo.h \

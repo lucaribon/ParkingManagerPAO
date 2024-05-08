@@ -8,11 +8,13 @@
 #include "dashboardwindow.h"
 #include "graphwindow.h"
 #include "reportwindow.h"
+#include "applogo.h"
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 private:
+    AppLogo* appLogo;
     SensorBar* sensorBar;
     SideMenu* sideMenu;
     QStackedWidget* contentWindow;
