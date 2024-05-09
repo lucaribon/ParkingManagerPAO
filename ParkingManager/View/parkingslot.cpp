@@ -1,28 +1,25 @@
 #include "parkingslot.h"
 #include <QPixmap>
 #include <QStackedWidget>
+#include <QSvgWidget>
 #include <QVBoxLayout>
 
-ParkingSlot::ParkingSlot(QWidget *parent)
-    : QWidget{parent}
+ParkingSlot::ParkingSlot(QWidget *parent, int id, std::string area, bool isBusy)
+    : QFrame{parent}
 {
-    lotFrame = new QFrame();
-    lotFrame->setObjectName("lotFrame");
-    lotFrame->setFixedSize(35, 50);
-    lotFrame->setStyleSheet("background: green; border: 1px solid black; border-radius: 8px;");
+    this->setObjectName("lotFrame");
+    this->setFixedSize(50, 35);
+    //#e01b24->rosso   #2ec27e->verde #e5a50a->giallo
+    if (isBusy)
+        this->setStyleSheet("background: #e01b24; color: white; border: none; border-radius: 8px;");
+    else
+        this->setStyleSheet("background: #2ec27e; color: white; border: none; border-radius: 8px;");
 
-    lotId = new QLabel("A1");
+    lotId = new QLabel(QString::fromStdString(area) + QString::number(id));
 
-    QPixmap carPixmap(":/assets/images/car.png");
-    carIcon = new QLabel();
-    carIcon->setPixmap(carPixmap.scaledToHeight(20));
-
-    QStackedWidget *stackedWidget = new QStackedWidget();
-    stackedWidget->addWidget(lotFrame);
-    stackedWidget->addWidget(carIcon);
-
-    QVBoxLayout *layout = new QVBoxLayout(this);
-    layout->setAlignment(Qt::AlignTop);
-    layout->addWidget(stackedWidget);
+    QHBoxLayout *layout = new QHBoxLayout(this);
+    layout->setAlignment(Qt::AlignCenter | Qt::AlignCenter);
     layout->addWidget(lotId);
+
+    setLayout(layout);
 }

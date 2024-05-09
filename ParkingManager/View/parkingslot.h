@@ -4,17 +4,19 @@
 #include <QFrame>
 #include <QLabel>
 #include <QWidget>
+#include <string>
 
-class ParkingSlot : public QWidget
+class ParkingSlot : public QFrame
 {
     Q_OBJECT
 private:
-    QFrame *lotFrame;
     QLabel *lotId;
-    QLabel *carIcon;
 
 public:
-    explicit ParkingSlot(QWidget *parent = nullptr);
+    explicit ParkingSlot(QWidget *parent = nullptr,
+                         int id = 0,
+                         std::string area = " ",
+                         bool isBusy = false);
 
 signals:
 };

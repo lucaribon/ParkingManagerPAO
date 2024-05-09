@@ -1,8 +1,9 @@
 #include "dashboardwindow.h"
 #include <QFrame>
 #include <QLabel>
+#include <QList>
 #include <QVBoxLayout>
-#include "parkingslot.h"
+#include "parkinglots.h"
 
 DashboardWindow::DashboardWindow(QWidget* parent) : QWidget(parent){
     QVBoxLayout* layout = new QVBoxLayout();
@@ -14,20 +15,32 @@ DashboardWindow::DashboardWindow(QWidget* parent) : QWidget(parent){
     //this->setObjectName("sensorBar");
 
     //TEST
-    QWidget* park = new QWidget();
-    QHBoxLayout* parkLayout = new QHBoxLayout(park);
-    parkLayout->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-    parkLayout->setSpacing(0);
-    parkLayout->setContentsMargins(0, 0, 0, 0);
-    ParkingSlot* parkingSlot = new ParkingSlot();
-    parkingSlot->setFixedSize(60, 100);
-    ParkingSlot* parkingSlot1 = new ParkingSlot();
-    parkingSlot1->setFixedSize(60, 100);
-    parkLayout->addWidget(parkingSlot);
-    parkLayout->addWidget(parkingSlot1);
+    //QWidget* park = new QWidget();
+    //QHBoxLayout* parkLayout = new QHBoxLayout(park);
+    //parkLayout->setAlignment(Qt::AlignLeft | Qt::AlignBottom);
+    //parkLayout->setSpacing(0);
+    //parkLayout->setContentsMargins(0, 0, 0, 0);
+
+    //ParkingSlot* parkingSlot = new ParkingSlot();
+    //ParkingSlot* parkingSlot1 = new ParkingSlot(this, true);
+    //ParkingSlot* parkingSlot2 = new ParkingSlot();
+    //parkLayout->addWidget(parkingSlot);
+    //parkLayout->addWidget(parkingSlot1);
+    //parkLayout->addWidget(parkingSlot2);
+
+    QWidget* parkSpace = new QWidget();
+    QHBoxLayout* parkLayout = new QHBoxLayout(parkSpace);
+
+    ParkingLots* park = new ParkingLots(this, "A");
+    ParkingLots* park1 = new ParkingLots(this, "B");
+    ParkingLots* park2 = new ParkingLots(this, "C");
+
+    parkLayout->addWidget(park);
+    parkLayout->addWidget(park1);
+    parkLayout->addWidget(park2);
 
     layout->addWidget(sensorBar);
-    layout->addWidget(park);
+    layout->addWidget(parkSpace);
 
     setLayout(layout);
 
