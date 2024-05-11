@@ -35,7 +35,7 @@ QListWidget::item:selected{
 }
 
 QListWidget::item:hover{
-    background: lightgray;
+    background: #f0f0f0;
     color: black;
     border: none;
 }
@@ -59,3 +59,14 @@ AppLogo {
     border: none;
     border-radius: 8px;
 }
+
+ParkingLots {
+    background: #f0f0f0;
+    border: none;
+    border-radius: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+

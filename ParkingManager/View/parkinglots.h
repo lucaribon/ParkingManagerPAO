@@ -7,7 +7,7 @@
 #include <string>
 #include <vector>
 
-class ParkingLots : public QWidget
+class ParkingLots : public QFrame
 {
     Q_OBJECT
 private:
@@ -15,7 +15,7 @@ private:
     QLabel *areaId;
 
 public:
-    explicit ParkingLots(QWidget *parent = nullptr, std::string area = " ");
+    explicit ParkingLots(QWidget *parent = nullptr, std::string area = " ", int numSlot = 10);
 
 signals:
 };

@@ -1,16 +1,34 @@
 #include "parkinglots.h"
 #include <QGridLayout>
 
-ParkingLots::ParkingLots(QWidget *parent, std::string area)
-    : QWidget{parent}
+ParkingLots::ParkingLots(QWidget *parent, std::string area, int numSlot)
+    : QFrame{parent}
 {
-    //areaId = new QLabel("Area 1");
-    QGridLayout *layout = new QGridLayout(this);
-    layout->setSpacing(4);
-    layout->setContentsMargins(0, 0, 0, 0);
-    layout->setAlignment(Qt::AlignLeft | Qt::AlignBottom);
-    for (int i = 0; i < 20; i++) {
+    //TEMP PARAMETERS
+    int numSlotForColumn = numSlot / 2;
+
+    QFrame *verticalLine = new QFrame();
+    verticalLine->setFrameShape(QFrame::VLine);
+
+    QFrame *framePark = new QFrame();
+    framePark->setObjectName("framePark");
+
+    QVBoxLayout *vertLayout = new QVBoxLayout(this);
+    QGridLayout *gridLayout = new QGridLayout(framePark);
+    gridLayout->setSpacing(4);
+    gridLayout->setContentsMargins(0, 0, 0, 0);
+    gridLayout->setAlignment(Qt::AlignLeft | Qt::AlignBottom);
+    for (int i = 0; i < numSlot; i++) {
         parkingSlots.push_back(new ParkingSlot(this, i + 1, area));
-        layout->addWidget(parkingSlots[i], i % 10, i / 10);
+        gridLayout->addWidget(parkingSlots[i], i % numSlotForColumn, i / numSlotForColumn);
     }
+    areaId = new QLabel(QString::fromStdString("Area " + area));
+    areaId->setAlignment(Qt::AlignCenter);
+
+    vertLayout->setAlignment(Qt::AlignBottom);
+    vertLayout->addWidget(framePark);
+    vertLayout->addWidget(areaId);
+
+    //setStyleSheet("background-color: #f0f0f0; border: 1px solid black; border-radius: 8px;");
+    setLayout(vertLayout);
 }
