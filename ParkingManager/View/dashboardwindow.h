@@ -14,6 +14,7 @@ private:
 public:
     DashboardWindow(QWidget* parent = 0);
     void show();
+    void editMode();
 };
 
 #endif // DASHBOARDWINDOW_H

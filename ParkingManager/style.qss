@@ -70,3 +70,9 @@ ParkingLots {
     margin-left: 20px;
 }
 
+QPushButton {
+    background: #f0f0f0;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+}
