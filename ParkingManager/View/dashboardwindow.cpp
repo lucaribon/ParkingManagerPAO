@@ -5,46 +5,33 @@
 #include <QLabel>
 #include <QList>
 #include <QPushButton>
+#include <QStackedWidget>
 #include <QVBoxLayout>
-#include "parkinglots.h"
+#include "parkingpage.h"
+#include "welcomepage.h"
 
 DashboardWindow::DashboardWindow(QWidget* parent) : QWidget(parent){
-    QVBoxLayout* layout = new QVBoxLayout();
-    layout->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+    QVBoxLayout* mainLayout = new QVBoxLayout();
 
-    // TOP BAR
-    QFrame* topBar = new QFrame();
-    QHBoxLayout* layoutTopBar = new QHBoxLayout(topBar);
-    // BARRA SENSORI
-    sensorBar = new SensorBar();
-    sensorBar->setObjectName("sensorBar");
-    QPushButton* editButton = new QPushButton(QIcon(":/assets/icons/edit.svg"), "");
-    editButton->setFixedSize(35, 35);
-    //editButton->setStyleSheet("background: #f0f0f0; border:none; border-radius:8px; padding: 10px;");
-    connect(editButton, &QPushButton::clicked, this, &DashboardWindow::editMode);
+    QStackedWidget* contentWindow = new QStackedWidget(this);
 
-    layoutTopBar->addWidget(sensorBar);
-    layoutTopBar->addWidget(editButton);
+    WelcomePage* welcomePage = new WelcomePage();
+    welcomePage->setFixedHeight(200);
+    contentWindow->addWidget(welcomePage);
 
-    // PARCHEGGIO
-    QWidget* parkSpace = new QWidget();
-    QHBoxLayout* parkLayout = new QHBoxLayout(parkSpace);
+    ParkingPage* parkingPage = new ParkingPage();
+    contentWindow->addWidget(parkingPage);
 
-    ParkingLots* park = new ParkingLots(this, "A", 20);
-    ParkingLots* park1 = new ParkingLots(this, "B", 10);
-    ParkingLots* park2 = new ParkingLots(this, "C", 12);
+    contentWindow->setCurrentWidget(welcomePage);
+    mainLayout->setAlignment(Qt::AlignCenter | Qt::AlignBottom);
+    mainLayout->addWidget(contentWindow);
+    setLayout(mainLayout);
+    /*
 
-    parkLayout->addWidget(park);
-    parkLayout->addWidget(park1);
-    parkLayout->addWidget(park2);
+    //******************
 
-    parkLayout->setAlignment(Qt::AlignBottom);
-
-    // LAYOUT GENERALE
-    layout->addWidget(topBar);
-    layout->addWidget(parkSpace);
-
-    setLayout(layout);
+    //EDIT WINDOW ******
+*/
 }
 
 void DashboardWindow::show(){
@@ -54,15 +41,12 @@ void DashboardWindow::show(){
 void DashboardWindow::editMode()
 {
     qDebug() << "Edit mode activated!";
-    //finestra a comparsa per la modifica
-    //modifica sensori
-    //modifica parcheggio
-    QPushButton* saveButton = new QPushButton("Save");
-    QPushButton* cancelButton = new QPushButton("Cancel");
-    QVBoxLayout* layout = new QVBoxLayout();
-    layout->addWidget(saveButton);
-    layout->addWidget(cancelButton);
-    QDialog* editWindow = new QDialog();
-    editWindow->setLayout(layout);
-    editWindow->show();
+    //QPushButton* saveButton = new QPushButton("Save");
+    //QPushButton* cancelButton = new QPushButton("Cancel");
+    //QVBoxLayout* layout = new QVBoxLayout();
+    //layout->addWidget(saveButton);
+    //layout->addWidget(cancelButton);
+    //QDialog* editWindow = new QDialog();
+    //editWindow->setLayout(layout);
+    //editWindow->show();
 }

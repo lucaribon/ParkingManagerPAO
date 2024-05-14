@@ -16,11 +16,13 @@ SOURCES += \
     View/main.cpp \
     View/mainwindow.cpp \
     View/parkinglots.cpp \
+    View/parkingpage.cpp \
     View/parkingslot.cpp \
     View/reportwindow.cpp \
     View/sensorbar.cpp \
     View/sensorinfo.cpp \
-    View/sidemenu.cpp
+    View/sidemenu.cpp \
+    View/welcomepage.cpp
 
 HEADERS += \
     View/applogo.h \
@@ -28,11 +30,13 @@ HEADERS += \
     View/graphwindow.h \
     View/mainwindow.h \
     View/parkinglots.h \
+    View/parkingpage.h \
     View/parkingslot.h \
     View/reportwindow.h \
     View/sensorbar.h \
     View/sensorinfo.h \
-    View/sidemenu.h
+    View/sidemenu.h \
+    View/welcomepage.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
