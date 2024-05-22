@@ -20,6 +20,7 @@ SOURCES += \
     View/parkingslot.cpp \
     View/reportwindow.cpp \
     View/sensorbar.cpp \
+    View/sensoreditor.cpp \
     View/sensorinfo.cpp \
     View/sidemenu.cpp \
     View/welcomepage.cpp
@@ -34,6 +35,7 @@ HEADERS += \
     View/parkingslot.h \
     View/reportwindow.h \
     View/sensorbar.h \
+    View/sensoreditor.h \
     View/sensorinfo.h \
     View/sidemenu.h \
     View/welcomepage.h

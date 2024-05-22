@@ -11,6 +11,7 @@
         <file>assets/icons/add.svg</file>
         <file>assets/icons/new-file.svg</file>
         <file>assets/icons/file.svg</file>
+        <file>assets/icons/minus.svg</file>
     </qresource>
     <qresource prefix="/style">
         <file>style.qss</file>

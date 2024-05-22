@@ -23,15 +23,11 @@ DashboardWindow::DashboardWindow(QWidget* parent) : QWidget(parent){
     contentWindow->addWidget(parkingPage);
 
     contentWindow->setCurrentWidget(welcomePage);
+    //contentWindow->setCurrentWidget(parkingPage);
+
     mainLayout->setAlignment(Qt::AlignCenter | Qt::AlignBottom);
     mainLayout->addWidget(contentWindow);
     setLayout(mainLayout);
-    /*
-
-    //******************
-
-    //EDIT WINDOW ******
-*/
 }
 
 void DashboardWindow::show(){

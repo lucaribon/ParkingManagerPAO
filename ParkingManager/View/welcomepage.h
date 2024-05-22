@@ -9,6 +9,7 @@ class WelcomePage : public QWidget
 public:
     explicit WelcomePage(QWidget *parent = nullptr);
     void openFile();
+    void newParking();
 signals:
 };
 

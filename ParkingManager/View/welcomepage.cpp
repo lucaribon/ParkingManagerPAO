@@ -4,6 +4,7 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include "sensoreditor.h"
 
 WelcomePage::WelcomePage(QWidget *parent)
     : QWidget{parent}
@@ -21,6 +22,7 @@ WelcomePage::WelcomePage(QWidget *parent)
     QPushButton *newFile = new QPushButton(QIcon(":/assets/icons/add.svg"), "New");
     buttonLayout->addWidget(open);
     buttonLayout->addWidget(newFile);
+    connect(newFile, &QPushButton::clicked, this, &WelcomePage::newParking);
 
     layout->setAlignment(Qt::AlignVCenter | Qt::AlignHCenter);
     layout->addWidget(welcomeLabel);
@@ -39,4 +41,18 @@ void WelcomePage::openFile()
     if (!filePath.isEmpty()) {
         //emit fileOpened(filePath);
     }
+}
+
+void WelcomePage::newParking()
+{
+    QDialog *dialog = new QDialog(this);
+    dialog->setWindowTitle("Sensor Editor");
+    dialog->setMinimumWidth(600);
+    dialog->setMinimumHeight(400);
+
+    SensorEditor *editor = new SensorEditor(dialog);
+
+    QVBoxLayout *layout = new QVBoxLayout(dialog);
+    layout->addWidget(editor);
+    dialog->exec();
 }
