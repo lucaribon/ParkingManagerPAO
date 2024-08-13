@@ -126,6 +126,9 @@ void SensorEditor::addArea()
         }
     });
     QPushButton *cancel = new QPushButton("Cancel");
+    connect(cancel, &QPushButton::clicked, [this, dialog]{
+        dialog->close();
+    });
     QHBoxLayout *layoutButtons = new QHBoxLayout(buttonBar);
     layoutButtons->addWidget(ok);
     layoutButtons->addWidget(cancel);
