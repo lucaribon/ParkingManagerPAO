@@ -1,5 +1,6 @@
 # Parking Manager PAO
 ## ToDo
+- [ ] sensore sismico?
 - [ ] sensore posto auto occupato con tre stati: libero, in attesa, occupato
 - [ ] gestire correlazione: sensore presenza -> posto auto
   - [ ] agggiunta dei sensori di parcheggio a zone (tot di posti ogni zona) -> aggiungere a destra nella gui
