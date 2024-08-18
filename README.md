@@ -12,7 +12,7 @@
 ### Dashboard
 - [ ] dati su presenza, temperatura ecc..
 - [ ] parcheggio si popola in base ai sensori di presenza?
-  ~~- [ ] oppure layout preimpostati?~~
+  - [ ] ~~oppure layout preimpostati?~~
   - [ ] creiamo noi dei json di esempio da poter caricare
 - [ ] autosave json (non necessario)
 
