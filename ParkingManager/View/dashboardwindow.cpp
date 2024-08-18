@@ -22,8 +22,8 @@ DashboardWindow::DashboardWindow(QWidget* parent) : QWidget(parent){
     ParkingPage* parkingPage = new ParkingPage();
     contentWindow->addWidget(parkingPage);
 
-    contentWindow->setCurrentWidget(welcomePage);
-    //contentWindow->setCurrentWidget(parkingPage);
+    //contentWindow->setCurrentWidget(welcomePage);
+    contentWindow->setCurrentWidget(parkingPage);
 
     mainLayout->setAlignment(Qt::AlignCenter | Qt::AlignBottom);
     mainLayout->addWidget(contentWindow);

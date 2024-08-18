@@ -120,6 +120,8 @@ void SensorEditor::addArea()
     connect(ok, &QPushButton::clicked, [this, lineEdit, dialog] {
         if (lineEdit->text().trimmed().isEmpty()) {
             QMessageBox::critical(dialog, "Error", "Area name cannot be empty", QMessageBox::Ok);
+        } else if (areas.find(lineEdit->text().trimmed().toStdString()) != areas.end()) {
+            QMessageBox::critical(dialog, "Error", "Area name already exists", QMessageBox::Ok);
         } else {
             pushAreaName(lineEdit->text().trimmed());
             dialog->accept();
@@ -138,7 +140,7 @@ void SensorEditor::addArea()
 }
 void SensorEditor::pushAreaName(const QString &area)
 {
-    areas.push_back(area.toStdString());
+    areas.insert(area.toStdString());
     refreshAreas(listAreas);
 }
 
@@ -160,6 +162,6 @@ void SensorEditor::removeArea(const QString &area)
     QString areaTrim = area;
     areaTrim.replace("Area ", "");
     qDebug() << "Removing area: " << areaTrim;
-    areas.remove(areaTrim.toStdString());
+    areas.erase(areaTrim.toStdString());
     refreshAreas(listAreas);
 }

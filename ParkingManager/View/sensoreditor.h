@@ -3,6 +3,7 @@
 
 #include <QListWidget>
 #include <QWidget>
+#include <set>
 
 class SensorEditor : public QWidget
 {
@@ -15,7 +16,7 @@ public:
     void refreshAreas(QListWidget *listAreas);
 
 private:
-    std::list<std::string> areas;
+    std::set<std::string> areas;
     std::list<std::string> sensors; //DA CAMBIARE CON SENSOR
     QListWidget *listAreas;
 signals:
