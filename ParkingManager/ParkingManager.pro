@@ -11,6 +11,7 @@ CONFIG += c++17
 
 SOURCES += \
     Model/sensor.cpp \
+    Model/sensorAir.cpp \
     View/applogo.cpp \
     View/dashboardwindow.cpp \
     View/graphwindow.cpp \
@@ -28,6 +29,7 @@ SOURCES += \
 
 HEADERS += \
     Model/sensor.h \
+    Model/sensorAir.h \
     View/applogo.h \
     View/dashboardwindow.h \
     View/graphwindow.h \
