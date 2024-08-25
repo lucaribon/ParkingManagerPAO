@@ -10,8 +10,9 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Model/airQualitySensor.cpp \
+    Model/airSensor.cpp \
     Model/sensor.cpp \
-    Model/sensorAir.cpp \
     View/applogo.cpp \
     View/dashboardwindow.cpp \
     View/graphwindow.cpp \
@@ -28,8 +29,9 @@ SOURCES += \
     View/welcomepage.cpp
 
 HEADERS += \
+    Model/airQualitySensor.h \
+    Model/airSensor.h \
     Model/sensor.h \
-    Model/sensorAir.h \
     View/applogo.h \
     View/dashboardwindow.h \
     View/graphwindow.h \
