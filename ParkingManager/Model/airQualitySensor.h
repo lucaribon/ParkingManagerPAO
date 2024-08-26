@@ -5,7 +5,8 @@
 
 class AirQualitySensor : public AirSensor{
 private:
-    // inquinanti che servono per calcolare il CAQI europeo
+    // inquinanti che servono per calcolare il CAQI europeo,
+    // tutti misurati in μg/m3
     float no2;
     float o3;
     float pm10;
@@ -23,13 +24,13 @@ public:
     void setPm10(float);
     void setPm25(float);
 
-    // TODO: funzione calculateCommonAirQualityIndex() con equazione
-    // https://en.wikipedia.org/wiki/Air_quality_index#CAQI
-    // https://en.wikipedia.org/wiki/Air_quality_index#Computing_the_AQI
-    // https://www.pranaair.com/blog/what-is-air-quality-index-aqi-and-its-calculation/?srsltid=AfmBOorCFpO9mlQiufmMVOsH1ceK9zuq7FAna3rnzmfjY5zJzAFS0Rfx
-    // Il valore dell'indice generico è dato dal valore peggiore
-    // misurato per un singolo inquinante; quindi se tipo il pm10=25
-    // pm2.5=50 no2=100, allora il valore dell'indice sarà 100=VeryHigh
-};
+    /* Il valore dell'indice generico è dato dal valore peggiore
+    misurato per un singolo inquinante; se, per esempio, il pm10=25=VeryLow
+    pm2.5=50=Medium no2=500=VeryHigh, allora il valore dell'indice sarà VeryHigh
+    Fonti:
+    https://en.wikipedia.org/wiki/Air_quality_index#CAQI
+    https://en.wikipedia.org/wiki/Air_quality_index#Computing_the_AQI
+    https://www.pranaair.com/blog/what-is-air-quality-index-aqi-and-its-calculation/?srsltid=AfmBOorCFpO9mlQiufmMVOsH1ceK9zuq7FAna3rnzmfjY5zJzAFS0Rfx */
+    int calculateCommonAirQualityIndex();
 
 #endif // AIRQUALITYSENSOR_H
