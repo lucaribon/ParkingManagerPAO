@@ -1,8 +1,8 @@
 # Parking Manager PAO
 ## Model
-- [x] creare classe astratta sensore
+- [ ] creare classe astratta sensore
 - [ ] creare classi concrete sensori
-- [x] creare classe astratta sensoreAria
+- [ ] creare classe astratta sensoreAria
 - [ ] creare classi concrete sensoriQualita-Gas
 - [ ] implementare metodi specifici per sensori
   - [ ] generazione dati per simulazione statica nei sensori concreti
