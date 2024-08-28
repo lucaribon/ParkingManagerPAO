@@ -16,7 +16,8 @@ private:
     Controller* controller;
     SensorBar* sensorBar;
     QStackedWidget* contentWindow;
-    SensorEditorDialog* editorDialog;
+    //SensorEditorDialog* editorDialog;
+
 
 public:
     DashboardWindow(Controller* con, QWidget* parent = 0);

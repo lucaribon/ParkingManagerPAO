@@ -5,7 +5,7 @@
 #include <QWidget>
 #include "../Controller/controller.h"
 
-class SensorEditorDialog : public QWidget
+class SensorEditorDialog : public QDialog
 {
     Q_OBJECT
 private:

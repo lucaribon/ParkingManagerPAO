@@ -46,6 +46,7 @@ void WelcomePage::openFile()
 
 void WelcomePage::newParking()
 {
-    SensorEditorDialog sensorEditor(controller);
     qDebug() << "HEEHEH";
+    SensorEditorDialog *sensorEditor = new SensorEditorDialog(controller, this);
+    sensorEditor->exec();
 }

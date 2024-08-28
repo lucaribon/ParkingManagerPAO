@@ -8,10 +8,10 @@ class ParkingPage : public QWidget
 {
     Q_OBJECT
 private:
-    SensorEditorDialog *editor;
+    //SensorEditorDialog *editor;
 
 public:
-    explicit ParkingPage(SensorEditorDialog *editor, QWidget *parent = nullptr);
+    explicit ParkingPage(QWidget *parent = nullptr);
     void editMode();
 
 signals:

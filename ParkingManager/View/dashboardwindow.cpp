@@ -17,7 +17,6 @@ DashboardWindow::DashboardWindow(Controller* con, QWidget* parent)
     QVBoxLayout* mainLayout = new QVBoxLayout();
 
     contentWindow = new QStackedWidget(this);
-    editorDialog = new SensorEditorDialog(controller, this);
 
     WelcomePage* welcomePage = new WelcomePage(controller, this);
     welcomePage->setFixedHeight(200);
@@ -32,7 +31,7 @@ DashboardWindow::DashboardWindow(Controller* con, QWidget* parent)
 void DashboardWindow::setParkingPage()
 {
     qDebug() << "Setting parking page!";
-    ParkingPage* parkingPage = new ParkingPage(editorDialog, this);
+    ParkingPage* parkingPage = new ParkingPage(this);
     contentWindow->addWidget(parkingPage);
     contentWindow->setCurrentWidget(parkingPage);
 }

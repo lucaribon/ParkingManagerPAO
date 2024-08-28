@@ -3,17 +3,15 @@
 #include "sensoreditor.h"
 
 SensorEditorDialog::SensorEditorDialog(Controller *con, QWidget *parent)
-    : QWidget(parent)
+    : QDialog(parent)
     , controller(con)
 {
-    QDialog *dialog = new QDialog(this);
-    dialog->setWindowTitle("Sensor Editor");
-    dialog->setMinimumWidth(600);
-    dialog->setMinimumHeight(400);
+    this->setWindowTitle("Sensor Editor");
+    this->setMinimumWidth(600);
+    this->setMinimumHeight(400);
 
-    SensorEditor *editor = new SensorEditor(controller);
+    SensorEditor *editor = new SensorEditor(controller, this);
 
-    QVBoxLayout *layout = new QVBoxLayout(dialog);
+    QVBoxLayout *layout = new QVBoxLayout(this);
     layout->addWidget(editor);
-    dialog->exec();
 }

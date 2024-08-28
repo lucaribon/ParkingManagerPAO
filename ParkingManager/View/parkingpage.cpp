@@ -8,10 +8,10 @@
 #include "sensorbar.h"
 #include "sensoreditordialog.h"
 
-ParkingPage::ParkingPage(SensorEditorDialog* editor, QWidget* parent)
+ParkingPage::ParkingPage(QWidget* parent)
     : QWidget{parent}
 {
-    this->editor = editor;
+    //this->editor = editor;
     //MAIN WINDOW *******
     QVBoxLayout* layout = new QVBoxLayout();
     layout->setAlignment(Qt::AlignLeft | Qt::AlignTop);
