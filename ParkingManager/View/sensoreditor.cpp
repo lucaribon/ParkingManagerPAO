@@ -10,8 +10,9 @@
 #include <QVBoxLayout>
 #include "dashboardwindow.h"
 
-SensorEditor::SensorEditor(QWidget *parent)
+SensorEditor::SensorEditor(Controller *con, QWidget *parent)
     : QWidget(parent)
+    , controller(con)
 {
     qDebug() << parentWidget()
                     ->parentWidget()
@@ -43,22 +44,23 @@ SensorEditor::SensorEditor(QWidget *parent)
     listAreas->setContentsMargins(0, 0, 0, 0);
     listAreas->setSpacing(4);
     listAreas->addItem("General");
-
+    /*
     for (const std::string &area : areas) {
         listAreas->addItem("Area " + QString::fromStdString(area));
     }
-
+    */
     //BUTTON BAR
     QWidget *buttonBar = new QWidget();
     QPushButton *addArea = new QPushButton(QIcon(":/assets/icons/add.svg"), "");
     addArea->setToolTip("Add Area");
     addArea->setStyleSheet("background: white;border: none;border-radius: 8px;");
-    connect(addArea, &QPushButton::clicked, this, &SensorEditor::addArea);
+
+    //connect(addArea, &QPushButton::clicked, this, addArea);
 
     QPushButton *remArea = new QPushButton(QIcon(":/assets/icons/minus.svg"), "");
     remArea->setStyleSheet("background: white;border: none;border-radius: 8px;");
     remArea->setToolTip("Remove Area");
-
+    /*
     connect(remArea, &QPushButton::clicked, [this] {
         if (listAreas->selectedItems().isEmpty()) {
             QMessageBox::critical(this, "Error", "Select an area to remove", QMessageBox::Ok);
@@ -67,11 +69,10 @@ SensorEditor::SensorEditor(QWidget *parent)
             removeArea(listAreas->selectedItems().first()->text());
         }
     });
-
+    */
     QHBoxLayout *layoutButtons = new QHBoxLayout(buttonBar);
     layoutButtons->addWidget(addArea);
     layoutButtons->addWidget(remArea);
-
     QVBoxLayout *layoutSideFrame = new QVBoxLayout(sideFrameAreas);
     layoutSideFrame->setContentsMargins(0, 0, 0, 0);
 
@@ -129,7 +130,7 @@ SensorEditor::SensorEditor(QWidget *parent)
     layout->addWidget(main);
     layout->addWidget(buttonBar2);
 }
-
+/*
 void SensorEditor::addArea()
 {
     QDialog *dialog = new QDialog(this);
@@ -195,15 +196,11 @@ void SensorEditor::removeArea(const QString &area)
     areas.erase(areaTrim.toStdString());
     refreshAreas(listAreas);
 }
+*/
 
 void SensorEditor::createPark()
 {
     //close dialog
-    parentWidget()->close();
-    //read the areas
-    for (const std::string &area : areas) {
-        qDebug() << "Area: " << area.c_str();
-    }
-
+    //parentWidget()->close();
     emit parkingCreated();
 }

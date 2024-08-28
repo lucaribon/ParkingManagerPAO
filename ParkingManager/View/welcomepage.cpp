@@ -6,10 +6,10 @@
 #include <QVBoxLayout>
 #include "sensoreditordialog.h"
 
-WelcomePage::WelcomePage(SensorEditorDialog *editor, QWidget *parent)
+WelcomePage::WelcomePage(Controller *con, QWidget *parent)
     : QWidget{parent}
+    , controller(con)
 {
-    this->editor = editor;
     QVBoxLayout *layout = new QVBoxLayout(this);
     QLabel *welcomeLabel = new QLabel("Welcome to Parking Manager", this);
     welcomeLabel->setAlignment(Qt::AlignCenter);
@@ -46,6 +46,6 @@ void WelcomePage::openFile()
 
 void WelcomePage::newParking()
 {
-    //editor->show();
+    SensorEditorDialog sensorEditor(controller);
     qDebug() << "HEEHEH";
 }

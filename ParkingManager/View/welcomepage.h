@@ -2,16 +2,16 @@
 #define WELCOMEPAGE_H
 
 #include <QWidget>
-#include "sensoreditordialog.h"
+#include "../Controller/controller.h"
 
 class WelcomePage : public QWidget
 {
     Q_OBJECT
 private:
-    SensorEditorDialog *editor;
+    Controller *controller;
 
 public:
-    explicit WelcomePage(SensorEditorDialog *editor, QWidget *parent = nullptr);
+    explicit WelcomePage(Controller *con, QWidget *parent = nullptr);
     void openFile();
     void newParking();
 signals:

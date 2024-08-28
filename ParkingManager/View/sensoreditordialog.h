@@ -3,12 +3,16 @@
 
 #include <QDialog>
 #include <QWidget>
+#include "../Controller/controller.h"
 
 class SensorEditorDialog : public QWidget
 {
     Q_OBJECT
+private:
+    Controller *controller;
+
 public:
-    explicit SensorEditorDialog(QWidget *parent = nullptr);
+    explicit SensorEditorDialog(Controller *con, QWidget *parent = nullptr);
 };
 
 #endif // SENSOREDITORDIALOG_H

@@ -3,28 +3,28 @@
 
 #include <QMainWindow>
 #include <QStackedWidget>
-#include "sensorbar.h"
-#include "sidemenu.h"
+#include "../Controller/controller.h"
+#include "applogo.h"
 #include "dashboardwindow.h"
 #include "graphwindow.h"
 #include "reportwindow.h"
-#include "applogo.h"
+#include "sidemenu.h"
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 private:
     AppLogo* appLogo;
-    SensorBar* sensorBar;
     SideMenu* sideMenu;
     QStackedWidget* contentWindow;
     DashboardWindow* dashWindow;
-    ReportWindow* reportWindow;
     GraphWindow* graphWindow;
+    ReportWindow* reportWindow;
+
+    Controller* controller;
 
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 };
 #endif // MAINWINDOW_H
-
