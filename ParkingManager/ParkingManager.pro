@@ -21,6 +21,7 @@ SOURCES += \
     View/reportwindow.cpp \
     View/sensorbar.cpp \
     View/sensoreditor.cpp \
+    View/sensoreditordialog.cpp \
     View/sensorinfo.cpp \
     View/sidemenu.cpp \
     View/welcomepage.cpp
@@ -36,6 +37,7 @@ HEADERS += \
     View/reportwindow.h \
     View/sensorbar.h \
     View/sensoreditor.h \
+    View/sensoreditordialog.h \
     View/sensorinfo.h \
     View/sidemenu.h \
     View/welcomepage.h

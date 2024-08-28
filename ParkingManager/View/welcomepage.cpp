@@ -4,11 +4,12 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QVBoxLayout>
-#include "sensoreditor.h"
+#include "sensoreditordialog.h"
 
-WelcomePage::WelcomePage(QWidget *parent)
+WelcomePage::WelcomePage(SensorEditorDialog *editor, QWidget *parent)
     : QWidget{parent}
 {
+    this->editor = editor;
     QVBoxLayout *layout = new QVBoxLayout(this);
     QLabel *welcomeLabel = new QLabel("Welcome to Parking Manager", this);
     welcomeLabel->setAlignment(Qt::AlignCenter);
@@ -45,14 +46,6 @@ void WelcomePage::openFile()
 
 void WelcomePage::newParking()
 {
-    QDialog *dialog = new QDialog(this);
-    dialog->setWindowTitle("Sensor Editor");
-    dialog->setMinimumWidth(600);
-    dialog->setMinimumHeight(400);
-
-    SensorEditor *editor = new SensorEditor(dialog);
-
-    QVBoxLayout *layout = new QVBoxLayout(dialog);
-    layout->addWidget(editor);
-    dialog->exec();
+    //editor->show();
+    qDebug() << "HEEHEH";
 }

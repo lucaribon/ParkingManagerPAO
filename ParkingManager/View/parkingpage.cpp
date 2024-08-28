@@ -6,10 +6,12 @@
 #include <QVBoxLayout>
 #include "parkinglots.h"
 #include "sensorbar.h"
+#include "sensoreditordialog.h"
 
-ParkingPage::ParkingPage(QWidget *parent)
+ParkingPage::ParkingPage(SensorEditorDialog* editor, QWidget* parent)
     : QWidget{parent}
 {
+    this->editor = editor;
     //MAIN WINDOW *******
     QVBoxLayout* layout = new QVBoxLayout();
     layout->setAlignment(Qt::AlignLeft | Qt::AlignTop);
@@ -22,7 +24,8 @@ ParkingPage::ParkingPage(QWidget *parent)
     sensorBar->setObjectName("sensorBar");
     QPushButton* editButton = new QPushButton(QIcon(":/assets/icons/edit.svg"), "");
     editButton->setFixedSize(35, 35);
-    //connect(editButton, &QPushButton::clicked, this, &DashboardWindow::editMode);
+
+    connect(editButton, &QPushButton::clicked, this, &ParkingPage::editMode);
 
     layoutTopBar->addWidget(sensorBar);
     layoutTopBar->addWidget(editButton);
@@ -46,4 +49,9 @@ ParkingPage::ParkingPage(QWidget *parent)
     layout->addWidget(parkSpace);
 
     setLayout(layout);
+}
+
+void ParkingPage::editMode()
+{
+    qDebug() << "Edit mode activated!";
 }

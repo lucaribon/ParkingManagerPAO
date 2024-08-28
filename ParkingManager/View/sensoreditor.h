@@ -14,12 +14,15 @@ public:
     void pushAreaName(const QString &area);
     void removeArea(const QString &area);
     void refreshAreas(QListWidget *listAreas);
+    void createPark();
 
 private:
     std::set<std::string> areas;
     std::list<std::string> sensors; //DA CAMBIARE CON SENSOR
     QListWidget *listAreas;
+
 signals:
+    void parkingCreated();
 };
 
 #endif // SENSOREDITOR_H

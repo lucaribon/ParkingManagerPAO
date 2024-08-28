@@ -8,10 +8,22 @@
 #include <QMessageBox>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include "dashboardwindow.h"
 
 SensorEditor::SensorEditor(QWidget *parent)
-    : QWidget{parent}
+    : QWidget(parent)
 {
+    qDebug() << parentWidget()
+                    ->parentWidget()
+                    ->parentWidget()
+                    ->parentWidget()
+                    ->parentWidget(); //dashboardwindow
+    connect(this,
+            &SensorEditor::parkingCreated,
+            qobject_cast<DashboardWindow *>(
+                parentWidget()->parentWidget()->parentWidget()->parentWidget()->parentWidget()),
+            &DashboardWindow::setParkingPage);
+
     //SEARCH BAR - non so come metterla piccola in mezzo :(
     QLineEdit *search = new QLineEdit();
     //search->setFixedWidth(250);
@@ -95,10 +107,27 @@ SensorEditor::SensorEditor(QWidget *parent)
     layoutH->addWidget(sensorFrame);
     layoutH->addWidget(sensorSettings);
 
+    //BUTTON BAR 2
+    QWidget *buttonBar2 = new QWidget();
+    QHBoxLayout *layoutButtons2 = new QHBoxLayout(buttonBar2);
+
+    QPushButton *cancel = new QPushButton("Cancel");
+    cancel->setStyleSheet("background: white;border: none;border-radius: 8px;");
+    QPushButton *confirm = new QPushButton("Confirm");
+    confirm->setStyleSheet("background: white;border: none;border-radius: 8px;");
+
+    layoutButtons2->addWidget(cancel);
+    layoutButtons2->addWidget(confirm);
+
+    //cancell button quit the dialog
+    connect(cancel, &QPushButton::clicked, [this] { this->parentWidget()->close(); });
+    connect(confirm, &QPushButton::clicked, this, &SensorEditor::createPark);
+
     //SEARCH + MAIN WINDOW
     QVBoxLayout *layout = new QVBoxLayout(this);
     layout->addWidget(search);
     layout->addWidget(main);
+    layout->addWidget(buttonBar2);
 }
 
 void SensorEditor::addArea()
@@ -128,9 +157,7 @@ void SensorEditor::addArea()
         }
     });
     QPushButton *cancel = new QPushButton("Cancel");
-    connect(cancel, &QPushButton::clicked, [this, dialog]{
-        dialog->close();
-    });
+    connect(cancel, &QPushButton::clicked, [dialog] { dialog->close(); });
     QHBoxLayout *layoutButtons = new QHBoxLayout(buttonBar);
     layoutButtons->addWidget(ok);
     layoutButtons->addWidget(cancel);
@@ -167,4 +194,16 @@ void SensorEditor::removeArea(const QString &area)
     qDebug() << "Removing area: " << areaTrim;
     areas.erase(areaTrim.toStdString());
     refreshAreas(listAreas);
+}
+
+void SensorEditor::createPark()
+{
+    //close dialog
+    parentWidget()->close();
+    //read the areas
+    for (const std::string &area : areas) {
+        qDebug() << "Area: " << area.c_str();
+    }
+
+    emit parkingCreated();
 }

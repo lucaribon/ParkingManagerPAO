@@ -13,36 +13,23 @@
 DashboardWindow::DashboardWindow(QWidget* parent) : QWidget(parent){
     QVBoxLayout* mainLayout = new QVBoxLayout();
 
-    QStackedWidget* contentWindow = new QStackedWidget(this);
+    contentWindow = new QStackedWidget(this);
+    editorDialog = new SensorEditorDialog(this);
 
-    WelcomePage* welcomePage = new WelcomePage();
+    WelcomePage* welcomePage = new WelcomePage(editorDialog, this);
     welcomePage->setFixedHeight(200);
     contentWindow->addWidget(welcomePage);
-
-    ParkingPage* parkingPage = new ParkingPage();
-    contentWindow->addWidget(parkingPage);
-
-    //contentWindow->setCurrentWidget(welcomePage);
-    contentWindow->setCurrentWidget(parkingPage);
+    contentWindow->setCurrentWidget(welcomePage);
 
     mainLayout->setAlignment(Qt::AlignCenter | Qt::AlignBottom);
     mainLayout->addWidget(contentWindow);
     setLayout(mainLayout);
 }
 
-void DashboardWindow::show(){
-    
-}
-
-void DashboardWindow::editMode()
+void DashboardWindow::setParkingPage()
 {
-    qDebug() << "Edit mode activated!";
-    //QPushButton* saveButton = new QPushButton("Save");
-    //QPushButton* cancelButton = new QPushButton("Cancel");
-    //QVBoxLayout* layout = new QVBoxLayout();
-    //layout->addWidget(saveButton);
-    //layout->addWidget(cancelButton);
-    //QDialog* editWindow = new QDialog();
-    //editWindow->setLayout(layout);
-    //editWindow->show();
+    qDebug() << "Setting parking page!";
+    ParkingPage* parkingPage = new ParkingPage(editorDialog, this);
+    contentWindow->addWidget(parkingPage);
+    contentWindow->setCurrentWidget(parkingPage);
 }
