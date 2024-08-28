@@ -15,5 +15,6 @@ ParkingManager/.qmake.stash
 ParkingManager/**/*.o
 ParkingManager/**/moc_*
 ParkingManager/ParkingManager
+ParkingManager/build
 
 build-*

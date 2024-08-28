@@ -1,0 +1,113 @@
+/*
+MainWindow {
+    background: white;
+}
+*/
+* {
+    font-family: 'Inter', 'Cantarell', sans-serif;
+}
+
+QStackedWidget {
+    border: none;
+    border-radius: 8px;
+    background: white;
+}
+
+QListWidget {
+    padding: 4px;
+    background: white;
+    border: none;
+    border-radius: 8px;
+    outline: 0;
+}
+
+QListWidget::item {
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+
+}
+
+QListWidget::item:selected{
+    background: lightblue;
+    color: black;
+    border: none;
+}
+
+QListWidget::item:hover{
+    background: #f0f0f0;
+    color: black;
+    border: none;
+}
+
+QListWidget::item:top:hover{
+    background: white;
+    color: black;
+    border: none;
+}
+
+QListWidget::item:disabled
+{
+    background: transparent;
+}
+
+AppLogo {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    background: white;
+    border: none;
+    border-radius: 8px;
+}
+
+ParkingLots {
+    background: #f0f0f0;
+    border: none;
+    border-radius: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+QPushButton {
+    background: #f0f0f0;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+QScrollBar:vertical, QScrollBar:horizontal {
+    border: none;
+    background: white;
+    width: 10px;
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:vertical, QScrollBar::handle:horizontal {
+    background: #f0f0f0;
+    border-radius: 4px;
+    min-height: 20px;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical, QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    border: none;
+    background: white;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical, QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+    background: white;
+}
+
+QScrollBar::add-line:vertical:pressed, QScrollBar::sub-line:vertical:pressed, QScrollBar::add-line:horizontal:pressed, QScrollBar::sub-line:horizontal:pressed {
+    background: #f0f0f0;
+}
+
+QScrollBar::handle:vertical:hover, QScrollBar::handle:horizontal:hover {
+    background: #e0e0e0;
+}
+
+QScrollBar::handle:vertical:pressed, QScrollBar::handle:horizontal:pressed {
+    background: #d0d0d0;
+}
+
