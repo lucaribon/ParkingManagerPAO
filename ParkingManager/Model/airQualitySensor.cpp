@@ -12,7 +12,7 @@ void AirQualitySensor::setO3(float val){o3 = val;}
 void AirQualitySensor::setPm10(float val){pm10 = val;}
 void AirQualitySensor::setPm25(float val){pm25 = val;}
 
-// ritorna
+// ritorna un int che rappresenta la qualità dell'aria su 5 livelli (lower is better)
 int AirQualitySensor::getAirStatus() {
     if(no2>400 || o3>240 || pm10>180 || pm25>110){
         return 5; // very high
