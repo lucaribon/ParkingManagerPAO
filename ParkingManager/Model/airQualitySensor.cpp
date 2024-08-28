@@ -1,10 +1,6 @@
 #include "airQualitySensor.h"
 
-AirQualitySensor::AirQualitySensor(std::string n, std::string a){
-    name = n;
-    area = a;
-    id = QUuid::createUuid().toString();
-}
+AirQualitySensor::AirQualitySensor(std::string n, std::string a) : AirSensor(n,a), no2(0), o3(0), pm10(0), pm25(0){}
 
 float AirQualitySensor::getNo2() const{return no2;}
 float AirQualitySensor::getO3() const{return o3;}
@@ -16,7 +12,8 @@ void AirQualitySensor::setO3(float val){o3 = val;}
 void AirQualitySensor::setPm10(float val){pm10 = val;}
 void AirQualitySensor::setPm25(float val){pm25 = val;}
 
-int calculateCommonAirQualityIndex() {
+// ritorna
+int AirQualitySensor::getAirStatus() {
     if(no2>400 || o3>240 || pm10>180 || pm25>110){
         return 5; // very high
     }else if((no2>=200&&no2<=400) ||

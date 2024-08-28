@@ -2,30 +2,28 @@
 #define SENSOR_H
 
 #include <string>
+#include <list>
 #include <QUuid>
+#include <QString>
 
 class Sensor {
 private:
     std::string name;
     std::string area;
-    QUuid id;
+    QString id;
 protected:
     Sensor(std::string, std::string);
+    // meglio una lista perché alla fine una volta generati di dati saranno inseriti alla fine e basta, e poi per usarli nei grafici l'accesso sarà sequenziale
+    virtual std::list<float> generateData()=0;
 public:
-    // per il momento per rendere la classe virtuale usiamo il costruttore
-    // come metodo puro e lo ridefiniamo fuori
-    virtual ~Sensor()=0;
-
+    virtual ~Sensor() =default;
     std::string getName() const;
     std::string getArea() const;
-    QUuid getId() const;
+    QString getId() const;
 
     void setName(std::string);
     void setArea(std::string);
-    // probabilmente ha più senso definire l'id in costruzione e non poterlo più modificare
-    // void setId();
+    void setId(QString);
+
 };
-
-Sensor::~Sensor(){}
-
 #endif // SENSOR_H

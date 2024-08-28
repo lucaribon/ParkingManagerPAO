@@ -12,8 +12,9 @@ private:
     float pm10;
     float pm25;
 protected:
-    AirQualitySensor(float, int);
+    AirQualitySensor(std::string, std::string);
 public:
+    virtual ~AirQualitySensor() =default;
     float getNo2() const;
     float getO3() const;
     float getPm10() const;
@@ -31,6 +32,7 @@ public:
     https://en.wikipedia.org/wiki/Air_quality_index#CAQI
     https://en.wikipedia.org/wiki/Air_quality_index#Computing_the_AQI
     https://www.pranaair.com/blog/what-is-air-quality-index-aqi-and-its-calculation/?srsltid=AfmBOorCFpO9mlQiufmMVOsH1ceK9zuq7FAna3rnzmfjY5zJzAFS0Rfx */
-    int calculateCommonAirQualityIndex();
+    virtual int getAirStatus();
+};
 
 #endif // AIRQUALITYSENSOR_H
