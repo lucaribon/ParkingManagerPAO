@@ -7,7 +7,6 @@
 
 #include "../Controller/controller.h"
 #include "sensorbar.h"
-#include "sensoreditordialog.h"
 
 class DashboardWindow : public QWidget
 {
@@ -16,8 +15,6 @@ private:
     Controller* controller;
     SensorBar* sensorBar;
     QStackedWidget* contentWindow;
-    //SensorEditorDialog* editorDialog;
-
 
 public:
     DashboardWindow(Controller* con, QWidget* parent = 0);

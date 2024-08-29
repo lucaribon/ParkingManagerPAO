@@ -31,7 +31,7 @@ DashboardWindow::DashboardWindow(Controller* con, QWidget* parent)
 void DashboardWindow::setParkingPage()
 {
     qDebug() << "Setting parking page!";
-    ParkingPage* parkingPage = new ParkingPage(this);
+    ParkingPage* parkingPage = new ParkingPage(controller, this);
     contentWindow->addWidget(parkingPage);
     contentWindow->setCurrentWidget(parkingPage);
 }

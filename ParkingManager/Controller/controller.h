@@ -18,9 +18,13 @@ public:
 
     void addSensor(Sensor *);
     void removeSensor(Sensor *);
-    void addArea();
-    void pushAreaName(const QString &area);
-    void removeArea(const QString &area);
+    void addArea(std::string area);
+    void removeArea(std::string area);
+    void setSensors(std::vector<Sensor *>);
+    void setAreas(std::set<std::string>);
+    std::set<std::string> getAreas();
+    std::vector<Sensor *> getSensors();
+
 signals:
 };
 

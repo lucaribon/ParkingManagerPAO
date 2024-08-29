@@ -14,17 +14,12 @@ SensorEditor::SensorEditor(Controller *con, QWidget *parent)
     : QWidget(parent)
     , controller(con)
 {
-    qDebug() << parentWidget()
-                    ->parentWidget()
-                    ->parentWidget()
-                    ->parentWidget()
-                    ->parentWidget(); //dashboardwindow
-    connect(this,
-            &SensorEditor::parkingCreated,
-            qobject_cast<DashboardWindow *>(
-                parentWidget()->parentWidget()->parentWidget()->parentWidget()->parentWidget()),
-            &DashboardWindow::setParkingPage);
+    qDebug() << "--- " << parent->parentWidget()->parentWidget()->parentWidget();
+    //get dashboard window
+    DashboardWindow *dashboard = dynamic_cast<DashboardWindow *>(
+        parent->parentWidget()->parentWidget()->parentWidget());
 
+    connect(this, &SensorEditor::parkingCreated, dashboard, &DashboardWindow::setParkingPage);
     //SEARCH BAR - non so come metterla piccola in mezzo :(
     QLineEdit *search = new QLineEdit();
     //search->setFixedWidth(250);
@@ -44,23 +39,24 @@ SensorEditor::SensorEditor(Controller *con, QWidget *parent)
     listAreas->setContentsMargins(0, 0, 0, 0);
     listAreas->setSpacing(4);
     listAreas->addItem("General");
-    /*
+
+    const std::set<std::string> areas = controller->getAreas();
     for (const std::string &area : areas) {
         listAreas->addItem("Area " + QString::fromStdString(area));
     }
-    */
+
     //BUTTON BAR
     QWidget *buttonBar = new QWidget();
     QPushButton *addArea = new QPushButton(QIcon(":/assets/icons/add.svg"), "");
     addArea->setToolTip("Add Area");
     addArea->setStyleSheet("background: white;border: none;border-radius: 8px;");
 
-    //connect(addArea, &QPushButton::clicked, this, addArea);
+    connect(addArea, &QPushButton::clicked, this, &SensorEditor::addAreaDialog);
 
     QPushButton *remArea = new QPushButton(QIcon(":/assets/icons/minus.svg"), "");
     remArea->setStyleSheet("background: white;border: none;border-radius: 8px;");
     remArea->setToolTip("Remove Area");
-    /*
+
     connect(remArea, &QPushButton::clicked, [this] {
         if (listAreas->selectedItems().isEmpty()) {
             QMessageBox::critical(this, "Error", "Select an area to remove", QMessageBox::Ok);
@@ -69,7 +65,7 @@ SensorEditor::SensorEditor(Controller *con, QWidget *parent)
             removeArea(listAreas->selectedItems().first()->text());
         }
     });
-    */
+
     QHBoxLayout *layoutButtons = new QHBoxLayout(buttonBar);
     layoutButtons->addWidget(addArea);
     layoutButtons->addWidget(remArea);
@@ -130,8 +126,8 @@ SensorEditor::SensorEditor(Controller *con, QWidget *parent)
     layout->addWidget(main);
     layout->addWidget(buttonBar2);
 }
-/*
-void SensorEditor::addArea()
+
+void SensorEditor::addAreaDialog()
 {
     QDialog *dialog = new QDialog(this);
     dialog->setWindowTitle("New Area");
@@ -147,11 +143,21 @@ void SensorEditor::addArea()
 
     QWidget *buttonBar = new QWidget();
     QPushButton *ok = new QPushButton("Ok");
+
     connect(ok, &QPushButton::clicked, [this, lineEdit, dialog] {
+        ////DEBUGG
+        qDebug() << "Ok clicked";
+        qDebug() << lineEdit->text().trimmed();
+        for (const auto &area : controller->getAreas()) {
+            qDebug() << "getAreas ";
+            qDebug() << QString::fromStdString(area);
+        }
+        ////////////////////////////////////////////////
+
         if (lineEdit->text().trimmed().isEmpty()) {
             QMessageBox::critical(dialog, "Error", "Area name cannot be empty", QMessageBox::Ok);
-        } else if (areas.find(lineEdit->text().trimmed().toStdString()) != areas.end()) {
-            QMessageBox::critical(dialog, "Error", "Area name already exists", QMessageBox::Ok);
+
+            //check if area already exists???
         } else {
             pushAreaName(lineEdit->text().trimmed());
             dialog->accept();
@@ -169,9 +175,10 @@ void SensorEditor::addArea()
 
     dialog->exec();
 }
-void SensorEditor::pushAreaName(const QString &area)
+
+void SensorEditor::pushAreaName(const QString &name)
 {
-    areas.insert(area.toStdString());
+    controller->addArea(name.toStdString());
     refreshAreas(listAreas);
 }
 
@@ -180,9 +187,12 @@ void SensorEditor::refreshAreas(QListWidget *listAreas)
     //show the new areas
     listAreas->clear();
     listAreas->addItem("General");
+
+    const std::set<std::string> areas = controller->getAreas();
     for (const std::string &area : areas) {
         listAreas->addItem("Area " + QString::fromStdString(area));
     }
+
     listAreas->update();
     listAreas->repaint();
     listAreas->show();
@@ -193,14 +203,14 @@ void SensorEditor::removeArea(const QString &area)
     QString areaTrim = area;
     areaTrim.replace("Area ", "");
     qDebug() << "Removing area: " << areaTrim;
-    areas.erase(areaTrim.toStdString());
+    controller->removeArea(areaTrim.toStdString());
     refreshAreas(listAreas);
 }
-*/
 
 void SensorEditor::createPark()
 {
     //close dialog
-    //parentWidget()->close();
+    parentWidget()->close();
+    qDebug() << "createPark()";
     emit parkingCreated();
 }

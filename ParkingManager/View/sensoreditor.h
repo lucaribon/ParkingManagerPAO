@@ -13,6 +13,9 @@ public:
 
     void refreshAreas(QListWidget *listAreas);
     void createPark();
+    void removeArea(const QString &area);
+    void pushAreaName(const QString &name);
+    void addAreaDialog();
 
 private:
     Controller *controller;
