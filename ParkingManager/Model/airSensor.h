@@ -10,10 +10,12 @@ private:
     float airflow;
 public:
     AirSensor(std::string n, std::string a);
-    virtual ~AirSensor() =0;
+    virtual ~AirSensor() =default;
     float getAirflow() const;
 
     void setAirflow(float);
+
+    virtual int getAirStatus() =0;
 };
 
 #endif // AIRSENSOR_H
