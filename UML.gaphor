@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<gaphor xmlns="http://gaphor.sourceforge.net/model" version="3.0" gaphor-version="2.25.0">
+<gaphor xmlns="http://gaphor.sourceforge.net/model" version="3.0" gaphor-version="2.26.0">
 <StyleSheet id="58d6989a-66f8-11ec-b4c8-0456e5e540ed">
 <styleSheet>
 <val>diagram {
@@ -26,16 +26,16 @@ controlflow {
 <ref refid="c80b685d-dbba-11ee-9548-6fe649a41c00"/>
 <ref refid="ce546bb8-dbba-11ee-9b87-6fe649a41c00"/>
 <ref refid="db345567-dbba-11ee-b87f-6fe649a41c00"/>
-<ref refid="e7bfa7da-dbba-11ee-b028-6fe649a41c00"/>
 <ref refid="dbab14f5-dbc1-11ee-917b-6fe649a41c00"/>
 <ref refid="266564a9-dbc3-11ee-b829-6fe649a41c00"/>
+<ref refid="a290b876-1855-11ef-819e-fb1d0593433f"/>
 <ref refid="47aea12f-dbc2-11ee-a22c-6fe649a41c00"/>
 <ref refid="4d0623fc-dbc2-11ee-bd3a-6fe649a41c00"/>
 <ref refid="51d6b861-dbc2-11ee-b4e2-6fe649a41c00"/>
 <ref refid="584a9524-dbc2-11ee-ba47-6fe649a41c00"/>
 <ref refid="5d31e164-dbc2-11ee-938d-6fe649a41c00"/>
-<ref refid="61385a53-dbc2-11ee-8396-6fe649a41c00"/>
 <ref refid="4f488155-dbc3-11ee-8d0f-6fe649a41c00"/>
+<ref refid="a99db30f-1855-11ef-b783-fb1d0593433f"/>
 </reflist>
 </ownedPresentation>
 </Diagram>
@@ -59,7 +59,7 @@ controlflow {
 </Class>
 <ClassItem id="b602376f-dbba-11ee-ba5a-6fe649a41c00">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 217.20103939944792, 180.60887858852118)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 217.20103939944792, 180.60887858852115)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
@@ -94,7 +94,7 @@ controlflow {
 </Class>
 <ClassItem id="bb10eada-dbba-11ee-8728-6fe649a41c00">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 95.64063262939456, 454.62890625)</val>
+<val>(1.0, 0.0, 0.0, 1.0, -2.745044857826346, 820.1752247708552)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
@@ -129,7 +129,7 @@ controlflow {
 </Class>
 <ClassItem id="c80b685d-dbba-11ee-9548-6fe649a41c00">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 273.2890625, 454.62890625)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 164.60697088079795, 820.175224770855)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
@@ -159,6 +159,19 @@ controlflow {
 <name>
 <val>SensoreAria</val>
 </name>
+<note>
+<val>getStatus ritorna lo stato (es. good, bad air, medium)</val>
+</note>
+<ownedAttribute>
+<reflist>
+<ref refid="8b258716-5d38-11ef-acee-93d24b3ce7da"/>
+</reflist>
+</ownedAttribute>
+<ownedOperation>
+<reflist>
+<ref refid="42c1b89c-5d38-11ef-8baf-93d24b3ce7da"/>
+</reflist>
+</ownedOperation>
 <presentation>
 <reflist>
 <ref refid="ce546bb8-dbba-11ee-9b87-6fe649a41c00"/>
@@ -173,16 +186,16 @@ controlflow {
 </Class>
 <ClassItem id="ce546bb8-dbba-11ee-9b87-6fe649a41c00">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 538.4426834300624, 454.62890624999994)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 530.0230833713306, 406.75718787548163)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
 </top-left>
 <width>
-<val>103.0</val>
+<val>128.0</val>
 </width>
 <height>
-<val>57.0</val>
+<val>91.0</val>
 </height>
 <diagram>
 <ref refid="abed2eca-dbba-11ee-a3e2-6fe649a41c00"/>
@@ -208,7 +221,7 @@ controlflow {
 </Class>
 <ClassItem id="db345567-dbba-11ee-b87f-6fe649a41c00">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 338.803065981586, 608.0418042348285)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 384.96683609675705, 691.4399260962934)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
@@ -224,41 +237,6 @@ controlflow {
 </diagram>
 <subject>
 <ref refid="db341e27-dbba-11ee-ad3c-6fe649a41c00"/>
-</subject>
-</ClassItem>
-<Class id="e7bf6ba2-dbba-11ee-b13b-6fe649a41c00">
-<clientDependency>
-<reflist>
-<ref refid="632aa86c-dbc2-11ee-b0e3-6fe649a41c00"/>
-</reflist>
-</clientDependency>
-<name>
-<val>SensoreFumo</val>
-</name>
-<presentation>
-<reflist>
-<ref refid="e7bfa7da-dbba-11ee-b028-6fe649a41c00"/>
-</reflist>
-</presentation>
-</Class>
-<ClassItem id="e7bfa7da-dbba-11ee-b028-6fe649a41c00">
-<matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 700.4188358857066, 608.0418042348284)</val>
-</matrix>
-<top-left>
-<val>(-5.0, 0.0)</val>
-</top-left>
-<width>
-<val>115.0</val>
-</width>
-<height>
-<val>57.0</val>
-</height>
-<diagram>
-<ref refid="abed2eca-dbba-11ee-a3e2-6fe649a41c00"/>
-</diagram>
-<subject>
-<ref refid="e7bf6ba2-dbba-11ee-b13b-6fe649a41c00"/>
 </subject>
 </ClassItem>
 <Class id="dbaabfeb-dbc1-11ee-979d-6fe649a41c00">
@@ -278,7 +256,7 @@ controlflow {
 </Class>
 <ClassItem id="dbab14f5-dbc1-11ee-917b-6fe649a41c00">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, -171.06530674913822, 661.0835507580515)</val>
+<val>(1.0, 0.0, 0.0, 1.0, -212.90816098848416, 820.1752247708548)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
@@ -313,7 +291,7 @@ controlflow {
 <val>(1.0, 0.0, 0.0, 1.0, -177.56974996391335, 350.26027600713655)</val>
 </matrix>
 <points>
-<val>[(444.77078936336136, -112.65139741861535), (444.77078936336136, 26.140110681867043), (133.9098269874335, 26.140110681867043), (133.9098269874335, 400.50686850091495)]</val>
+<val>[(444.77078936336136, -112.65139741861535), (444.77078936336136, 26.140110681867043), (53.66158897542914, 26.140110681867043), (53.66158897542914, 469.91494876371826)]</val>
 </points>
 <head-connection>
 <ref refid="b602376f-dbba-11ee-ba5a-6fe649a41c00"/>
@@ -360,7 +338,7 @@ controlflow {
 <val>(1.0, 0.0, 0.0, 1.0, -62.05899969799783, 194.39601538243542)</val>
 </matrix>
 <points>
-<val>[(329.2600390974458, 45.136763312074805), (329.2600390974458, 182.00437130656812), (228.19963232739238, 182.00437130656812), (228.19963232739238, 260.2328908675646)]</val>
+<val>[(329.2600390974458, 45.136763312074805), (329.2600390974458, 182.00437130656812), (129.8139548401715, 182.00437130656812), (129.8139548401715, 625.7792093884196)]</val>
 </points>
 <head-connection>
 <ref refid="47aea12f-dbc2-11ee-a22c-6fe649a41c00"/>
@@ -404,7 +382,7 @@ controlflow {
 <val>(1.0, 0.0, 0.0, 1.0, 359.0287026536994, 455.41156697002066)</val>
 </matrix>
 <points>
-<val>[(-91.82766325425138, -215.87878827551037), (-91.82766325425138, -79.01118028101712), (-0.23964015369938352, -79.01118028101712), (-0.23964015369938352, -0.7826607200206581)]</val>
+<val>[(-91.82766325425138, -215.87878827551037), (-91.82766325425138, -79.01118028101712), (-108.92173177290141, -79.01118028101712), (-108.92173177290141, 364.7636578008345)]</val>
 </points>
 <head-connection>
 <ref refid="4d0623fc-dbc2-11ee-bd3a-6fe649a41c00"/>
@@ -448,7 +426,7 @@ controlflow {
 <val>(1.0, 0.0, 0.0, 1.0, 961.3893125616625, 385.56343883990723)</val>
 </matrix>
 <points>
-<val>[(-694.1882731622145, -146.03066014539695), (-694.1882731622145, -9.163052150903752), (-374.78060236488716, -9.163052150903752), (-374.78060236488716, 69.06546741009282)]</val>
+<val>[(-694.1882731622145, -146.03066014539695), (-694.1882731622145, -9.163052150903752), (-371.5094192278149, -9.163052150903752), (-371.5094192278149, 21.1937490355744)]</val>
 </points>
 <head-connection>
 <ref refid="51d6b861-dbc2-11ee-b4e2-6fe649a41c00"/>
@@ -469,6 +447,11 @@ controlflow {
 <supplier>
 <ref refid="55d6219f-dbc2-11ee-b3a5-6fe649a41c00"/>
 </supplier>
+<supplierDependency>
+<reflist>
+<ref refid="ab460775-1855-11ef-a466-fb1d0593433f"/>
+</reflist>
+</supplierDependency>
 </Dependency>
 <DependencyItem id="5d31e164-dbc2-11ee-938d-6fe649a41c00">
 <diagram>
@@ -487,7 +470,7 @@ controlflow {
 <val>(1.0, 0.0, 0.0, 1.0, 517.1545001236134, 607.7765172112638)</val>
 </matrix>
 <points>
-<val>[(72.78818330644901, -96.14761096126375), (72.78818330644901, -53.929672687603784), (-101.54752924281536, -53.929672687603784), (-101.54752924281536, 0.2652870235647242)]</val>
+<val>[(76.8685832477172, -110.01932933578217), (76.8685832477172, -53.929672687603784), (-52.18766402685645, -53.929672687603784), (-52.18766402685645, 83.66340888502964)]</val>
 </points>
 <head-connection>
 <ref refid="ce546bb8-dbba-11ee-9b87-6fe649a41c00"/>
@@ -508,50 +491,6 @@ controlflow {
 <supplier>
 <ref refid="ce542be1-dbba-11ee-a303-6fe649a41c00"/>
 </supplier>
-<supplierDependency>
-<reflist>
-<ref refid="632aa86c-dbc2-11ee-b0e3-6fe649a41c00"/>
-</reflist>
-</supplierDependency>
-</Dependency>
-<DependencyItem id="61385a53-dbc2-11ee-8396-6fe649a41c00">
-<diagram>
-<ref refid="abed2eca-dbba-11ee-a3e2-6fe649a41c00"/>
-</diagram>
-<horizontal>
-<val>0</val>
-</horizontal>
-<orthogonal>
-<val>1</val>
-</orthogonal>
-<subject>
-<ref refid="632aa86c-dbc2-11ee-b0e3-6fe649a41c00"/>
-</subject>
-<matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 823.5539041261984, 575.2651315241749)</val>
-</matrix>
-<points>
-<val>[(-233.611220696136, -63.63622527417505), (-233.611220696136, -21.418287000514965), (-71.25542025049867, -21.418287000514965), (-71.25542025049867, 32.77667271065343)]</val>
-</points>
-<head-connection>
-<ref refid="5d31e164-dbc2-11ee-938d-6fe649a41c00"/>
-</head-connection>
-<tail-connection>
-<ref refid="e7bfa7da-dbba-11ee-b028-6fe649a41c00"/>
-</tail-connection>
-</DependencyItem>
-<Dependency id="632aa86c-dbc2-11ee-b0e3-6fe649a41c00">
-<client>
-<ref refid="e7bf6ba2-dbba-11ee-b13b-6fe649a41c00"/>
-</client>
-<presentation>
-<reflist>
-<ref refid="61385a53-dbc2-11ee-8396-6fe649a41c00"/>
-</reflist>
-</presentation>
-<supplier>
-<ref refid="5f4f54ca-dbc2-11ee-8662-6fe649a41c00"/>
-</supplier>
 </Dependency>
 <Class id="26651309-dbc3-11ee-b6ef-6fe649a41c00">
 <clientDependency>
@@ -570,7 +509,7 @@ controlflow {
 </Class>
 <ClassItem id="266564a9-dbc3-11ee-b829-6fe649a41c00">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 539.9426834300624, 608.0418042348285)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 683.5116788261869, 691.4399260962934)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
@@ -605,7 +544,7 @@ controlflow {
 <val>(1.0, 0.0, 0.0, 1.0, 557.666935324694, 615.5018963560112)</val>
 </matrix>
 <points>
-<val>[(32.27574810536839, -103.87299010601129), (32.27574810536839, -61.655051832351205), (32.27574810536828, -61.655051832351205), (32.27574810536828, -7.460092121182697)]</val>
+<val>[(36.35614804663658, -117.7447084805296), (36.35614804663658, -61.655051832351205), (175.84474350149276, -61.655051832351205), (175.84474350149276, 75.93802974028222)]</val>
 </points>
 <head-connection>
 <ref refid="ce546bb8-dbba-11ee-9b87-6fe649a41c00"/>
@@ -627,4 +566,94 @@ controlflow {
 <ref refid="ce542be1-dbba-11ee-a303-6fe649a41c00"/>
 </supplier>
 </Dependency>
+<Class id="a290716c-1855-11ef-971a-fb1d0593433f">
+<clientDependency>
+<reflist>
+<ref refid="ab460775-1855-11ef-a466-fb1d0593433f"/>
+</reflist>
+</clientDependency>
+<name>
+<val>SensoreLuminosità</val>
+</name>
+<presentation>
+<reflist>
+<ref refid="a290b876-1855-11ef-819e-fb1d0593433f"/>
+</reflist>
+</presentation>
+</Class>
+<ClassItem id="a290b876-1855-11ef-819e-fb1d0593433f">
+<matrix>
+<val>(1.0, 0.0, 0.0, 1.0, -408.8970723766245, 820.175224770855)</val>
+</matrix>
+<top-left>
+<val>(0.0, 0.0)</val>
+</top-left>
+<width>
+<val>159.0</val>
+</width>
+<height>
+<val>57.0</val>
+</height>
+<diagram>
+<ref refid="abed2eca-dbba-11ee-a3e2-6fe649a41c00"/>
+</diagram>
+<subject>
+<ref refid="a290716c-1855-11ef-971a-fb1d0593433f"/>
+</subject>
+</ClassItem>
+<DependencyItem id="a99db30f-1855-11ef-b783-fb1d0593433f">
+<diagram>
+<ref refid="abed2eca-dbba-11ee-a3e2-6fe649a41c00"/>
+</diagram>
+<horizontal>
+<val>0</val>
+</horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
+<subject>
+<ref refid="ab460775-1855-11ef-a466-fb1d0593433f"/>
+</subject>
+<matrix>
+<val>(1.0, 0.0, 0.0, 1.0, -335.27337679572884, 547.5874232831815)</val>
+</matrix>
+<points>
+<val>[(602.4744161951771, -308.05464458867107), (602.4744161951767, -171.18703659417793), (5.876304419104315, -171.18703659417787), (3.6979532677889893, 272.58780148767346)]</val>
+</points>
+<head-connection>
+<ref refid="584a9524-dbc2-11ee-ba47-6fe649a41c00"/>
+</head-connection>
+<tail-connection>
+<ref refid="a290b876-1855-11ef-819e-fb1d0593433f"/>
+</tail-connection>
+</DependencyItem>
+<Dependency id="ab460775-1855-11ef-a466-fb1d0593433f">
+<client>
+<ref refid="a290716c-1855-11ef-971a-fb1d0593433f"/>
+</client>
+<presentation>
+<reflist>
+<ref refid="a99db30f-1855-11ef-b783-fb1d0593433f"/>
+</reflist>
+</presentation>
+<supplier>
+<ref refid="59d74aad-dbc2-11ee-8d5e-6fe649a41c00"/>
+</supplier>
+</Dependency>
+<Operation id="42c1b89c-5d38-11ef-8baf-93d24b3ce7da">
+<class_>
+<ref refid="ce542be1-dbba-11ee-a303-6fe649a41c00"/>
+</class_>
+<name>
+<val>getAirStatus</val>
+</name>
+</Operation>
+<Property id="8b258716-5d38-11ef-acee-93d24b3ce7da">
+<class_>
+<ref refid="ce542be1-dbba-11ee-a303-6fe649a41c00"/>
+</class_>
+<name>
+<val>float airFlow</val>
+</name>
+</Property>
 </gaphor>
