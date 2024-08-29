@@ -3,22 +3,22 @@
 
 #include <QListWidget>
 #include <QWidget>
-#include <set>
+#include "../Controller/controller.h"
 
 class SensorEditor : public QWidget
 {
     Q_OBJECT
 public:
-    explicit SensorEditor(QWidget *parent = nullptr);
-    void addArea();
-    void pushAreaName(const QString &area);
-    void removeArea(const QString &area);
+    explicit SensorEditor(Controller *con, QWidget *parent = nullptr);
+
     void refreshAreas(QListWidget *listAreas);
     void createPark();
+    void removeArea(const QString &area);
+    void pushAreaName(const QString &name);
+    void addAreaDialog();
 
 private:
-    std::set<std::string> areas;
-    std::list<std::string> sensors; //DA CAMBIARE CON SENSOR
+    Controller *controller;
     QListWidget *listAreas;
 
 signals:

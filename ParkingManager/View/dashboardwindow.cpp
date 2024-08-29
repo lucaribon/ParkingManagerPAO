@@ -10,13 +10,15 @@
 #include "parkingpage.h"
 #include "welcomepage.h"
 
-DashboardWindow::DashboardWindow(QWidget* parent) : QWidget(parent){
+DashboardWindow::DashboardWindow(Controller* con, QWidget* parent)
+    : QWidget(parent)
+    , controller(con)
+{
     QVBoxLayout* mainLayout = new QVBoxLayout();
 
     contentWindow = new QStackedWidget(this);
-    editorDialog = new SensorEditorDialog(this);
 
-    WelcomePage* welcomePage = new WelcomePage(editorDialog, this);
+    WelcomePage* welcomePage = new WelcomePage(controller, this);
     welcomePage->setFixedHeight(200);
     contentWindow->addWidget(welcomePage);
     contentWindow->setCurrentWidget(welcomePage);
@@ -29,7 +31,7 @@ DashboardWindow::DashboardWindow(QWidget* parent) : QWidget(parent){
 void DashboardWindow::setParkingPage()
 {
     qDebug() << "Setting parking page!";
-    ParkingPage* parkingPage = new ParkingPage(editorDialog, this);
+    ParkingPage* parkingPage = new ParkingPage(controller, this);
     contentWindow->addWidget(parkingPage);
     contentWindow->setCurrentWidget(parkingPage);
 }
