@@ -5,8 +5,8 @@
 
 class AirQualitySensor : public AirSensor{
 private:
-    // inquinanti che servono per calcolare il CAQI europeo,
-    // tutti misurati in μg/m3
+    /* inquinanti che servono per calcolare il
+     * CAQI europeo, tutti misurati in μg/m3 */
     float no2;
     float o3;
     float pm10;

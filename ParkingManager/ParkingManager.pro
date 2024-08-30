@@ -12,6 +12,7 @@ CONFIG += c++17
 SOURCES += \
     Model/airQualitySensor.cpp \
     Model/airSensor.cpp \
+    Model/explosiveGasSensor.cpp \
     Model/sensor.cpp \
     View/applogo.cpp \
     View/dashboardwindow.cpp \
