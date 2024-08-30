@@ -34,6 +34,7 @@ HEADERS += \
     Controller/controller.h \
     Model/airQualitySensor.h \
     Model/airSensor.h \
+    Model/explosiveGasSensor.h \
     Model/sensor.h \
     View/applogo.h \
     View/dashboardwindow.h \
