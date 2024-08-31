@@ -10,10 +10,10 @@ CONFIG += c++17
 
 SOURCES += \
     Controller/controller.cpp \
-    Model/InOutSensor.cpp \
     Model/airQualitySensor.cpp \
     Model/airSensor.cpp \
     Model/explosiveGasSensor.cpp \
+    Model/inOutSensor.cpp \
     Model/lightSensor.cpp \
     Model/presenceSensor.cpp \
     Model/sensor.cpp \
