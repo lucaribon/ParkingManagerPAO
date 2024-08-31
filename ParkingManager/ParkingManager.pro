@@ -1,5 +1,4 @@
-QT += core gui
-QT += svg svgwidgets
+QT += core gui widgets charts svg svgwidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -11,13 +10,18 @@ CONFIG += c++17
 
 SOURCES += \
     Controller/controller.cpp \
+    Model/InOutSensor.cpp \
     Model/airQualitySensor.cpp \
     Model/airSensor.cpp \
+    Model/explosiveGasSensor.cpp \
+    Model/lightSensor.cpp \
+    Model/presenceSensor.cpp \
     Model/sensor.cpp \
+    Model/tempHumSensor.cpp \
     View/applogo.cpp \
     View/dashboardwindow.cpp \
     View/graphwindow.cpp \
-    View/main.cpp \
+    main.cpp \
     View/mainwindow.cpp \
     View/parkinglots.cpp \
     View/parkingpage.cpp \
@@ -35,7 +39,11 @@ HEADERS += \
     Model/airQualitySensor.h \
     Model/airSensor.h \
     Model/explosiveGasSensor.h \
+    Model/inOutSensor.h \
+    Model/lightSensor.h \
+    Model/presenceSensor.h \
     Model/sensor.h \
+    Model/tempHumSensor.h \
     View/applogo.h \
     View/dashboardwindow.h \
     View/graphwindow.h \

@@ -3,19 +3,22 @@
 
 #include "airSensor.h"
 
-class GasSensor : public AirSensor{
-private:
-    float methane; // pericolo esplosione > 5%
-    float propane; // pericolo esplosione > 2%
-    float benzene; // pericolo esplosione > 1.2%
-    float hydrogen; // pericolo esplosione > 4%
-protected:
-    GasSensor(std::string, std::string);
+class ExplosiveGasSensor : public AirSensor{
 public:
-    virtual ~GasSensor() =default;
-    float getNo2() const;
+    ExplosiveGasSensor(std::string, std::string);
+    virtual ~ExplosiveGasSensor();
 
-    void setNo2(float);
-}
+    /* ritorna il livello di pericolosità dato
+     * dalla presenza di gas potenzialmente
+     * esplosivi man mano che ci si avvicina o
+     * supera la soglia minima di pericolosità;
+     * la soglia viene calcolata basandosi
+     * sull'aria totale analizzata dal sensore
+     * (sensor::airflow) e solle quantità dei
+     * vari gas misurati da questo sensore
+     * (lowerIsBetter) */
+    virtual int getAirStatus(time_t) override;
+    virtual void generateSimulationData() override;
+};
 
 #endif // EXPLOSIVEGASSENSOR_H
