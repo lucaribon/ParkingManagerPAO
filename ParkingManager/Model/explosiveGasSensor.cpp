@@ -32,5 +32,26 @@ int ExplosiveGasSensor::getAirStatus(time_t t){
 }
 
 void ExplosiveGasSensor::generateSimulationData() {
-    //TODO
+    time_t init = time(0);
+    tm* date = localtime(&init); // now
+    date->tm_mday -= 7; // a week ago
+
+    for(int i=0; i<7; i++) {
+        for(int j=0; j<24; j++){
+            time_t tempT = mktime(date);
+
+            airflow[tempT] = 0.9 + (float)((std::rand()) / (1.1 - 0.9 + 1));
+
+            std::vector<float> tempVal;
+            tempVal[0] = (float)(std::rand()) / (7);
+            tempVal[1] = (float)(std::rand()) / (4);
+            tempVal[2] = (float)(std::rand()) / (3.2);
+            tempVal[3] = (float)(std::rand()) / (6);
+            values[tempT] = tempVal;
+
+            date->tm_hour += 1;
+        }
+        date->tm_mday += 1;
+    }
+
 }

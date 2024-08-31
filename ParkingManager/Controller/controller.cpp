@@ -39,3 +39,5 @@ std::set<std::string> Controller::getAreas() {
 std::vector<Sensor *> Controller::getSensors() {
     return sensors;
 }
+
+// QRegularExpressionMatch match=exp.match(QString::fromStdString(sensor->getName()), QRegularExpression::CaseInsensitive);
