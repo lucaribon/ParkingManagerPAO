@@ -13,7 +13,9 @@ public:
 
     void createPark();
     void refreshAreas(QListWidget *listAreas);
+    void refreshSensors(QListWidget *listSensors);
     void removeArea(const QString &area);
+    void removeSensor(const int pos);
     void pushAreaName(const QString &name);
     void pushSensor(const QString name, const QString sensorType, const QString area);
     void addAreaDialog();
