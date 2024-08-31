@@ -117,7 +117,7 @@ SensorEditor::SensorEditor(Controller *con, QWidget *parent)
             QMessageBox::critical(this, "Error", "Select a sensor to remove", QMessageBox::Ok);
             return;
         } else {
-            removeArea(listSensors->selectedItems().first()->text());
+            removeSensor(listSensors->currentRow());
         }
     });
 
@@ -271,7 +271,14 @@ void SensorEditor::addSensorDialog()
 
         ////////////////////////////////////////////////
 
-        if (sensorType->currentText() == "Presence") {
+        int numberParkingSlots = 0;
+        if (lineEdit->text().trimmed().isEmpty() || sensorType->currentText().isEmpty()
+            || areaSelect->currentText().isEmpty()) {
+            QMessageBox::critical(dialogSensor,
+                                  "Error",
+                                  "Sensor fields cannot be empty",
+                                  QMessageBox::Ok);
+        } else if (sensorType->currentText() == "Presence") {
             QDialog *dialogNumber = new QDialog(this);
             dialogNumber->setWindowTitle("Parking slots");
 
@@ -289,24 +296,27 @@ void SensorEditor::addSensorDialog()
             numLayout->addRow("Number of parking slots", lineEditNum);
 
             QWidget *buttonBarNum = new QWidget();
-            QPushButton *okNum = new QPushButton("Ok");
-            QPushButton *cancelNum = new QPushButton("Cancel");
+            QPushButton *okNum = new QPushButton("Confirm");
             QHBoxLayout *layoutButtonsDialogNum = new QHBoxLayout(buttonBarNum);
             layoutButtonsDialogNum->addWidget(okNum);
-            layoutButtonsDialogNum->addWidget(cancelNum);
+
+            connect(okNum, &QPushButton::clicked, [lineEditNum, &numberParkingSlots, dialogNumber] {
+                numberParkingSlots = lineEditNum->text().toInt();
+                dialogNumber->accept();
+            });
 
             QVBoxLayout *layoutNum = new QVBoxLayout(dialogNumber);
             layoutNum->addWidget(num);
             layoutNum->addWidget(buttonBarNum);
 
             dialogNumber->exec();
-        }
 
-        if (lineEdit->text().trimmed().isEmpty()) {
-            QMessageBox::critical(dialogSensor,
-                                  "Error",
-                                  "Sensor name cannot be empty",
-                                  QMessageBox::Ok);
+            for (int i = 0; i < numberParkingSlots; i++) {
+                pushSensor(lineEdit->text().trimmed() + QString::number(i + 1),
+                           sensorType->currentText(),
+                           areaSelect->currentText());
+            }
+            dialogSensor->accept();
         } else {
             pushSensor(lineEdit->text().trimmed(),
                        sensorType->currentText(),
@@ -340,10 +350,37 @@ void SensorEditor::pushSensor(const QString name, const QString sensorType, cons
         QMessageBox::critical(this, "Error", "All fields are required", QMessageBox::Ok);
         return;
     }
+
     if (sensorType == "Presence") {
-        controller->addSensor(new PresenceSensor(name.toStdString(), area.toStdString()));
+        qDebug() << "Adding presence sensor";
+        controller->addSensor(
+            new PresenceSensor(sensorType.toStdString() + " - " + name.toStdString(),
+                               area.toStdString()));
+    } else if (sensorType == "Light") {
+        qDebug() << "Adding light sensor";
+        controller->addSensor(new LightSensor(sensorType.toStdString() + " - " + name.toStdString(),
+                                              area.toStdString()));
+    } else if (sensorType == "Temperature and Humidity") {
+        qDebug() << "Adding tempHum sensor";
+        controller->addSensor(
+            new TempHumSensor(sensorType.toStdString() + " - " + name.toStdString(),
+                              area.toStdString()));
+    } else if (sensorType == "Air Quality") {
+        qDebug() << "Adding airQuality sensor";
+        controller->addSensor(
+            new AirQualitySensor(sensorType.toStdString() + " - " + name.toStdString(),
+                                 area.toStdString()));
+    } else if (sensorType == "Explosive Gas") {
+        qDebug() << "Adding explosiveGas sensor";
+        controller->addSensor(
+            new ExplosiveGasSensor(sensorType.toStdString() + " - " + name.toStdString(),
+                                   area.toStdString()));
+    } else {
+        qDebug() << "Adding InOut sensor";
+        controller->addSensor(new InOutSensor(sensorType.toStdString() + " - " + name.toStdString(),
+                                              area.toStdString()));
     }
-    //refreshAreas(listSensors);
+    refreshSensors(listSensors);
 }
 
 void SensorEditor::refreshAreas(QListWidget *listAreas)
@@ -362,6 +399,21 @@ void SensorEditor::refreshAreas(QListWidget *listAreas)
     listAreas->show();
 }
 
+void SensorEditor::refreshSensors(QListWidget *listSensor)
+{
+    //show the new areas
+    listSensor->clear();
+
+    for (const Sensor *sensor : controller->getSensors()) {
+        listSensor->addItem(QString::fromStdString(sensor->getArea()) + " - "
+                            + QString::fromStdString(sensor->getName()));
+    }
+
+    listSensor->update();
+    listSensor->repaint();
+    listSensor->show();
+}
+
 void SensorEditor::removeArea(const QString &area)
 {
     QString areaTrim = area;
@@ -369,6 +421,13 @@ void SensorEditor::removeArea(const QString &area)
     qDebug() << "Removing area: " << areaTrim;
     controller->removeArea(areaTrim.toStdString());
     refreshAreas(listAreas);
+}
+
+void SensorEditor::removeSensor(const int pos)
+{
+    qDebug() << "Removing sensor at position: " << pos;
+    controller->removeSensor(controller->getSensors().at(pos));
+    refreshSensors(listSensors);
 }
 
 void SensorEditor::createPark()
