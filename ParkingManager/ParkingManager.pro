@@ -32,7 +32,7 @@ SOURCES += \
     View/sensoreditordialog.cpp \
     View/sensorinfo.cpp \
     View/sidemenu.cpp \
-    View/welcomepage.cpp \
+    View/welcomepage.cpp
 
 HEADERS += \
     Controller/controller.h \
