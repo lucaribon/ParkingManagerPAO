@@ -55,8 +55,8 @@ void AirQualitySensor::generateSimulationData() {
 
             std::vector<float> tempVal;
             tempVal[0] = (float)(std::rand()) / (501);
-            tempVal[1] = (float)(std::rand()) / (301),
-            tempVal[2] = (float)(std::rand()) / (201),
+            tempVal[1] = (float)(std::rand()) / (301);
+            tempVal[2] = (float)(std::rand()) / (201);
             tempVal[3] = (float)(std::rand()) / (161);
             values[tempT] = tempVal;
 
