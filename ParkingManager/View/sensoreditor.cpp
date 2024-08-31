@@ -108,7 +108,7 @@ SensorEditor::SensorEditor(Controller *con, QWidget *parent)
 
     QPushButton *remSensor = new QPushButton(QIcon(":/assets/icons/minus.svg"), "");
     remSensor->setStyleSheet("background: white;border: none;border-radius: 8px;");
-    remSensor->setToolTip("Remove Area");
+    remSensor->setToolTip("Remove Sensor");
 
     connect(addSensor, &QPushButton::clicked, this, &SensorEditor::addSensorDialog);
     connect(remSensor, &QPushButton::clicked, [this] {
@@ -132,6 +132,26 @@ SensorEditor::SensorEditor(Controller *con, QWidget *parent)
     QFrame *sensorSettings = new QFrame();
     sensorSettings->setMinimumWidth(300);
     sensorSettings->setStyleSheet("background-color: #ffcfd2;border:none;border-radius:8px;");
+    QWidget *settings = new QWidget();
+    QVBoxLayout *layoutSettings = new QVBoxLayout(settings);
+    QLabel *labelSettings = new QLabel("Settings");
+    labelSettings->setStyleSheet(
+        "margin-top: 10px; margin-left: 18px; text-align: center; font-size: "
+        "16px; font-weight: bold;");
+    layoutSettings->addWidget(labelSettings);
+
+    //when i click on a sensor, show settings of the sensor
+    //when i unclick a sensor, hide settings of the sensor
+    settings->setHidden(true);
+    connect(listSensors, &QListWidget::itemChanged, [this, settings](QListWidgetItem *item) {
+        if (item->isSelected()) {
+            settings->setHidden(false);
+        } else {
+            settings->setHidden(true);
+        }
+    });
+
+    layoutSensors->addWidget(settings);
 
     QWidget *main = new QWidget();
     QHBoxLayout *layoutH = new QHBoxLayout(main);
@@ -162,7 +182,6 @@ SensorEditor::SensorEditor(Controller *con, QWidget *parent)
     layout->addWidget(main);
     layout->addWidget(buttonBar2);
 
-    //on click list areas
     connect(listAreas, &QListWidget::itemClicked, [this](QListWidgetItem *item) {
         std::vector<Sensor *> filter;
         if (item->text() == "General") {
