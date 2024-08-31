@@ -2,26 +2,31 @@
 #define AIRSENSOR_H
 
 #include "sensor.h"
-#include <string>
-#include <QUuid>
+#include <map>
 
 class AirSensor : public Sensor{
 private:
-    /* registra i metri cubi di aria al minuto,
+    /* registra i metri cubi di aria all'ora,
      * nel nostro caso l'idea è che ci sia un
      * flusso d'aria di +-1(m^3)/h (0.9-1.1)
      * costante che viene usato dai sensori per
-     * compierele misurazioni */
-    float airflow;
+     * compiere le misurazioni */
+    std::map<time_t, float> airflow;
 protected:
+    // map<dataora, vector<no2,o3,pm10,pm25>>
+    std::map<time_t, std::vector<float>> values;
     /* converte m^3 di aria in grammi */
     float airFlowToAirMass(float);
-public:
     AirSensor(std::string n, std::string a);
+public:
     virtual ~AirSensor() =0;
-    float getAirflow() const;
+    std::map<time_t, float> getAirflow() const;
+    std::map<time_t, std::vector<float>> getValues() const;
 
-    void setAirflow(float);
+    void setAirflow(std::map<time_t, float>);
+    void setValues(std::map<time_t, std::vector<float>>);
+
+    virtual int getAirStatus(time_t) =0;
 };
 
 #endif // AIRSENSOR_H

@@ -2,7 +2,6 @@
 #define SENSOR_H
 
 #include <string>
-#include <list>
 #include <QUuid>
 #include <QString>
 
@@ -13,8 +12,7 @@ private:
     QString id;
 protected:
     Sensor(std::string, std::string);
-    // meglio una lista perché alla fine una volta generati di dati saranno inseriti alla fine e basta, e poi per usarli nei grafici l'accesso sarà sequenziale
-    virtual std::list<float> generateData()=0;
+    virtual void generateSimulationData()=0;
 public:
     virtual ~Sensor() =default;
     std::string getName() const;
@@ -24,6 +22,5 @@ public:
     void setName(std::string);
     void setArea(std::string);
     void setId(QString);
-
 };
 #endif // SENSOR_H

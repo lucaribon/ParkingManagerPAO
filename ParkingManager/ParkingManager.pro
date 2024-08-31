@@ -1,4 +1,4 @@
-QT += core gui
+QT += core gui widgets charts
 QT += svg svgwidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -10,10 +10,14 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Model/InOutSensor.cpp \
     Model/airQualitySensor.cpp \
     Model/airSensor.cpp \
     Model/explosiveGasSensor.cpp \
+    Model/lightSensor.cpp \
+    Model/presenceSensor.cpp \
     Model/sensor.cpp \
+    Model/tempHumSensor.cpp \
     View/applogo.cpp \
     View/dashboardwindow.cpp \
     View/graphwindow.cpp \
@@ -33,7 +37,11 @@ HEADERS += \
     Model/airQualitySensor.h \
     Model/airSensor.h \
     Model/explosiveGasSensor.h \
+    Model/inOutSensor.h \
+    Model/lightSensor.h \
+    Model/presenceSensor.h \
     Model/sensor.h \
+    Model/tempHumSensor.h \
     View/applogo.h \
     View/dashboardwindow.h \
     View/graphwindow.h \
