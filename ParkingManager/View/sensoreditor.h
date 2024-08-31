@@ -13,7 +13,7 @@ public:
 
     void createPark();
     void refreshAreas(QListWidget *listAreas);
-    void refreshSensors(QListWidget *listSensors);
+    void refreshSensors(QListWidget *listSensors, const std::vector<Sensor *> &sensors);
     void removeArea(const QString &area);
     void removeSensor(const int pos);
     void pushAreaName(const QString &name);
