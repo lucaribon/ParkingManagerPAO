@@ -38,5 +38,16 @@ int AirQualitySensor::getAirStatus(time_t t) {
 }
 
 void AirQualitySensor::generateSimulationData() {
-    //TODO
+    time_t init = time(0);
+    tm* date = localtime(&init); // now
+    date->tm_mday -= 7; // a week ago
+
+    for(int i=0; i<7; i++) {
+        for(int j=0; j<24; j++){
+            time_t temp = mktime(date);
+            airflow[temp] = static_cast<float> (0.9 + (std::rand() / static_cast<float>(1.1 - 0.9 + 1)));
+            date->tm_hour += 1;
+        }
+        date->tm_mday += 1;
+    }
 }

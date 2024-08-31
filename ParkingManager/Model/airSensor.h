@@ -6,13 +6,13 @@
 
 class AirSensor : public Sensor{
 private:
+protected:
     /* registra i metri cubi di aria all'ora,
      * nel nostro caso l'idea è che ci sia un
      * flusso d'aria di +-1(m^3)/h (0.9-1.1)
      * costante che viene usato dai sensori per
      * compiere le misurazioni */
     std::map<time_t, float> airflow;
-protected:
     // map<dataora, vector<no2,o3,pm10,pm25>>
     std::map<time_t, std::vector<float>> values;
     /* converte m^3 di aria in grammi */

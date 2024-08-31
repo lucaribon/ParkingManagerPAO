@@ -20,7 +20,7 @@ SOURCES += \
     View/applogo.cpp \
     View/dashboardwindow.cpp \
     View/graphwindow.cpp \
-    View/main.cpp \
+    main.cpp \
     View/mainwindow.cpp \
     View/parkinglots.cpp \
     View/parkingpage.cpp \
