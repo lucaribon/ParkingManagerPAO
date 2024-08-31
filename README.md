@@ -1,20 +1,20 @@
 # Parking Manager PAO
 ## Model
 - [x] creare classe astratta sensore
-- [ ] creare classi concrete sensori
+- [x] creare classi concrete sensori
 - [x] creare classe astratta sensoreAria
-- [ ] creare classi concrete sensoriQualita-Gas
-- [ ] implementare metodi specifici per sensori
+- [x] creare classi concrete sensoriQualita-Gas
+- [x] implementare metodi specifici per sensori
   - [ ] generazione dati per simulazione statica nei sensori concreti
-  - [ ] getAirStatus per sensoreAria
-- [ ] sensore posto auto occupato con tre stati: libero, in attesa, occupato
-- [ ] gestire correlazione: sensore presenza -> posto auto
+  - [x] getAirStatus per sensoreAria
+- [x] sensore posto auto occupato ~~con tre stati: libero, in attesa, occupato~~
+- [x] gestire correlazione: sensore presenza -> posto auto
   - [ ] ~~aggiunta dei sensori di parcheggio a zone (tot di posti ogni zona) -> aggiungere a destra nella~~
-  - [ ] possibilità di aggiungere, rimuovere zone (attributo area negli oggetti)
+  - [x] possibilità di aggiungere, rimuovere zone (attributo area negli oggetti)
 
 ## Controller
 - [ ] vettore di sensori
-- [ ] passagio dati view<->model (gestione dei sensori)
+- [ ] passaggio dati view<->model (gestione dei sensori)
 - [ ] gestione json (salvataggio, apertura, creazione)
 - [ ] ricerca (chiamata a funzione di ricerca nel model)
 - [ ] autosave json (non necessario)

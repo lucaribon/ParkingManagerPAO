@@ -12,7 +12,6 @@ class Controller : public QObject
 private:
     std::vector<Sensor *> sensors;
     std::set<std::string> areas;
-
 public:
     explicit Controller(QObject *parent = nullptr);
 
@@ -24,7 +23,6 @@ public:
     void setAreas(std::set<std::string>);
     std::set<std::string> getAreas();
     std::vector<Sensor *> getSensors();
-
 signals:
 };
 
