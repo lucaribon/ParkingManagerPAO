@@ -10,6 +10,12 @@
 #include <QMessageBox>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include "../Model/airQualitySensor.h"
+#include "../Model/explosiveGasSensor.h"
+#include "../Model/inOutSensor.h"
+#include "../Model/lightSensor.h"
+#include "../Model/presenceSensor.h"
+#include "../Model/tempHumSensor.h"
 #include "dashboardwindow.h"
 
 SensorEditor::SensorEditor(Controller *con, QWidget *parent)
@@ -234,13 +240,21 @@ void SensorEditor::addSensorDialog()
     QComboBox *sensorType = new QComboBox();
     sensorType->setInsertPolicy(QComboBox::InsertAlphabetically);
     sensorType->setFrame(true);
-    sensorType->addItem("Luminosità");
-    sensorType->addItem("Temperatura");
-    sensorType->addItem("Presenza");
-    sensorType->addItem("Qualità dell'aria");
-    sensorType->addItem("Gas esplosivi");
+    sensorType->addItem("Presence");
+    sensorType->addItem("Light");
+    sensorType->addItem("Temperature and Humidity");
+    sensorType->addItem("Air Quality");
+    sensorType->addItem("Explosive Gas");
     sensorType->setFixedWidth(220);
     formLayout->addRow("Sensor Type", sensorType);
+
+    //if presence sensor, show a text box to insert number
+    QLineEdit *presenceNumber = new QLineEdit();
+    if (sensorType->currentText() == "Presence") {
+        formLayout->addRow("Presence Number", presenceNumber);
+    } else {
+        formLayout->removeRow(presenceNumber);
+    }
 
     // area select
     QComboBox *areaSelect = new QComboBox();
@@ -275,9 +289,9 @@ void SensorEditor::addSensorDialog()
                                   "Sensor name cannot be empty",
                                   QMessageBox::Ok);
         } else {
-            controller->addSensor(lineEdit->text().trimmed().toStdString(),
-                                  sensorType->currentText().toStdString(),
-                                  areaSelect->currentText().toStdString());
+            pushSensor(lineEdit->text().trimmed(),
+                       sensorType->currentText(),
+                       areaSelect->currentText());
             dialogSensor->accept();
         }
     });
@@ -299,6 +313,18 @@ void SensorEditor::pushAreaName(const QString &name)
 {
     controller->addArea(name.toStdString());
     refreshAreas(listAreas);
+}
+
+void SensorEditor::pushSensor(const QString name, const QString sensorType, const QString area)
+{
+    if (name.isEmpty() || sensorType.isEmpty() || area.isEmpty()) {
+        QMessageBox::critical(this, "Error", "All fields are required", QMessageBox::Ok);
+        return;
+    }
+    if (sensorType == "Presence") {
+        controller->addSensor(new PresenceSensor(name.toStdString(), area.toStdString()));
+    }
+    refreshAreas(listSensors);
 }
 
 void SensorEditor::refreshAreas(QListWidget *listAreas)

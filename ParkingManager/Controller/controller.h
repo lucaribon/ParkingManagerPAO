@@ -15,7 +15,7 @@ private:
 public:
     explicit Controller(QObject *parent = nullptr);
 
-    void addSensor(std::string name, std::string sensorType, std::string area);
+    void addSensor(Sensor *);
     void removeSensor(Sensor *);
     void addArea(std::string area);
     void removeArea(std::string area);
