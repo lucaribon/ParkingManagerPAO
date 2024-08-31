@@ -32,13 +32,12 @@ SensorEditor::SensorEditor(Controller *con, QWidget *parent)
     connect(this, &SensorEditor::parkingCreated, dashboard, &DashboardWindow::setParkingPage);
     //SEARCH BAR - non so come metterla piccola in mezzo :(
     QLineEdit *search = new QLineEdit();
-    //search->setFixedWidth(250);
     search->setPlaceholderText("Search...");
     search->setStyleSheet("background:white; border: none; border-radius: 8px; padding: 4px;");
 
     //LIST OF AREAS, ADD/REMOVE BUTTONS
     QFrame *sideFrameAreas = new QFrame();
-    sideFrameAreas->setStyleSheet("background:yellow; border: none; border-radius: 8px;");
+    sideFrameAreas->setStyleSheet("background:#fbf8cc; border: none; border-radius: 8px;");
     sideFrameAreas->setMinimumWidth(150);
     sideFrameAreas->setMaximumWidth(230);
 
@@ -89,7 +88,7 @@ SensorEditor::SensorEditor(Controller *con, QWidget *parent)
     QFrame *sensorFrame = new QFrame();
     sensorFrame->setMinimumWidth(200);
     sensorFrame->setMaximumWidth(350);
-    sensorFrame->setStyleSheet("background-color: lightblue;border: none; border-radius: 8px;");
+    sensorFrame->setStyleSheet("background-color: #fde4cf;border: none; border-radius: 8px;");
     listSensors->setContentsMargins(0, 0, 0, 0);
     listSensors->setSpacing(4);
 
@@ -109,7 +108,7 @@ SensorEditor::SensorEditor(Controller *con, QWidget *parent)
 
     QPushButton *remSensor = new QPushButton(QIcon(":/assets/icons/minus.svg"), "");
     remSensor->setStyleSheet("background: white;border: none;border-radius: 8px;");
-    remSensor->setToolTip("Remove Area");
+    remSensor->setToolTip("Remove Sensor");
 
     connect(addSensor, &QPushButton::clicked, this, &SensorEditor::addSensorDialog);
     connect(remSensor, &QPushButton::clicked, [this] {
@@ -132,7 +131,27 @@ SensorEditor::SensorEditor(Controller *con, QWidget *parent)
 
     QFrame *sensorSettings = new QFrame();
     sensorSettings->setMinimumWidth(300);
-    sensorSettings->setStyleSheet("background-color: lightgreen;border:none;border-radius:8px;");
+    sensorSettings->setStyleSheet("background-color: #ffcfd2;border:none;border-radius:8px;");
+    QWidget *settings = new QWidget();
+    QVBoxLayout *layoutSettings = new QVBoxLayout(settings);
+    QLabel *labelSettings = new QLabel("Settings");
+    labelSettings->setStyleSheet(
+        "margin-top: 10px; margin-left: 18px; text-align: center; font-size: "
+        "16px; font-weight: bold;");
+    layoutSettings->addWidget(labelSettings);
+
+    //when i click on a sensor, show settings of the sensor
+    //when i unclick a sensor, hide settings of the sensor
+    settings->setHidden(true);
+    connect(listSensors, &QListWidget::itemChanged, [this, settings](QListWidgetItem *item) {
+        if (item->isSelected()) {
+            settings->setHidden(false);
+        } else {
+            settings->setHidden(true);
+        }
+    });
+
+    layoutSensors->addWidget(settings);
 
     QWidget *main = new QWidget();
     QHBoxLayout *layoutH = new QHBoxLayout(main);
@@ -162,6 +181,20 @@ SensorEditor::SensorEditor(Controller *con, QWidget *parent)
     layout->addWidget(search);
     layout->addWidget(main);
     layout->addWidget(buttonBar2);
+
+    connect(listAreas, &QListWidget::itemClicked, [this](QListWidgetItem *item) {
+        std::vector<Sensor *> filter;
+        if (item->text() == "General") {
+            refreshSensors(listSensors, controller->getSensors());
+        } else {
+            for (Sensor *sensor : controller->getSensors()) {
+                if (sensor->getArea() == item->text().remove("Area ").toStdString()) {
+                    filter.push_back(const_cast<Sensor *>(sensor));
+                }
+            }
+            refreshSensors(listSensors, filter);
+        }
+    });
 }
 
 void SensorEditor::addAreaDialog()
@@ -380,7 +413,7 @@ void SensorEditor::pushSensor(const QString name, const QString sensorType, cons
         controller->addSensor(new InOutSensor(sensorType.toStdString() + " - " + name.toStdString(),
                                               area.toStdString()));
     }
-    refreshSensors(listSensors);
+    refreshSensors(listSensors, controller->getSensors());
 }
 
 void SensorEditor::refreshAreas(QListWidget *listAreas)
@@ -399,12 +432,12 @@ void SensorEditor::refreshAreas(QListWidget *listAreas)
     listAreas->show();
 }
 
-void SensorEditor::refreshSensors(QListWidget *listSensor)
+void SensorEditor::refreshSensors(QListWidget *listSensor, const std::vector<Sensor *> &sensors)
 {
     //show the new areas
     listSensor->clear();
 
-    for (const Sensor *sensor : controller->getSensors()) {
+    for (const Sensor *sensor : sensors) {
         listSensor->addItem(QString::fromStdString(sensor->getArea()) + " - "
                             + QString::fromStdString(sensor->getName()));
     }
@@ -427,7 +460,7 @@ void SensorEditor::removeSensor(const int pos)
 {
     qDebug() << "Removing sensor at position: " << pos;
     controller->removeSensor(controller->getSensors().at(pos));
-    refreshSensors(listSensors);
+    refreshSensors(listSensors, controller->getSensors());
 }
 
 void SensorEditor::createPark()
