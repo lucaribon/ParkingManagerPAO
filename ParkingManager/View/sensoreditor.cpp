@@ -248,18 +248,6 @@ void SensorEditor::addSensorDialog()
     sensorType->setFixedWidth(220);
     formLayout->addRow("Sensor Type", sensorType);
 
-    //if presence sensor, show a text box to insert number
-    QLineEdit *presenceNumber = new QLineEdit();
-    formLayout->addRow("Presence Number", presenceNumber);
-
-    qDebug() << "sensorType->currentText()" << sensorType->currentText();
-    if (sensorType->currentText() == "Presence") {
-        //disable presence number
-        presenceNumber->setEnabled(true);
-    } else {
-        presenceNumber->setEnabled(false);
-    }
-
     // area select
     QComboBox *areaSelect = new QComboBox();
     areaSelect->setInsertPolicy(QComboBox::InsertAlphabetically);
@@ -277,15 +265,42 @@ void SensorEditor::addSensorDialog()
 
     connect(ok, &QPushButton::clicked, [this, lineEdit, sensorType, areaSelect, dialogSensor] {
         ////DEBUGG
-        qDebug() << "Ok clicked";
         qDebug() << lineEdit->text().trimmed();
         qDebug() << sensorType->currentText();
         qDebug() << areaSelect->currentText();
-        for (const auto &area : controller->getAreas()) {
-            qDebug() << "getAreas ";
-            qDebug() << QString::fromStdString(area);
-        }
+
         ////////////////////////////////////////////////
+
+        if (sensorType->currentText() == "Presence") {
+            QDialog *dialogNumber = new QDialog(this);
+            dialogNumber->setWindowTitle("Parking slots");
+
+            //Form
+            QWidget *num = new QWidget();
+            QFormLayout *numLayout = new QFormLayout(num);
+            numLayout->setLabelAlignment(Qt::AlignLeft);
+            numLayout->setFormAlignment(Qt::AlignLeft);
+
+            //Name Edit
+            QLineEdit *lineEditNum = new QLineEdit();
+            lineEditNum->setMaxLength(2);
+            lineEditNum->setStyleSheet(
+                "background:white; border: none; border-radius: 8px; padding: 4px;");
+            numLayout->addRow("Number of parking slots", lineEditNum);
+
+            QWidget *buttonBarNum = new QWidget();
+            QPushButton *okNum = new QPushButton("Ok");
+            QPushButton *cancelNum = new QPushButton("Cancel");
+            QHBoxLayout *layoutButtonsDialogNum = new QHBoxLayout(buttonBarNum);
+            layoutButtonsDialogNum->addWidget(okNum);
+            layoutButtonsDialogNum->addWidget(cancelNum);
+
+            QVBoxLayout *layoutNum = new QVBoxLayout(dialogNumber);
+            layoutNum->addWidget(num);
+            layoutNum->addWidget(buttonBarNum);
+
+            dialogNumber->exec();
+        }
 
         if (lineEdit->text().trimmed().isEmpty()) {
             QMessageBox::critical(dialogSensor,
@@ -328,7 +343,7 @@ void SensorEditor::pushSensor(const QString name, const QString sensorType, cons
     if (sensorType == "Presence") {
         controller->addSensor(new PresenceSensor(name.toStdString(), area.toStdString()));
     }
-    refreshAreas(listSensors);
+    //refreshAreas(listSensors);
 }
 
 void SensorEditor::refreshAreas(QListWidget *listAreas)
