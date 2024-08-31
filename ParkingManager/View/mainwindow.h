@@ -12,7 +12,6 @@
 
 class MainWindow : public QMainWindow
 {
-    Q_OBJECT
 private:
     AppLogo* appLogo;
     SideMenu* sideMenu;

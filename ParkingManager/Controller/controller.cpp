@@ -1,6 +1,9 @@
+#include <QRegularExpression>
+#include <QRegularExpressionMatch>
+
 #include "controller.h"
 
-Controller::Controller(QObject *parent) : QObject{parent} {
+Controller::Controller(QObject* p) : parent(p) {
     sensors = std::vector<Sensor *>();
 }
 
@@ -37,4 +40,16 @@ std::vector<Sensor *> Controller::getSensors() {
     return sensors;
 }
 
-// QRegularExpressionMatch match=exp.match(QString::fromStdString(sensor->getName()), QRegularExpression::CaseInsensitive);
+void Controller::searchSensor(const std::string query){
+    if(!query.empty()){
+        QRegularExpression queryExp("^"+query);
+        std::vector<Sensor*> matchingSensors;
+        for(Sensor* sens : sensors){
+            QRegularExpressionMatch match=queryExp.match(QString::fromStdString(sens->getName()), QRegularExpression::CaseInsensitive);
+            if(match.hasMatch()){
+                matchingSensors.push_back(sens);
+            }
+        }
+    }
+    // refresh dei sensori visualizzati dopo la ricerca
+}
