@@ -6,10 +6,13 @@
 #include <QVBoxLayout>
 #include "parkinglots.h"
 #include "sensorbar.h"
+#include "sensoreditordialog.h"
 
-ParkingPage::ParkingPage(QWidget *parent)
+ParkingPage::ParkingPage(Controller* con, QWidget* parent)
     : QWidget{parent}
+    , controller(con)
 {
+    //this->editor = editor;
     //MAIN WINDOW *******
     QVBoxLayout* layout = new QVBoxLayout();
     layout->setAlignment(Qt::AlignLeft | Qt::AlignTop);
@@ -22,7 +25,8 @@ ParkingPage::ParkingPage(QWidget *parent)
     sensorBar->setObjectName("sensorBar");
     QPushButton* editButton = new QPushButton(QIcon(":/assets/icons/edit.svg"), "");
     editButton->setFixedSize(35, 35);
-    //connect(editButton, &QPushButton::clicked, this, &DashboardWindow::editMode);
+
+    connect(editButton, &QPushButton::clicked, this, &ParkingPage::editMode);
 
     layoutTopBar->addWidget(sensorBar);
     layoutTopBar->addWidget(editButton);
@@ -31,13 +35,16 @@ ParkingPage::ParkingPage(QWidget *parent)
     QWidget* parkSpace = new QWidget();
     QHBoxLayout* parkLayout = new QHBoxLayout(parkSpace);
 
-    ParkingLots* park = new ParkingLots(this, "A", 20);
-    ParkingLots* park1 = new ParkingLots(this, "B", 10);
-    ParkingLots* park2 = new ParkingLots(this, "C", 12);
+    //get areas from controller
+    for (const std::string& area : controller->getAreas()) {
+        qDebug() << " MISERIA: " << QString::fromStdString(area);
+        parkingAreas.push_back(new ParkingLots(this, area, 10));
+        parkLayout->addWidget(parkingAreas.back());
+    }
 
-    parkLayout->addWidget(park);
-    parkLayout->addWidget(park1);
-    parkLayout->addWidget(park2);
+    for (ParkingLots* park : parkingAreas) {
+        qDebug() << "PARKING LOTS: " << park;
+    }
 
     parkLayout->setAlignment(Qt::AlignBottom);
 
@@ -46,4 +53,11 @@ ParkingPage::ParkingPage(QWidget *parent)
     layout->addWidget(parkSpace);
 
     setLayout(layout);
+}
+
+void ParkingPage::editMode()
+{
+    qDebug() << "Edit mode activated!";
+    SensorEditorDialog* sensorEditor = new SensorEditorDialog(controller, this);
+    sensorEditor->exec();
 }

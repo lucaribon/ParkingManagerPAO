@@ -7,7 +7,6 @@ class AirQualitySensor : public AirSensor{
 public:
     AirQualitySensor(std::string, std::string);
     virtual ~AirQualitySensor();
-
     /* Ritorna un int che rappresenta la qualità dell'aria su 5 livelli (lower is better) in
      * un determinato istante time_t.
      * Il valore dell'indice generico è dato dal valore peggiore

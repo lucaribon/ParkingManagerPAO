@@ -1,9 +1,12 @@
 #include <QHBoxLayout>
 #include "mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent)
+MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent)
-{
+    , appLogo(new AppLogo())
+    , sideMenu(new SideMenu())
+    , controller(new Controller(this))
+{    
     // WIDGET CENTRALE
     QWidget* central = new QWidget();
 
@@ -13,8 +16,6 @@ MainWindow::MainWindow(QWidget *parent)
     QVBoxLayout* layoutSidePanel = new QVBoxLayout(sidePanel);
     layoutSidePanel->setContentsMargins(0, 0, 0, 0);
 
-    appLogo = new AppLogo();
-    sideMenu = new SideMenu();
     //sideMenu->setFixedWidth(200);
 
     layoutSidePanel->addWidget(appLogo);
@@ -25,7 +26,7 @@ MainWindow::MainWindow(QWidget *parent)
     // STACKED WIDGET
     contentWindow = new QStackedWidget(central);
 
-    dashWindow = new DashboardWindow();
+    dashWindow = new DashboardWindow(controller);
     graphWindow = new GraphWindow();
     reportWindow = new ReportWindow();
 

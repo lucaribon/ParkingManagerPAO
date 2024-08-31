@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Controller/controller.cpp \
     Model/InOutSensor.cpp \
     Model/airQualitySensor.cpp \
     Model/airSensor.cpp \
@@ -28,11 +29,13 @@ SOURCES += \
     View/reportwindow.cpp \
     View/sensorbar.cpp \
     View/sensoreditor.cpp \
+    View/sensoreditordialog.cpp \
     View/sensorinfo.cpp \
     View/sidemenu.cpp \
-    View/welcomepage.cpp
+    View/welcomepage.cpp \
 
 HEADERS += \
+    Controller/controller.h \
     Model/airQualitySensor.h \
     Model/airSensor.h \
     Model/explosiveGasSensor.h \
@@ -51,9 +54,10 @@ HEADERS += \
     View/reportwindow.h \
     View/sensorbar.h \
     View/sensoreditor.h \
+    View/sensoreditordialog.h \
     View/sensorinfo.h \
     View/sidemenu.h \
-    View/welcomepage.h
+    View/welcomepage.h \
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
