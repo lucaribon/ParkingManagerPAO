@@ -2,27 +2,34 @@
 #define CONTROLLER_H
 
 #include <QObject>
-#include "../Model/sensor.h"
 #include <set>
 #include <vector>
 
+#include "../Model/sensor.h"
+
 class Controller : public QObject
 {
-    Q_OBJECT
 private:
     std::vector<Sensor *> sensors;
     std::set<std::string> areas;
+    QObject* parent;
+    std::string path;
 public:
-    explicit Controller(QObject *parent = nullptr);
+    explicit Controller(QObject* =nullptr);
 
-    void addSensor(Sensor *);
-    void removeSensor(Sensor *);
-    void addArea(std::string area);
-    void removeArea(std::string area);
-    void setSensors(std::vector<Sensor *>);
-    void setAreas(std::set<std::string>);
     std::set<std::string> getAreas();
     std::vector<Sensor *> getSensors();
+
+    void setSensors(std::vector<Sensor *>);
+    void setAreas(std::set<std::string>);
+
+    void addSensor(Sensor *);
+    void addArea(std::string);
+
+    void removeSensor(Sensor *);
+    void removeArea(std::string);
+
+    void searchSensor(const std::string);
 signals:
 };
 
