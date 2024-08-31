@@ -1,4 +1,9 @@
 #include "airQualitySensor.h"
+#include <iostream>
+#include <sstream>
+#include <map>
+#include <vector>
+#include <ctime>  // For time_t
 
 AirQualitySensor::AirQualitySensor(std::string n, std::string a) : AirSensor(n,a) {}
 AirQualitySensor::~AirQualitySensor() =default;
@@ -44,8 +49,17 @@ void AirQualitySensor::generateSimulationData() {
 
     for(int i=0; i<7; i++) {
         for(int j=0; j<24; j++){
-            time_t temp = mktime(date);
-            airflow[temp] = static_cast<float> (0.9 + (std::rand() / static_cast<float>(1.1 - 0.9 + 1)));
+            time_t tempT = mktime(date);
+
+            airflow[tempT] = 0.9 + (float)((std::rand()) / (1.1 - 0.9 + 1));
+
+            std::vector<float> tempVal;
+            tempVal[0] = (float)(std::rand()) / (501);
+            tempVal[1] = (float)(std::rand()) / (301);
+            tempVal[2] = (float)(std::rand()) / (201);
+            tempVal[3] = (float)(std::rand()) / (161);
+            values[tempT] = tempVal;
+
             date->tm_hour += 1;
         }
         date->tm_mday += 1;

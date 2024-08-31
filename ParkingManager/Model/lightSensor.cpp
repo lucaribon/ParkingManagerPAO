@@ -12,11 +12,33 @@ void LightSensor::setBrightness(std::map<time_t, int> b) {
 }
 
 bool LightSensor::lightsNeeded(time_t t){
-    if(brightness[t] < 8000){
+    if(brightness[t] < 150){
         return true;
     }
     return false;
 }
 
-void LightSensor::generateSimulationData(){}
+void LightSensor::generateSimulationData(){
+    time_t init = time(0);
+    tm* date = localtime(&init); // now
+    date->tm_mday -= 7; // a week ago
+
+    for(int i=0; i<7; i++) {
+        for(int j=0; j<24; j++){
+            time_t tempT = mktime(date);
+
+            // nighttime birghtness
+            if(tempT->tm_hour>=20 && tempT->tm_hour<=7){
+                brightness[tempT] = 10 + (std::rand() % (250 - 10 + 1));
+            }
+            // daytime birghtness
+            else if(tempT->tm_hour>7 && tempT->tm_hour<20){
+                brightness[tempT] = 148 + (std::rand() % (100 - 148 + 1));
+            }
+
+            date->tm_hour += 1;
+        }
+        date->tm_mday += 1;
+    }
+}
 
