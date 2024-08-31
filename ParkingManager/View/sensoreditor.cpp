@@ -10,6 +10,12 @@
 #include <QMessageBox>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include "../Model/airQualitySensor.h"
+#include "../Model/explosiveGasSensor.h"
+#include "../Model/inOutSensor.h"
+#include "../Model/lightSensor.h"
+#include "../Model/presenceSensor.h"
+#include "../Model/tempHumSensor.h"
 #include "dashboardwindow.h"
 
 SensorEditor::SensorEditor(Controller *con, QWidget *parent)
@@ -228,17 +234,17 @@ void SensorEditor::addSensorDialog()
     QLineEdit *lineEdit = new QLineEdit();
     lineEdit->setMaxLength(15); //MAX LENGTH NAME AREA
     lineEdit->setStyleSheet("background:white; border: none; border-radius: 8px; padding: 4px;");
-    formLayout->addRow("Nome", lineEdit);
+    formLayout->addRow("Name", lineEdit);
 
     // type select
     QComboBox *sensorType = new QComboBox();
     sensorType->setInsertPolicy(QComboBox::InsertAlphabetically);
     sensorType->setFrame(true);
-    sensorType->addItem("Luminosità");
-    sensorType->addItem("Temperatura");
-    sensorType->addItem("Presenza");
-    sensorType->addItem("Qualità dell'aria");
-    sensorType->addItem("Gas esplosivi");
+    sensorType->addItem("Light");
+    sensorType->addItem("Presence");
+    sensorType->addItem("Temperature and Humidity");
+    sensorType->addItem("Air Quality");
+    sensorType->addItem("Explosive Gas");
     sensorType->setFixedWidth(220);
     formLayout->addRow("Sensor Type", sensorType);
 
@@ -259,15 +265,42 @@ void SensorEditor::addSensorDialog()
 
     connect(ok, &QPushButton::clicked, [this, lineEdit, sensorType, areaSelect, dialogSensor] {
         ////DEBUGG
-        qDebug() << "Ok clicked";
         qDebug() << lineEdit->text().trimmed();
         qDebug() << sensorType->currentText();
         qDebug() << areaSelect->currentText();
-        for (const auto &area : controller->getAreas()) {
-            qDebug() << "getAreas ";
-            qDebug() << QString::fromStdString(area);
-        }
+
         ////////////////////////////////////////////////
+
+        if (sensorType->currentText() == "Presence") {
+            QDialog *dialogNumber = new QDialog(this);
+            dialogNumber->setWindowTitle("Parking slots");
+
+            //Form
+            QWidget *num = new QWidget();
+            QFormLayout *numLayout = new QFormLayout(num);
+            numLayout->setLabelAlignment(Qt::AlignLeft);
+            numLayout->setFormAlignment(Qt::AlignLeft);
+
+            //Name Edit
+            QLineEdit *lineEditNum = new QLineEdit();
+            lineEditNum->setMaxLength(2);
+            lineEditNum->setStyleSheet(
+                "background:white; border: none; border-radius: 8px; padding: 4px;");
+            numLayout->addRow("Number of parking slots", lineEditNum);
+
+            QWidget *buttonBarNum = new QWidget();
+            QPushButton *okNum = new QPushButton("Ok");
+            QPushButton *cancelNum = new QPushButton("Cancel");
+            QHBoxLayout *layoutButtonsDialogNum = new QHBoxLayout(buttonBarNum);
+            layoutButtonsDialogNum->addWidget(okNum);
+            layoutButtonsDialogNum->addWidget(cancelNum);
+
+            QVBoxLayout *layoutNum = new QVBoxLayout(dialogNumber);
+            layoutNum->addWidget(num);
+            layoutNum->addWidget(buttonBarNum);
+
+            dialogNumber->exec();
+        }
 
         if (lineEdit->text().trimmed().isEmpty()) {
             QMessageBox::critical(dialogSensor,
@@ -275,9 +308,9 @@ void SensorEditor::addSensorDialog()
                                   "Sensor name cannot be empty",
                                   QMessageBox::Ok);
         } else {
-            controller->addSensor(lineEdit->text().trimmed().toStdString(),
-                                  sensorType->currentText().toStdString(),
-                                  areaSelect->currentText().toStdString());
+            pushSensor(lineEdit->text().trimmed(),
+                       sensorType->currentText(),
+                       areaSelect->currentText());
             dialogSensor->accept();
         }
     });
@@ -299,6 +332,18 @@ void SensorEditor::pushAreaName(const QString &name)
 {
     controller->addArea(name.toStdString());
     refreshAreas(listAreas);
+}
+
+void SensorEditor::pushSensor(const QString name, const QString sensorType, const QString area)
+{
+    if (name.isEmpty() || sensorType.isEmpty() || area.isEmpty()) {
+        QMessageBox::critical(this, "Error", "All fields are required", QMessageBox::Ok);
+        return;
+    }
+    if (sensorType == "Presence") {
+        controller->addSensor(new PresenceSensor(name.toStdString(), area.toStdString()));
+    }
+    //refreshAreas(listSensors);
 }
 
 void SensorEditor::refreshAreas(QListWidget *listAreas)

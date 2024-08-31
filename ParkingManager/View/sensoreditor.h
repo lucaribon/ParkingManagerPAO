@@ -4,7 +4,6 @@
 #include <QListWidget>
 #include <QWidget>
 #include "../Controller/controller.h"
-#include "../Model/sensor.h"
 
 class SensorEditor : public QWidget
 {
@@ -16,9 +15,9 @@ public:
     void refreshAreas(QListWidget *listAreas);
     void removeArea(const QString &area);
     void pushAreaName(const QString &name);
+    void pushSensor(const QString name, const QString sensorType, const QString area);
     void addAreaDialog();
     void addSensorDialog();
-    void pushSensor(const QString &area, const Sensor &sensor);
 
 private:
     Controller *controller;
