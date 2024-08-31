@@ -7,7 +7,7 @@
 
 class AirSensor : public Sensor{
 private:
-    float airflow;
+    float airflow; // m3 al minuto
 public:
     AirSensor(std::string n, std::string a);
     virtual ~AirSensor() =default;
