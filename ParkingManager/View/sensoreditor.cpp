@@ -234,14 +234,14 @@ void SensorEditor::addSensorDialog()
     QLineEdit *lineEdit = new QLineEdit();
     lineEdit->setMaxLength(15); //MAX LENGTH NAME AREA
     lineEdit->setStyleSheet("background:white; border: none; border-radius: 8px; padding: 4px;");
-    formLayout->addRow("Nome", lineEdit);
+    formLayout->addRow("Name", lineEdit);
 
     // type select
     QComboBox *sensorType = new QComboBox();
     sensorType->setInsertPolicy(QComboBox::InsertAlphabetically);
     sensorType->setFrame(true);
-    sensorType->addItem("Presence");
     sensorType->addItem("Light");
+    sensorType->addItem("Presence");
     sensorType->addItem("Temperature and Humidity");
     sensorType->addItem("Air Quality");
     sensorType->addItem("Explosive Gas");
@@ -250,10 +250,14 @@ void SensorEditor::addSensorDialog()
 
     //if presence sensor, show a text box to insert number
     QLineEdit *presenceNumber = new QLineEdit();
+    formLayout->addRow("Presence Number", presenceNumber);
+
+    qDebug() << "sensorType->currentText()" << sensorType->currentText();
     if (sensorType->currentText() == "Presence") {
-        formLayout->addRow("Presence Number", presenceNumber);
+        //disable presence number
+        presenceNumber->setEnabled(true);
     } else {
-        formLayout->removeRow(presenceNumber);
+        presenceNumber->setEnabled(false);
     }
 
     // area select
