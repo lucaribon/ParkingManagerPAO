@@ -5,7 +5,7 @@
 - [x] creare classe astratta sensoreAria
 - [x] creare classi concrete sensoriQualita-Gas
 - [x] implementare metodi specifici per sensori
-  - [ ] generazione dati per simulazione statica nei sensori concreti
+  - [x] generazione dati per simulazione statica nei sensori concreti
   - [x] getAirStatus per sensoreAria
 - [x] sensore posto auto occupato ~~con tre stati: libero, in attesa, occupato~~
 - [x] gestire correlazione: sensore presenza -> posto auto
