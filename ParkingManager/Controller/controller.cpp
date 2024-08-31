@@ -4,7 +4,11 @@ Controller::Controller(QObject *parent) : QObject{parent} {
     sensors = std::vector<Sensor *>();
 }
 
-void Controller::addSensor(Sensor *sensor) {
+void Controller::addSensor(std::string name, std::string sensorType, std::string area)
+{
+    switch (sensorType) {}
+
+    Sensor *sensor = new Sensor(name, sensorType, area);
     sensors.push_back(sensor);
 }
 
