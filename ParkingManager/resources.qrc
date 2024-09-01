@@ -13,6 +13,7 @@
         <file>assets/icons/file.svg</file>
         <file>assets/icons/minus.svg</file>
         <file>assets/icons/player-play.svg</file>
+        <file>assets/icons/save-file.svg</file>
     </qresource>
     <qresource prefix="/style">
         <file>style.qss</file>
