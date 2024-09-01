@@ -15,8 +15,8 @@ private:
     std::string id;
 protected:
     Sensor(std::string, std::string, std::string="");
-    virtual void generateSimulationData()=0;
 public:
+    virtual void generateSimulationData()=0;
     virtual ~Sensor() =default;
     std::string getName() const;
     std::string getArea() const;

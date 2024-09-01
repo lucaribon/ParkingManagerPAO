@@ -33,7 +33,7 @@ void LightSensor::generateSimulationData(){
             }
             // daytime birghtness
             else if(date->tm_hour>7 && date->tm_hour<20){
-                brightness[tempT] = 148 + (std::rand() % (100 - 148 + 1));
+                brightness[tempT] = 148 + (std::rand() % (1000 - 148 + 1));
             }
 
             date->tm_hour += 1;

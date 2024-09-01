@@ -254,7 +254,7 @@ controlflow {
 <val>(1.0, 0.0, 0.0, 1.0, 485.085698672711, -92.53037252543886)</val>
 </matrix>
 <top-left>
-<val>(9.340479254618913, -2.842170943040401e-14)</val>
+<val>(9.340479254618913, 0.0)</val>
 </top-left>
 <width>
 <val>355.6595207453811</val>
@@ -507,6 +507,9 @@ controlflow {
 <horizontal>
 <val>0</val>
 </horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
 <subject>
 <ref refid="e05bb15b-688d-11ef-bc7b-91a72f86a557"/>
 </subject>
@@ -619,6 +622,9 @@ controlflow {
 <horizontal>
 <val>0</val>
 </horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
 <subject>
 <ref refid="5bca6017-688e-11ef-b4e0-91a72f86a557"/>
 </subject>
@@ -857,6 +863,9 @@ controlflow {
 <ref refid="83e30448-6888-11ef-8ace-91a72f86a557"/>
 </reflist>
 </ownedParameter>
+<visibility>
+<val>protected</val>
+</visibility>
 </Operation>
 <Parameter id="83e0bf31-6888-11ef-8f14-91a72f86a557">
 <direction>
