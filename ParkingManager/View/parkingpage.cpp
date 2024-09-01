@@ -6,7 +6,6 @@
 #include <QVBoxLayout>
 #include "../Model/presenceSensor.h"
 #include "parkinglots.h"
-#include "sensorbar.h"
 #include "sensoreditordialog.h"
 
 ParkingPage::ParkingPage(Controller* con, QWidget* parent)

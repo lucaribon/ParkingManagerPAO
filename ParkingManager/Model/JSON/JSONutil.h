@@ -7,7 +7,7 @@
 #include "../ISensorVisitor.h"
 #include "../sensor.h"
 
-class JSONutil : IConstSensorVisitor, ISensorVisitor {
+class JSONutil : IConstSensorVisitor {
 private:
     QJsonDocument* document;
     QString path;

@@ -26,6 +26,7 @@ void Controller::removeArea(std::string area) {
 
 void Controller::setSensors(std::vector<Sensor *> sensors) {
     this->sensors = sensors;
+    jUtil->updateSensorsIntoJSON(sensors);
 }
 
 void Controller::setAreas(std::set<std::string> areas) {
@@ -34,6 +35,8 @@ void Controller::setAreas(std::set<std::string> areas) {
 
 void Controller::setPath(std::string path) {
     this->path = path;
+    jUtil = new JSONutil(QString::fromStdString(path));
+    sensors = jUtil->getSensorsFromJSON();
 }
 
 std::set<std::string> Controller::getAreas() {
