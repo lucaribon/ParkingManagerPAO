@@ -65,3 +65,5 @@ std::vector<Sensor*> Controller::searchSensor(const std::string query){
     }
     return matchingSensors;
 }
+
+void Controller::saveFile(){}

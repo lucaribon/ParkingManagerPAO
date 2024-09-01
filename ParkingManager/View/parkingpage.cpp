@@ -37,6 +37,7 @@ ParkingPage::ParkingPage(Controller* con, QWidget* parent)
     connect(editButton, &QPushButton::clicked, this, &ParkingPage::editMode);
     connect(saveButton, &QPushButton::clicked, controller, &Controller::saveFile);
 
+    layoutTopBar->addWidget(saveButton);
     layoutTopBar->addWidget(editButton);
 
     // PARCHEGGIO

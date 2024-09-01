@@ -38,6 +38,7 @@ public:
 
     std::vector<Sensor*> searchSensor(const std::string);
     void generateSimulation();
+    void saveFile();
 signals:
 };
 
