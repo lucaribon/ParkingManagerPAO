@@ -22,14 +22,12 @@ ParkingPage::ParkingPage(Controller* con, QWidget* parent)
     QFrame* topBar = new QFrame();
     QHBoxLayout* layoutTopBar = new QHBoxLayout(topBar);
     // BARRA SENSORI
-    SensorBar* sensorBar = new SensorBar();
-    sensorBar->setObjectName("sensorBar");
+
     QPushButton* editButton = new QPushButton(QIcon(":/assets/icons/edit.svg"), "");
     editButton->setFixedSize(35, 35);
 
     connect(editButton, &QPushButton::clicked, this, &ParkingPage::editMode);
 
-    layoutTopBar->addWidget(sensorBar);
     layoutTopBar->addWidget(editButton);
 
     // PARCHEGGIO

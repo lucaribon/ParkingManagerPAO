@@ -238,7 +238,10 @@ void SensorEditor::addAreaDialog()
 
 void SensorEditor::addSensorDialog()
 {
-
+    if (controller->getAreas().empty()) {
+        QMessageBox::critical(this, "Error", "Add an area before adding a sensor", QMessageBox::Ok);
+        return;
+    }
     QDialog *dialogSensor = new QDialog(this);
 
     //Form
