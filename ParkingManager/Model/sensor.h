@@ -24,7 +24,7 @@ public:
 
     void setName(std::string);
     void setArea(std::string);
-    void setId(std::string );
+    void setId(std::string);
 
     virtual void accept(ISensorVisitor*) =0;
     virtual void accept(IConstSensorVisitor*) const =0;

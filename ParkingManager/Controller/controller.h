@@ -6,6 +6,8 @@
 #include <vector>
 
 #include "../Model/sensor.h"
+#include "../Model/JSON/JSONutil.h"
+
 
 enum sensType {AirQuality, ExplosiveGas, InOut, Light, Presence, TempHum};
 
@@ -16,6 +18,7 @@ private:
     std::set<std::string> areas;
     QObject* parent;
     std::string path;
+    JSONutil jUtil;
 public:
     explicit Controller(QObject* =nullptr);
 
