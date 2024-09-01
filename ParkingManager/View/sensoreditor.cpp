@@ -242,6 +242,7 @@ void SensorEditor::addSensorDialog()
         QMessageBox::critical(this, "Error", "Add an area before adding a sensor", QMessageBox::Ok);
         return;
     }
+
     QDialog *dialogSensor = new QDialog(this);
 
     //Form
@@ -283,7 +284,6 @@ void SensorEditor::addSensorDialog()
 
     QWidget *buttonBar = new QWidget();
     QPushButton *ok = new QPushButton("Ok");
-
     connect(ok, &QPushButton::clicked, [this, lineEdit, sensorType, areaSelect, dialogSensor] {
         ////DEBUGG
         qDebug() << lineEdit->text().trimmed();
@@ -336,28 +336,28 @@ void SensorEditor::addSensorDialog()
                 pushSensor(lineEdit->text().trimmed() + QString::number(i + 1),
                            sensorType->currentText(),
                            areaSelect->currentText());
-                dialogSensor->accept();
             }
-        });
-        QPushButton *cancel = new QPushButton("Cancel");
-        connect(cancel, &QPushButton::clicked, [dialogSensor] { dialogSensor->close(); });
-        QHBoxLayout *layoutButtonsDialogS = new QHBoxLayout(buttonBar);
-        layoutButtonsDialogS->addWidget(ok);
-        layoutButtonsDialogS->addWidget(cancel);
+            dialogSensor->accept();
+        } else {
+            pushSensor(lineEdit->text().trimmed(),
+                       sensorType->currentText(),
+                       areaSelect->currentText());
+            dialogSensor->accept();
+        }
+    });
 
-        QVBoxLayout *layout = new QVBoxLayout(dialogSensor);
-        layout->addWidget(form);
-        layout->addWidget(buttonBar);
-        //Composizione form
+    QPushButton *cancel = new QPushButton("Cancel");
+    connect(cancel, &QPushButton::clicked, [dialogSensor] { dialogSensor->close(); });
+    QHBoxLayout *layoutButtonsDialogS = new QHBoxLayout(buttonBar);
+    layoutButtonsDialogS->addWidget(ok);
+    layoutButtonsDialogS->addWidget(cancel);
 
-        dialogSensor->exec();
-    }else{
-        QMessageBox::critical(dialogSensor,
-                              "Error",
-                              "You need to create an area before",
-                              QMessageBox::Ok);
-    }
+    QVBoxLayout *layout = new QVBoxLayout(dialogSensor);
+    layout->addWidget(form);
+    layout->addWidget(buttonBar);
+    //Composizione form
 
+    dialogSensor->exec();
 }
 
 void SensorEditor::editSensorDialog(Sensor *sensor)
