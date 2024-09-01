@@ -12,13 +12,11 @@ ParkingLots::ParkingLots(QWidget *parent, std::string area, int numSlot)
         numSlotForColumn = (numSlot / 2) + 1;
     }
 
-    QFrame *verticalLine = new QFrame();
-    verticalLine->setFrameShape(QFrame::VLine);
-
     QFrame *framePark = new QFrame();
     framePark->setObjectName("framePark");
 
     QVBoxLayout *vertLayout = new QVBoxLayout(this);
+
     QGridLayout *gridLayout = new QGridLayout(framePark);
     gridLayout->setSpacing(4);
     gridLayout->setContentsMargins(0, 0, 0, 0);
@@ -34,6 +32,5 @@ ParkingLots::ParkingLots(QWidget *parent, std::string area, int numSlot)
     vertLayout->addWidget(framePark);
     vertLayout->addWidget(areaId);
 
-    //setStyleSheet("background-color: #f0f0f0; border: 1px solid black; border-radius: 8px;");
     setLayout(vertLayout);
 }

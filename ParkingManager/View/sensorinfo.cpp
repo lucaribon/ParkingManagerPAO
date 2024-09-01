@@ -4,25 +4,13 @@
 
 #include "sensorinfo.h"
 
-SensorInfo::SensorInfo(QWidget* parent) : QWidget(parent){
+SensorInfo::SensorInfo(QLabel *name, QLabel *value, QWidget *parent)
+    : QWidget(parent)
+    , name(name)
+    , value(value)
+{
     QHBoxLayout* layout = new QHBoxLayout(this);
     layout->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-
-    icon = new QSvgWidget(":/assets/icons/temperature-mini.svg");
-    name = new QLabel();
-    value = new QLabel();
-
-    layout->addWidget(icon);
     layout->addWidget(name);
     layout->addWidget(value);
-}
-
-void SensorInfo::show(){
-    // QPixmap pixIcon(":/assets/icons/temperature-mini.svg");
-    //icon->setAttribute(Qt.AA_UseHighDpiPixmaps, true);
-    icon->setFixedSize(20,20);
-
-    name->setText("Temperature");
-
-    value->setText("50 °C");
 }
