@@ -20,6 +20,11 @@ public:
     void pushSensor(const QString name, const QString sensorType, const QString area);
     void addAreaDialog();
     void addSensorDialog();
+    void editSensorDialog(Sensor *sensor);
+    void editSensor(Sensor *sensor,
+                    const QString &name,
+                    const QString &area,
+                    const QString &sensorType);
 
 private:
     Controller *controller;

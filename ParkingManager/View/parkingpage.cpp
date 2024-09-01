@@ -4,6 +4,7 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include "../Model/presenceSensor.h"
 #include "parkinglots.h"
 #include "sensorbar.h"
 #include "sensoreditordialog.h"
@@ -37,13 +38,18 @@ ParkingPage::ParkingPage(Controller* con, QWidget* parent)
 
     //get areas from controller
     for (const std::string& area : controller->getAreas()) {
-        qDebug() << " AREE: " << QString::fromStdString(area);
-        parkingAreas.push_back(new ParkingLots(this, area, 10));
-        parkLayout->addWidget(parkingAreas.back());
-    }
+        //count sensor presence
+        int parkingCount = 0;
+        for (Sensor* sensor : controller->getSensors()) {
+            if (sensor->getArea() == area) {
+                //add sensor to parking area
+                if (dynamic_cast<PresenceSensor*>(sensor))
+                    parkingCount++;
+            }
+        }
 
-    for (ParkingLots* park : parkingAreas) {
-        qDebug() << "PARKING LOTS: " << park;
+        parkingAreas.push_back(new ParkingLots(this, area, parkingCount));
+        parkLayout->addWidget(parkingAreas.back());
     }
 
     parkLayout->setAlignment(Qt::AlignBottom);
