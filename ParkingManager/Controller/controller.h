@@ -37,7 +37,7 @@ public:
     void removeArea(std::string);
 
     std::vector<Sensor*> searchSensor(const std::string);
-
+    void generateSimulation();
 signals:
 };
 

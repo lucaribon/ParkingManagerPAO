@@ -5,7 +5,6 @@
 #include <map>
 
 class AirSensor : public Sensor{
-private:
 protected:
     /* registra i metri cubi di aria all'ora,
      * nel nostro caso l'idea è che ci sia un

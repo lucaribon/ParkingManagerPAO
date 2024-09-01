@@ -557,3 +557,9 @@ void SensorEditor::editSensor(Sensor *sensor,
     sensor->setArea(area.toStdString());
     refreshSensors(listSensors, controller->getSensors());
 }
+
+void Controller::generateSimulation(){
+    for(auto s : sensors){
+        s->generateSimulationData();
+    }
+}
