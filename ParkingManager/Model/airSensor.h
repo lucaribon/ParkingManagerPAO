@@ -13,11 +13,11 @@ protected:
      * costante che viene usato dai sensori per
      * compiere le misurazioni */
     std::map<time_t, float> airflow;
-    // map<dataora, vector<no2,o3,pm10,pm25>>
+    // map<dataora, vector<elemento1,elemento2,elemento3,elemento4>>
     std::map<time_t, std::vector<float>> values;
     /* converte m^3 di aria in grammi */
     float airFlowToAirMass(float);
-    AirSensor(std::string n, std::string a);
+    AirSensor(std::string, std::string, std::string="");
 public:
     virtual ~AirSensor() =0;
     std::map<time_t, float> getAirflow() const;

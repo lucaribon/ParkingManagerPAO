@@ -8,7 +8,7 @@ class PresenceSensor : public Sensor{
 private:
     std::map<time_t,bool> parkingLotsPresence;
 public:
-    PresenceSensor(std::string, std::string);
+    PresenceSensor(std::string, std::string, std::string="");
     virtual ~PresenceSensor();
 
     std::map<time_t,bool> getParkingLotsPresence() const;
@@ -16,6 +16,9 @@ public:
     void setParkingLotsPresence(std::map<time_t,bool>);
 
     virtual void generateSimulationData() override;
+
+    virtual void accept(ISensorVisitor*) override;
+    virtual void accept(IConstSensorVisitor*) const override;
 };
 
 

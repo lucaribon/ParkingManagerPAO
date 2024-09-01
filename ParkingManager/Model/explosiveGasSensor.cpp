@@ -1,6 +1,6 @@
 #include "explosiveGasSensor.h"
 
-ExplosiveGasSensor::ExplosiveGasSensor(std::string n, std::string a) : AirSensor(n,a) {}
+ExplosiveGasSensor::ExplosiveGasSensor(std::string n, std::string a, std::string i) : AirSensor(n,a, i!="" ? i : (QUuid::createUuid().toString()).toStdString()) {}
 ExplosiveGasSensor::~ExplosiveGasSensor() =default;
 
 int ExplosiveGasSensor::getAirStatus(time_t t){
@@ -53,5 +53,12 @@ void ExplosiveGasSensor::generateSimulationData() {
         }
         date->tm_mday += 1;
     }
+}
 
+void ExplosiveGasSensor::accept(ISensorVisitor* handler){
+    handler->handle(this);
+}
+
+void ExplosiveGasSensor::accept(IConstSensorVisitor* handler) const {
+    handler->handle(this);
 }

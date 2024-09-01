@@ -1,6 +1,6 @@
 #include "lightSensor.h"
 
-LightSensor::LightSensor(std::string n, std::string a) : Sensor(n,a) {}
+LightSensor::LightSensor(std::string n, std::string a, std::string i) : Sensor(n,a, i!="" ? i : (QUuid::createUuid().toString()).toStdString()) {}
 LightSensor::~LightSensor() =default;
 
 std::map<time_t,int> LightSensor::getBrightness() const {return brightness;}
@@ -42,3 +42,10 @@ void LightSensor::generateSimulationData(){
     }
 }
 
+void LightSensor::accept(ISensorVisitor* handler){
+    handler->handle(this);
+}
+
+void LightSensor::accept(IConstSensorVisitor* handler) const {
+    handler->handle(this);
+}

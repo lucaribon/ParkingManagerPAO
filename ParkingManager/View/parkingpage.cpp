@@ -37,7 +37,7 @@ ParkingPage::ParkingPage(Controller* con, QWidget* parent)
 
     //get areas from controller
     for (const std::string& area : controller->getAreas()) {
-        qDebug() << " MISERIA: " << QString::fromStdString(area);
+        qDebug() << " AREE: " << QString::fromStdString(area);
         parkingAreas.push_back(new ParkingLots(this, area, 10));
         parkLayout->addWidget(parkingAreas.back());
     }

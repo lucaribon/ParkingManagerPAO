@@ -5,7 +5,7 @@
 
 class ExplosiveGasSensor : public AirSensor{
 public:
-    ExplosiveGasSensor(std::string, std::string);
+    ExplosiveGasSensor(std::string, std::string, std::string="");
     virtual ~ExplosiveGasSensor();
 
     /* ritorna il livello di pericolosità dato
@@ -19,6 +19,9 @@ public:
      * (lowerIsBetter) */
     virtual int getAirStatus(time_t) override;
     virtual void generateSimulationData() override;
+
+    virtual void accept(ISensorVisitor*) override;
+    virtual void accept(IConstSensorVisitor*) const override;
 };
 
 #endif // EXPLOSIVEGASSENSOR_H

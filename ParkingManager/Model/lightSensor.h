@@ -12,7 +12,7 @@ private:
      * può arrivare 1000lux */
     std::map<time_t,int> brightness;
 public:
-    LightSensor(std::string, std::string);
+    LightSensor(std::string, std::string, std::string="");
     virtual ~LightSensor();
 
     std::map<time_t,int> getBrightness() const;
@@ -21,6 +21,9 @@ public:
 
     bool lightsNeeded(time_t);
     virtual void generateSimulationData() override;
+
+    virtual void accept(ISensorVisitor*) override;
+    virtual void accept(IConstSensorVisitor*) const override;
 };
 
 #endif // LIGHTSENSOR_H

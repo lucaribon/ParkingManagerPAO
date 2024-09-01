@@ -1,6 +1,6 @@
 #include "tempHumSensor.h"
 
-TempHumSensor::TempHumSensor(std::string n, std::string a) : Sensor(n,a) {}
+TempHumSensor::TempHumSensor(std::string n, std::string a, std::string i) : Sensor(n,a, i!="" ? i : (QUuid::createUuid().toString()).toStdString()) {}
 TempHumSensor::~TempHumSensor() =default;
 
 std::map<time_t, std::vector<float>> TempHumSensor::getTempHum() const
@@ -39,4 +39,12 @@ void TempHumSensor::generateSimulationData(){
         }
         date->tm_mday += 1;
     }
+}
+
+void TempHumSensor::accept(ISensorVisitor* handler){
+    handler->handle(this);
+}
+
+void TempHumSensor::accept(IConstSensorVisitor* handler) const {
+    handler->handle(this);
 }
