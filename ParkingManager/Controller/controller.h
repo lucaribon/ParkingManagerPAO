@@ -30,6 +30,7 @@ public:
     void removeArea(std::string);
 
     void searchSensor(const std::string);
+
 signals:
 };
 
