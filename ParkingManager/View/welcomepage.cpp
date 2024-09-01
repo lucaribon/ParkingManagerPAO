@@ -39,11 +39,9 @@ void WelcomePage::openFile()
                                                    "../../",
                                                    "JSON files (*.json)");
     qDebug() << filePath;
-    if (!filePath.isEmpty()) {
-        //emit fileOpened(filePath);
-    }
-
     controller->setPath(filePath.toStdString());
+    controller->saveFile();
+    controller->generateSimulation();
 }
 
 void WelcomePage::newParking()
