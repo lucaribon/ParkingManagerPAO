@@ -36,6 +36,9 @@ SOURCES += \
 
 HEADERS += \
     Controller/controller.h \
+    Model/IConstSensorVisitor.h \
+    Model/ISensorVisitor.h \
+    Model/JSONutil.h \
     Model/airQualitySensor.h \
     Model/airSensor.h \
     Model/explosiveGasSensor.h \

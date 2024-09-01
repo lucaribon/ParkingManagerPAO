@@ -42,6 +42,8 @@ void WelcomePage::openFile()
     if (!filePath.isEmpty()) {
         //emit fileOpened(filePath);
     }
+
+    controller->setPath(filePath);
 }
 
 void WelcomePage::newParking()

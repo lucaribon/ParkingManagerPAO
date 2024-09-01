@@ -32,6 +32,10 @@ void Controller::setAreas(std::set<std::string> areas) {
     this->areas = areas;
 }
 
+void Controller::setPath(std::string path) {
+    this->path = path;
+}
+
 std::set<std::string> Controller::getAreas() {
     return areas;
 }
@@ -40,10 +44,14 @@ std::vector<Sensor *> Controller::getSensors() {
     return sensors;
 }
 
-void Controller::searchSensor(const std::string query){
+std::string Controller::getPath(){
+    return path;
+}
+
+std::vector<Sensor*> Controller::searchSensor(const std::string query){
+    std::vector<Sensor*> matchingSensors;
     if(!query.empty()){
         QRegularExpression queryExp("^" + QString::fromStdString(query));
-        std::vector<Sensor*> matchingSensors;
         for(Sensor* sens : sensors){
             QRegularExpressionMatch match = queryExp.match(QString::fromStdString(sens->getName()),
                                                            Qt::CaseInsensitive);
@@ -52,5 +60,5 @@ void Controller::searchSensor(const std::string query){
             }
         }
     }
-    // refresh dei sensori visualizzati dopo la ricerca
+    return matchingSensors;
 }

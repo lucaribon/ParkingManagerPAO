@@ -255,6 +255,7 @@ void SensorEditor::addSensorDialog()
      */
 
     QDialog *dialogSensor = new QDialog(this);
+
     if(!controller->getAreas().empty()){
         dialogSensor->setWindowTitle("New Sensor");
 
