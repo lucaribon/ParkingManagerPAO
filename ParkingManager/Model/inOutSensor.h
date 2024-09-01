@@ -8,7 +8,7 @@ class InOutSensor : public Sensor {
 private:
     std::map<time_t,std::vector<int>> inOut;
 public:
-    InOutSensor(std::string,std::string);
+    InOutSensor(std::string, std::string, std::string="");
     virtual ~InOutSensor();
 
     std::map<time_t,std::vector<int>> getInOut() const;
@@ -16,6 +16,9 @@ public:
     void setInOut(std::map<time_t,std::vector<int>>);
 
     virtual void generateSimulationData() override;
+
+    virtual void accept(ISensorVisitor*) override;
+    virtual void accept(IConstSensorVisitor*) const override;
 };
 
 #endif // INOUTSENSOR_H

@@ -3,7 +3,7 @@
 // densità dell'aria in cm^3
 #define AIR_DENSITY_CM3  0.0012;
 
-AirSensor::AirSensor(std::string n, std::string a) : Sensor(n,a) {}
+AirSensor::AirSensor(std::string n, std::string a, std::string i) : Sensor(n,a,  i!="" ? i :(QUuid::createUuid().toString()).toStdString()) {}
 AirSensor::~AirSensor(){}
 
 std::map<time_t, float> AirSensor::getAirflow() const {return airflow;}

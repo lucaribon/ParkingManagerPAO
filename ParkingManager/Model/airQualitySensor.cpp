@@ -3,9 +3,9 @@
 #include <sstream>
 #include <map>
 #include <vector>
-#include <ctime>  // For time_t
+#include <ctime>
 
-AirQualitySensor::AirQualitySensor(std::string n, std::string a) : AirSensor(n,a) {}
+AirQualitySensor::AirQualitySensor(std::string n, std::string a, std::string i) : AirSensor(n,a, i!="" ? i : (QUuid::createUuid().toString()).toStdString()) {}
 AirQualitySensor::~AirQualitySensor() =default;
 
 int AirQualitySensor::getAirStatus(time_t t) {
@@ -65,3 +65,12 @@ void AirQualitySensor::generateSimulationData() {
         date->tm_mday += 1;
     }
 }
+
+void AirQualitySensor::accept(ISensorVisitor * handler){
+    handler->handle(this);
+}
+
+void AirQualitySensor::accept(IConstSensorVisitor * handler) const {
+    handler->handle(this);
+}
+

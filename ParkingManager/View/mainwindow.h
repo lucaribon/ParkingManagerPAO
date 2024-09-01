@@ -21,7 +21,6 @@ private:
     ReportWindow* reportWindow;
 
     Controller* controller;
-
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();

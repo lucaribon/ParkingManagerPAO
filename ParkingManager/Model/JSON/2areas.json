@@ -1,0 +1,94 @@
+{
+    "sensors": [
+        {
+            "id": "5f85dd27-ddb6-4f55-b7c7-17810a8df3b5",
+            "name": "A-AirQuality-Ai1",
+            "area": "A",
+            "sensType": 1
+        },
+        {
+            "id": "5f85ad17-dcb6-4f55-b7c7-17810a8df3b5",
+            "name": "B-AirQuality-Bi1",
+            "area": "B",
+            "sensType": 1
+        },
+        {
+            "id": "5f11dd27-ddb6-4f55-b7c7-17810a8df3b5",
+            "name": "A-ExplosiveGas-E1",
+            "area": "A",
+            "sensType": 2
+        },
+        {
+            "id": "5f23ad17-dcb6-4f55-b7c7-17810a8df3b5",
+            "name": "B-ExplosiveGas-E1",
+            "area": "B",
+            "sensType": 2
+        },
+        {
+            "id": "5f11dd27-deb6-4f55-b7c7-17810a8df3b5",
+            "name": "A-InOut-IO1",
+            "area": "A",
+            "sensType": 3
+        },
+        {
+            "id": "5f77dd27-deb6-4f55-b7c7-17810a8df3b5",
+            "name": "B-InOut-IO1",
+            "area": "B",
+            "sensType": 3
+        },
+        {
+            "id": "5f21dd23-deb6-4f55-b7c7-17810a8df3b5",
+            "name": "A-Ligth-L1",
+            "area": "A",
+            "sensType": 4
+        },
+        {
+            "id": "5f11dd27-dgg6-4f55-b7c7-17810a8df3b5",
+            "name": "B-Light-L1",
+            "area": "B",
+            "sensType":4
+        },
+        {
+            "id": "1f85ad17-ddb6-4f55-b7c7-17810a8df3b1",
+            "name": "A-Presence-P1",
+            "area": "A",
+            "sensType": 5
+        },
+        {
+            "id": "2f85ad17-ddb6-4f55-b7c7-17810a8df3b2",
+            "name": "A-Presence-P2",
+            "area": "A",
+            "sensType": 5
+        },
+        {
+            "id": "3f85ad17-ddb6-4f55-b7c7-17810a8df3b3",
+            "name": "B-Presence-P1",
+            "area": "B",
+            "sensType": 5
+        },
+        {
+            "id": "4f85ad17-ddb6-4f55-b7c7-17810a8df3b4",
+            "name": "B-Presence-P2",
+            "area": "B",
+            "sensType": 5
+        },
+        {
+            "id": "5f85ad17-ddb6-4f55-b7c7-17810a8df3b5",
+            "name": "B-Presence-P3",
+            "area": "B",
+            "sensType": 5
+        },
+        {
+            "id": "7a11dd27-deb6-4f55-b7c7-17810a8df3b5",
+            "name": "A-TempHum-TH1",
+            "area": "A",
+            "sensType": 6
+        },
+        {
+            "id": "7a11dd27-deb6-4f89-b7c7-17810a8df3b5",
+            "name": "B-TempHum-TH1",
+            "area": "B",
+            "sensType": 6
+        }
+    ]
+}

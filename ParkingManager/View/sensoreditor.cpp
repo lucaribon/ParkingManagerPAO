@@ -243,7 +243,6 @@ void SensorEditor::addSensorDialog()
         return;
     }
     QDialog *dialogSensor = new QDialog(this);
-    dialogSensor->setWindowTitle("New Sensor");
 
     //Form
     QWidget *form = new QWidget();
@@ -337,27 +336,28 @@ void SensorEditor::addSensorDialog()
                 pushSensor(lineEdit->text().trimmed() + QString::number(i + 1),
                            sensorType->currentText(),
                            areaSelect->currentText());
+                dialogSensor->accept();
             }
-            dialogSensor->accept();
-        } else {
-            pushSensor(lineEdit->text().trimmed(),
-                       sensorType->currentText(),
-                       areaSelect->currentText());
-            dialogSensor->accept();
-        }
-    });
-    QPushButton *cancel = new QPushButton("Cancel");
-    connect(cancel, &QPushButton::clicked, [dialogSensor] { dialogSensor->close(); });
-    QHBoxLayout *layoutButtonsDialogS = new QHBoxLayout(buttonBar);
-    layoutButtonsDialogS->addWidget(ok);
-    layoutButtonsDialogS->addWidget(cancel);
+        });
+        QPushButton *cancel = new QPushButton("Cancel");
+        connect(cancel, &QPushButton::clicked, [dialogSensor] { dialogSensor->close(); });
+        QHBoxLayout *layoutButtonsDialogS = new QHBoxLayout(buttonBar);
+        layoutButtonsDialogS->addWidget(ok);
+        layoutButtonsDialogS->addWidget(cancel);
 
-    QVBoxLayout *layout = new QVBoxLayout(dialogSensor);
-    layout->addWidget(form);
-    layout->addWidget(buttonBar);
-    //Composizione form
+        QVBoxLayout *layout = new QVBoxLayout(dialogSensor);
+        layout->addWidget(form);
+        layout->addWidget(buttonBar);
+        //Composizione form
 
-    dialogSensor->exec();
+        dialogSensor->exec();
+    }else{
+        QMessageBox::critical(dialogSensor,
+                              "Error",
+                              "You need to create an area before",
+                              QMessageBox::Ok);
+    }
+
 }
 
 void SensorEditor::editSensorDialog(Sensor *sensor)

@@ -5,7 +5,7 @@
 
 class AirQualitySensor : public AirSensor{
 public:
-    AirQualitySensor(std::string, std::string);
+    AirQualitySensor(std::string, std::string, std::string="");
     virtual ~AirQualitySensor();
     /* Ritorna un int che rappresenta la qualità dell'aria su 5 livelli (lower is better) in
      * un determinato istante time_t.
@@ -18,6 +18,9 @@ public:
      * https://www.pranaair.com/blog/what-is-air-quality-index-aqi-and-its-calculation/?srsltid=AfmBOorCFpO9mlQiufmMVOsH1ceK9zuq7FAna3rnzmfjY5zJzAFS0Rfx */
     virtual int getAirStatus(time_t) override;
     virtual void generateSimulationData() override;
+
+    virtual void accept(ISensorVisitor*) override;
+    virtual void accept(IConstSensorVisitor*) const override;
 };
 
 #endif // AIRQUALITYSENSOR_H
