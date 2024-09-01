@@ -1,3 +1,0 @@
-- aggiungere bottone in dashboard per la gestione/aggiunta/modifica dei sensori
-- aggiungere una WelcomePage come stacked widget della dashboard
-    - scelta tra aprire un progetto esistente o crearne uno nuovo
