@@ -36,7 +36,6 @@ void Controller::setAreas(std::set<std::string> areas) {
 void Controller::setPath(std::string path) {
     this->path = path;
     jUtil = new JSONutil(QString::fromStdString(path));
-    sensors = jUtil->getSensorsFromJSON();
 }
 
 std::set<std::string> Controller::getAreas() {
@@ -66,4 +65,6 @@ std::vector<Sensor*> Controller::searchSensor(const std::string query){
     return matchingSensors;
 }
 
-void Controller::saveFile(){}
+void Controller::saveFile(){
+    jUtil->updateSensorsIntoJSON(sensors);
+}

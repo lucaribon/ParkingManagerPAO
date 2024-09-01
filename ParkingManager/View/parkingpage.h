@@ -17,6 +17,7 @@ private:
 public:
     explicit ParkingPage(Controller *con, QWidget *parent = nullptr);
     void editMode();
+    void saveFile();
 
 signals:
 };

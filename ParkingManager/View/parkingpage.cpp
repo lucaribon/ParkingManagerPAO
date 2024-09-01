@@ -4,6 +4,7 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <QFileDialog>
 #include "../Model/airQualitySensor.h"
 #include "../Model/explosiveGasSensor.h"
 #include "../Model/inOutSensor.h"
@@ -35,7 +36,7 @@ ParkingPage::ParkingPage(Controller* con, QWidget* parent)
     editButton->setFixedSize(35, 35);
 
     connect(editButton, &QPushButton::clicked, this, &ParkingPage::editMode);
-    connect(saveButton, &QPushButton::clicked, controller, &Controller::saveFile);
+    connect(saveButton, &QPushButton::clicked, this, &ParkingPage::saveFile);
 
     layoutTopBar->addWidget(saveButton);
     layoutTopBar->addWidget(editButton);
@@ -127,4 +128,10 @@ void ParkingPage::editMode(){
     qDebug() << "Edit mode activated!";
     SensorEditorDialog* sensorEditor = new SensorEditorDialog(controller, this);
     sensorEditor->exec();
+}
+
+void ParkingPage::saveFile(){
+    qDebug() << "Saving file!";
+    controller->setPath((QFileDialog::getSaveFileName(this, ("Crea nuovo file"), QDir::homePath(), "JSON Files (*.json)")).toStdString());
+    controller->saveFile();
 }
