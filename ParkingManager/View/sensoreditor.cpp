@@ -35,6 +35,15 @@ SensorEditor::SensorEditor(Controller *con, QWidget *parent)
     search->setPlaceholderText("Search...");
     search->setStyleSheet("background:white; border: none; border-radius: 8px; padding: 4px;");
 
+    connect(search, &QLineEdit::textChanged, [this](const QString &text) {
+        if (text.isEmpty()) {
+            refreshSensors(listSensors, controller->getSensors());
+        } else {
+            std::vector<Sensor *> filter = controller->searchSensor(text.toStdString());
+            refreshSensors(listSensors, filter);
+        }
+    });
+
     //LIST OF AREAS, ADD/REMOVE BUTTONS
     QFrame *sideFrameAreas = new QFrame();
     sideFrameAreas->setStyleSheet("background:#fbf8cc; border: none; border-radius: 8px;");

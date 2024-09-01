@@ -26,8 +26,8 @@ MainWindow::MainWindow(QWidget* parent)
     // STACKED WIDGET
     contentWindow = new QStackedWidget(central);
 
-    dashWindow = new DashboardWindow(controller);
-    graphWindow = new GraphWindow();
+    dashWindow = new DashboardWindow(controller, this);
+    graphWindow = new GraphWindow(controller, this);
 
     contentWindow->insertWidget(0, dashWindow);
     contentWindow->insertWidget(1, graphWindow);

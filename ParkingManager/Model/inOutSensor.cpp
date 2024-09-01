@@ -26,7 +26,7 @@ void InOutSensor::generateSimulationData() {
         for(int j=0; j<24; j++){
             time_t tempT = mktime(date);
 
-            std::vector<int> tempInOut;
+            std::vector<int> tempInOut = std::vector<int>(2);
             tempInOut[0] = (std::rand() % (500 + 1));
             tempInOut[1] = (std::rand() % (500 + 1));
             inOut[tempT] = tempInOut;

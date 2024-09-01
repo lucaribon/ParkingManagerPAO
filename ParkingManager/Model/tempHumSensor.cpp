@@ -30,7 +30,7 @@ void TempHumSensor::generateSimulationData(){
         for(int j=0; j<24; j++){
             time_t tempT = mktime(date);
 
-            std::vector<float> tempVal;
+            std::vector<float> tempVal = std::vector<float>(2);
             tempVal[0] = 18 + (float)((std::rand()) / (40 - 18 + 1));
             tempVal[1] = 40 + (float)((std::rand()) / (70 - 40 + 1));
             tempHum[tempT] = tempVal;

@@ -1,8 +1,12 @@
 #include "graphwindow.h"
 #include <QLabel>
+#include <QListWidget>
 #include <QVBoxLayout>
 
-GraphWindow::GraphWindow(QWidget* parent) : QWidget(parent){
+GraphWindow::GraphWindow(Controller* con, QWidget* parent)
+    : QWidget(parent)
+    , controller(con)
+{
     QVBoxLayout* layout = new QVBoxLayout();
     layout->setAlignment(Qt::AlignCenter | Qt::AlignTop);
 
@@ -11,4 +15,15 @@ GraphWindow::GraphWindow(QWidget* parent) : QWidget(parent){
     layout->addWidget(tempTxt);
 
     setLayout(layout);
+
+    QFrame* graphFrame = new QFrame();
+    QHBoxLayout* hLayout = new QHBoxLayout(graphFrame);
+
+    QListWidget* sensorList = new QListWidget();
+    for (Sensor* sensor : controller->getSensors()) {
+        sensorList->addItem(QString::fromStdString(sensor->getName()));
+    }
+
+    hLayout->addWidget(sensorList);
+    layout->addWidget(graphFrame);
 }

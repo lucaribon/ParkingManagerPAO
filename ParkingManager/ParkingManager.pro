@@ -21,7 +21,7 @@ SOURCES += \
     Model/tempHumSensor.cpp \
     View/applogo.cpp \
     View/dashboardwindow.cpp \
-    View/graphpanel.cpp \
+    View/graphpage.cpp \
     View/graphwindow.cpp \
     View/sensoreditor.cpp \
     main.cpp \
@@ -50,7 +50,7 @@ HEADERS += \
     Model/tempHumSensor.h \
     View/applogo.h \
     View/dashboardwindow.h \
-    View/graphpanel.h \
+    View/graphpage.h \
     View/graphwindow.h \
     View/mainwindow.h \
     View/parkinglots.h \

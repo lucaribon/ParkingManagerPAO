@@ -73,9 +73,11 @@ ParkingPage::ParkingPage(Controller* con, QWidget* parent)
                     areaLayout->addWidget(sensorInfo);
                 } else if (dynamic_cast<InOutSensor*>(sensor)) {
                     InOutSensor* inOutSens = dynamic_cast<InOutSensor*>(sensor);
+                    QString inOut = "-";
+                    /*
                     QString inOut = QString::fromStdString(
                         "IN: " + std::to_string(inOutSens->getInOut().end()->second.at(0))
-                        + " OUT: " + std::to_string(inOutSens->getInOut().end()->second.at(1)));
+                        + " OUT: " + std::to_string(inOutSens->getInOut().end()->second.at(1)));*/
                     SensorInfo* sensorInfo = new SensorInfo(new QLabel(QString::fromStdString(
                                                                 sensor->getName())),
                                                             new QLabel(inOut),
@@ -83,9 +85,12 @@ ParkingPage::ParkingPage(Controller* con, QWidget* parent)
                     areaLayout->addWidget(sensorInfo);
                 } else if (dynamic_cast<AirQualitySensor*>(sensor)) {
                     AirQualitySensor* air = dynamic_cast<AirQualitySensor*>(sensor);
+                    QString airQuality("-");
+                    /*
                     QString airQuality = QString::fromStdString(
                         //ctime per to string in caso
                         std::to_string(air->getAirStatus(air->getValues().end()->first)));
+                    */
                     SensorInfo* sensorInfo = new SensorInfo(new QLabel(QString::fromStdString(
                                                                 sensor->getName())),
                                                             new QLabel(airQuality),
@@ -93,8 +98,10 @@ ParkingPage::ParkingPage(Controller* con, QWidget* parent)
                     areaLayout->addWidget(sensorInfo);
                 } else if (dynamic_cast<ExplosiveGasSensor*>(sensor)) {
                     ExplosiveGasSensor* gas = dynamic_cast<ExplosiveGasSensor*>(sensor);
+                    QString gasLevel("-");
+                    /*
                     QString gasLevel = QString::fromStdString(
-                        std::to_string(gas->getAirStatus(gas->getValues().end()->first)));
+                        std::to_string(gas->getAirStatus(gas->getValues().end()->first)));*/
                     SensorInfo* sensorInfo = new SensorInfo(new QLabel(QString::fromStdString(
                                                                 sensor->getName())),
                                                             new QLabel(gasLevel),
@@ -102,9 +109,10 @@ ParkingPage::ParkingPage(Controller* con, QWidget* parent)
                     areaLayout->addWidget(sensorInfo);
                 } else if (dynamic_cast<TempHumSensor*>(sensor)) {
                     TempHumSensor* temp = dynamic_cast<TempHumSensor*>(sensor);
-                    QString temperature = QString::fromStdString(
+                    QString temperature("-");
+                    /*QString temperature = QString::fromStdString(
                         std::to_string(temp->getTempHum().end()->second.at(0)) + "°C" + "\n"
-                        + std::to_string(temp->getTempHum().end()->second.at(1)) + "%");
+                        + std::to_string(temp->getTempHum().end()->second.at(1)) + "%");*/
                     SensorInfo* sensorInfo = new SensorInfo(new QLabel(QString::fromStdString(
                                                                 sensor->getName())),
                                                             new QLabel(temperature),
