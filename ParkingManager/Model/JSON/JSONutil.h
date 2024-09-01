@@ -28,6 +28,7 @@ public:
     virtual void handle(const PresenceSensor*) override;
     virtual void handle(const TempHumSensor*) override;
     std::vector<Sensor*> getSensorsFromJSON() const;
+    void updateSensorsIntoJSON(std::vector<Sensor*>);
 };
 
 #endif // JSONUTIL_H

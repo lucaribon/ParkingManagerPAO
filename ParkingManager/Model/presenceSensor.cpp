@@ -2,7 +2,7 @@
 #include <random>
 #include <functional>
 
-PresenceSensor::PresenceSensor(std::string n, std::string a) : Sensor(n,a) {}
+PresenceSensor::PresenceSensor(std::string n, std::string a, std::string i) : Sensor(n,a, i!="" ? i : (QUuid::createUuid().toString()).toStdString()) {}
 PresenceSensor::~PresenceSensor() =default;
 
 std::map<time_t,bool> PresenceSensor::getParkingLotsPresence() const {return parkingLotsPresence;}
@@ -32,4 +32,12 @@ void PresenceSensor::generateSimulationData(){
         }
         date->tm_mday += 1;
     }
+}
+
+void PresenceSensor::accept(ISensorVisitor* handler){
+    handler->handle(this);
+}
+
+void PresenceSensor::accept(IConstSensorVisitor* handler) const {
+    handler->handle(this);
 }

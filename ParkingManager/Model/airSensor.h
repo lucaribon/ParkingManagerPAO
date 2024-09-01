@@ -17,7 +17,7 @@ protected:
     std::map<time_t, std::vector<float>> values;
     /* converte m^3 di aria in grammi */
     float airFlowToAirMass(float);
-    AirSensor(std::string n, std::string a);
+    AirSensor(std::string, std::string, std::string="");
 public:
     virtual ~AirSensor() =0;
     std::map<time_t, float> getAirflow() const;

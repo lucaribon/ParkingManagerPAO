@@ -277,9 +277,9 @@ void SensorEditor::addSensorDialog()
         sensorType->setFrame(true);
         sensorType->addItem("Light");
         sensorType->addItem("Presence");
-        sensorType->addItem("Temperature and Humidity");
-        sensorType->addItem("Air Quality");
-        sensorType->addItem("Explosive Gas");
+        sensorType->addItem("TemperatureAndHumidity");
+        sensorType->addItem("AirQuality");
+        sensorType->addItem("ExplosiveGas");
         sensorType->setFixedWidth(220);
         formLayout->addRow("Sensor Type", sensorType);
 

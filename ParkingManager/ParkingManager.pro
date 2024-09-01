@@ -40,7 +40,7 @@ HEADERS += \
     Model/IConstSensorVisitor.h \
     Model/ISensorVisitor.h \
     Model/JSON/JSONutil.h \
-    Model/JSONutil.h \
+    Model/JSON/JSONutil.h \
     Model/airQualitySensor.h \
     Model/airSensor.h \
     Model/explosiveGasSensor.h \
