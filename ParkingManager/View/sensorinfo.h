@@ -9,12 +9,10 @@ class SensorInfo : public QWidget
 {
     Q_OBJECT
 private:
-    QSvgWidget* icon;
     QLabel* name;
     QLabel* value;
 public:
-    SensorInfo(QWidget* parent = 0);
-    void show();
+    SensorInfo(QLabel* name, QLabel* value, QWidget* parent = nullptr);
 };
 
 #endif // SENSORINFO_H

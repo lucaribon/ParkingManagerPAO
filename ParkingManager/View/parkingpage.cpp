@@ -4,10 +4,15 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include "../Model/airQualitySensor.h"
+#include "../Model/explosiveGasSensor.h"
+#include "../Model/inOutSensor.h"
+#include "../Model/lightSensor.h"
 #include "../Model/presenceSensor.h"
+#include "../Model/tempHumSensor.h"
 #include "parkinglots.h"
-#include "sensorbar.h"
 #include "sensoreditordialog.h"
+#include "sensorinfo.h"
 
 ParkingPage::ParkingPage(Controller* con, QWidget* parent)
     : QWidget{parent}
@@ -31,26 +36,80 @@ ParkingPage::ParkingPage(Controller* con, QWidget* parent)
     layoutTopBar->addWidget(editButton);
 
     // PARCHEGGIO
-    QWidget* parkSpace = new QWidget();
+    QFrame* parkSpace = new QFrame();
     QHBoxLayout* parkLayout = new QHBoxLayout(parkSpace);
 
     //get areas from controller
     for (const std::string& area : controller->getAreas()) {
+        QWidget* areaSpace = new QWidget();
+        QVBoxLayout* areaLayout = new QVBoxLayout(areaSpace);
         //count sensor presence
         int parkingCount = 0;
         for (Sensor* sensor : controller->getSensors()) {
             if (sensor->getArea() == area) {
                 //add sensor to parking area
-                if (dynamic_cast<PresenceSensor*>(sensor))
+                if (dynamic_cast<PresenceSensor*>(sensor)) {
                     parkingCount++;
+                } else if (dynamic_cast<LightSensor*>(sensor)) {
+                    LightSensor* light = dynamic_cast<LightSensor*>(sensor);
+                    QString brightness = QString::fromStdString(
+                        std::to_string(light->getBrightness().end()->second));
+                    SensorInfo* sensorInfo = new SensorInfo(new QLabel(QString::fromStdString(
+                                                                sensor->getName())),
+                                                            new QLabel(brightness),
+                                                            this);
+                    areaLayout->addWidget(sensorInfo);
+                } else if (dynamic_cast<InOutSensor*>(sensor)) {
+                    InOutSensor* inOutSens = dynamic_cast<InOutSensor*>(sensor);
+                    QString inOut = QString::fromStdString(
+                        "IN: " + std::to_string(inOutSens->getInOut().end()->second.at(0))
+                        + " OUT: " + std::to_string(inOutSens->getInOut().end()->second.at(1)));
+                    SensorInfo* sensorInfo = new SensorInfo(new QLabel(QString::fromStdString(
+                                                                sensor->getName())),
+                                                            new QLabel(inOut),
+                                                            this);
+                    areaLayout->addWidget(sensorInfo);
+                } else if (dynamic_cast<AirQualitySensor*>(sensor)) {
+                    AirQualitySensor* air = dynamic_cast<AirQualitySensor*>(sensor);
+                    QString airQuality = QString::fromStdString(
+                        //ctime per to string in caso
+                        std::to_string(air->getAirStatus(air->getValues().end()->first)));
+                    SensorInfo* sensorInfo = new SensorInfo(new QLabel(QString::fromStdString(
+                                                                sensor->getName())),
+                                                            new QLabel(airQuality),
+                                                            this);
+                    areaLayout->addWidget(sensorInfo);
+                } else if (dynamic_cast<ExplosiveGasSensor*>(sensor)) {
+                    ExplosiveGasSensor* gas = dynamic_cast<ExplosiveGasSensor*>(sensor);
+                    QString gasLevel = QString::fromStdString(
+                        std::to_string(gas->getAirStatus(gas->getValues().end()->first)));
+                    SensorInfo* sensorInfo = new SensorInfo(new QLabel(QString::fromStdString(
+                                                                sensor->getName())),
+                                                            new QLabel(gasLevel),
+                                                            this);
+                    areaLayout->addWidget(sensorInfo);
+                } else if (dynamic_cast<TempHumSensor*>(sensor)) {
+                    TempHumSensor* temp = dynamic_cast<TempHumSensor*>(sensor);
+                    QString temperature = QString::fromStdString(
+                        std::to_string(temp->getTempHum().end()->second.at(0)) + "°C" + "\n"
+                        + std::to_string(temp->getTempHum().end()->second.at(1)) + "%");
+                    SensorInfo* sensorInfo = new SensorInfo(new QLabel(QString::fromStdString(
+                                                                sensor->getName())),
+                                                            new QLabel(temperature),
+                                                            this);
+                    areaLayout->addWidget(sensorInfo);
+                }
             }
         }
-        qDebug() << "Area: " << QString::fromStdString(area) << " - Sensors: " << parkingCount;
-        parkingAreas.push_back(new ParkingLots(this, area, parkingCount));
-        parkLayout->addWidget(parkingAreas.back());
+        if (parkingCount > 0) {
+            qDebug() << "Area: " << QString::fromStdString(area) << " - Sensors: " << parkingCount;
+            parkingAreas.push_back(new ParkingLots(this, area, parkingCount));
+            areaLayout->addWidget(parkingAreas.back());
+        }
+        parkLayout->addWidget(areaSpace);
     }
 
-    parkLayout->setAlignment(Qt::AlignBottom);
+    parkLayout->setAlignment(Qt::AlignBottom | Qt::AlignCenter);
 
     // LAYOUT GENERALE
     layout->addWidget(topBar);
@@ -59,8 +118,7 @@ ParkingPage::ParkingPage(Controller* con, QWidget* parent)
     setLayout(layout);
 }
 
-void ParkingPage::editMode()
-{
+void ParkingPage::editMode(){
     qDebug() << "Edit mode activated!";
     SensorEditorDialog* sensorEditor = new SensorEditorDialog(controller, this);
     sensorEditor->exec();

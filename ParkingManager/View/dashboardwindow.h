@@ -6,14 +6,12 @@
 #include <QWidget>
 
 #include "../Controller/controller.h"
-#include "sensorbar.h"
 
 class DashboardWindow : public QWidget
 {
     Q_OBJECT
 private:
     Controller* controller;
-    SensorBar* sensorBar;
     QStackedWidget* contentWindow;
 
 public:

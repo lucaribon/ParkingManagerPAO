@@ -467,7 +467,7 @@ void SensorEditor::pushSensor(const QString name, const QString sensorType, cons
     } else if (sensorType == "Temperature and Humidity") {
         qDebug() << "Adding tempHum sensor";
         controller->addSensor(
-            new TempHumSensor(sensorType.toStdString() + " - " + name.toStdString(),
+            new TempHumSensor("TempHum - " + name.toStdString(),
                               area.toStdString()));
     } else if (sensorType == "Air Quality") {
         qDebug() << "Adding airQuality sensor";
