@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     Controller/controller.cpp \
+    Model/JSON/JSONutil.cpp \
     Model/airQualitySensor.cpp \
     Model/airSensor.cpp \
     Model/explosiveGasSensor.cpp \
@@ -36,6 +37,10 @@ SOURCES += \
 
 HEADERS += \
     Controller/controller.h \
+    Model/IConstSensorVisitor.h \
+    Model/ISensorVisitor.h \
+    Model/JSON/JSONutil.h \
+    Model/JSON/JSONutil.h \
     Model/airQualitySensor.h \
     Model/airSensor.h \
     Model/explosiveGasSensor.h \

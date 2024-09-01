@@ -1,6 +1,6 @@
 #include "inOutSensor.h"
 
-InOutSensor::InOutSensor(std::string n, std::string a) : Sensor(n,a) {}
+InOutSensor::InOutSensor(std::string n, std::string a, std::string i) : Sensor(n,a, i!="" ? i : (QUuid::createUuid().toString()).toStdString()) {}
 InOutSensor::~InOutSensor() =default;
 
 std::map<time_t,std::vector<int>> InOutSensor::getInOut() const {return inOut;}
@@ -37,4 +37,10 @@ void InOutSensor::generateSimulationData() {
     }
 }
 
+void InOutSensor::accept(ISensorVisitor* handler){
+    handler->handle(this);
+}
 
+void InOutSensor::accept(IConstSensorVisitor* handler) const {
+    handler->handle(this);
+}
