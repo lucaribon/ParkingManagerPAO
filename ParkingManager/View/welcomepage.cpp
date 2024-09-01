@@ -43,7 +43,7 @@ void WelcomePage::openFile()
         //emit fileOpened(filePath);
     }
 
-    controller->setPath(filePath);
+    controller->setPath(filePath.toStdString());
 }
 
 void WelcomePage::newParking()

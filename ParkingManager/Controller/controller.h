@@ -7,6 +7,8 @@
 
 #include "../Model/sensor.h"
 
+enum sensType {AirQuality, ExplosiveGas, InOut, Light, Presence, TempHum};
+
 class Controller : public QObject
 {
 private:

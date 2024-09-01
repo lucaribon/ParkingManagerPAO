@@ -5,27 +5,28 @@
 
 #include "../IConstSensorVisitor.h"
 #include "../ISensorVisitor.h"
+#include "../sensor.h"
 
 class JSONutil : IConstSensorVisitor, ISensorVisitor {
 private:
     QJsonDocument* document;
-    std::string path;
+    QString path;
 public:
-    JSONutil(std::string);
+    JSONutil(QString);
     virtual ~JSONutil() =default;
 
     QJsonDocument getDocument() const;
-    std::string getPath() const;
+    QString getPath() const;
 
     void setDocument(QJsonDocument);
-    void setPath(std::string);
+    void setPath(QString);
 
-    virtual void handle(AirQualitySensor*) override;
-    virtual void handle(EsplosiveGasSensor*) override;
-    virtual void handle(InOutSensor*) override;
-    virtual void handle(LightSensor*) override;
-    virtual void handle(PresenceSensor*) override;
-    virtual void handle(TempHumSensor*) override;
+    virtual void handle(const AirQualitySensor*) override;
+    virtual void handle(const ExplosiveGasSensor*) override;
+    virtual void handle(const InOutSensor*) override;
+    virtual void handle(const LightSensor*) override;
+    virtual void handle(const PresenceSensor*) override;
+    virtual void handle(const TempHumSensor*) override;
     std::vector<Sensor*> getSensorsFromJSON() const;
 };
 
