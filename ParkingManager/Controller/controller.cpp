@@ -53,11 +53,12 @@ std::string Controller::getPath(){
 std::vector<Sensor*> Controller::searchSensor(const std::string query){
     std::vector<Sensor*> matchingSensors;
     if(!query.empty()){
-        QRegularExpression queryExp("^" + QString::fromStdString(query));
-        for(Sensor* sens : sensors){
+        QRegularExpression queryExp(".*\\b" + QString::fromStdString(query) + "\\b.*");
+        for (Sensor *sens : sensors) {
             QRegularExpressionMatch match = queryExp.match(QString::fromStdString(sens->getName()),
                                                            Qt::CaseInsensitive);
-            if(match.hasMatch()){
+
+            if (match.hasMatch()) {
                 matchingSensors.push_back(sens);
             }
         }

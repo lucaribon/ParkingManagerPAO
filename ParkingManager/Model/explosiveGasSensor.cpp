@@ -42,7 +42,7 @@ void ExplosiveGasSensor::generateSimulationData() {
 
             airflow[tempT] = 0.9 + (float)((std::rand()) / (1.1 - 0.9 + 1));
 
-            std::vector<float> tempVal;
+            std::vector<float> tempVal = std::vector<float>(4);
             tempVal[0] = (float)(std::rand()) / (7);
             tempVal[1] = (float)(std::rand()) / (4);
             tempVal[2] = (float)(std::rand()) / (3.2);
