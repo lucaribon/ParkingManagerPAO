@@ -50,6 +50,7 @@ HEADERS += \
     Model/tempHumSensor.h \
     View/applogo.h \
     View/dashboardwindow.h \
+    View/graphpanel.h \
     View/graphwindow.h \
     View/mainwindow.h \
     View/parkinglots.h \
