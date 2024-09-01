@@ -22,6 +22,7 @@ SOURCES += \
     View/applogo.cpp \
     View/dashboardwindow.cpp \
     View/graphwindow.cpp \
+    View/sensoreditor.cpp \
     main.cpp \
     View/mainwindow.cpp \
     View/parkinglots.cpp \
@@ -29,7 +30,6 @@ SOURCES += \
     View/parkingslot.cpp \
     View/reportwindow.cpp \
     View/sensorbar.cpp \
-    View/sensoreditor.cpp \
     View/sensoreditordialog.cpp \
     View/sensorinfo.cpp \
     View/sidemenu.cpp \
