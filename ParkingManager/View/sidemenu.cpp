@@ -18,10 +18,6 @@ SideMenu::SideMenu(QWidget* parent): QListWidget(parent) {
     graphs = new QListWidgetItem(graphIcon, "Graphs");
     addItem(graphs);
 
-    QIcon reportIcon(":/assets/icons/report.svg");
-    reports = new QListWidgetItem(reportIcon, "Reports");
-    addItem(reports);
-
     this->setContentsMargins(16, 16, 16, 16);
     setSpacing(4);
     setCurrentItem(dashboard);

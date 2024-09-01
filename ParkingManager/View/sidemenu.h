@@ -12,7 +12,6 @@ class SideMenu : public QListWidget
 private:
     QListWidgetItem* parkingApp;
     QListWidgetItem* dashboard;
-    QListWidgetItem* reports;
     QListWidgetItem* graphs;
 public:
     SideMenu(QWidget* parent = 0);

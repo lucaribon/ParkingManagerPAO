@@ -28,11 +28,10 @@ MainWindow::MainWindow(QWidget* parent)
 
     dashWindow = new DashboardWindow(controller);
     graphWindow = new GraphWindow();
-    reportWindow = new ReportWindow();
 
     contentWindow->insertWidget(0, dashWindow);
     contentWindow->insertWidget(1, graphWindow);
-    contentWindow->insertWidget(2, reportWindow);
+    //contentWindow->insertWidget(2, reportWindow);
 
     contentWindow->setCurrentIndex(0); // finestra di default
 
