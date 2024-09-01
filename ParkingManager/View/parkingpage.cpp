@@ -29,17 +29,22 @@ ParkingPage::ParkingPage(Controller* con, QWidget* parent)
     QHBoxLayout* layoutTopBar = new QHBoxLayout(topBar);
     // BARRA SENSORI
     //save button
-    QPushButton* saveButton = new QPushButton(QIcon(":/assets/icons/save-file.svg"), "");
-    saveButton->setFixedSize(35, 35);
+    QPushButton* saveButton = new QPushButton(QIcon(":/assets/icons/save-file.svg"), "Save");
+    //saveButton->setFixedSize(35, 35);
 
-    QPushButton* editButton = new QPushButton(QIcon(":/assets/icons/edit.svg"), "");
-    editButton->setFixedSize(35, 35);
+    QPushButton* editButton = new QPushButton(QIcon(":/assets/icons/edit.svg"), "Edit");
+    //editButton->setFixedSize(35, 35);
+
+    QPushButton* generateButton = new QPushButton(QIcon(":/assets/icons/player-play.svg"),
+                                                  "Generate");
+    //generateButton->setFixedSize(35, 35);
 
     connect(editButton, &QPushButton::clicked, this, &ParkingPage::editMode);
     connect(saveButton, &QPushButton::clicked, this, &ParkingPage::saveFile);
 
     layoutTopBar->addWidget(saveButton);
     layoutTopBar->addWidget(editButton);
+    layoutTopBar->addWidget(generateButton);
 
     // PARCHEGGIO
     QFrame* parkSpace = new QFrame();

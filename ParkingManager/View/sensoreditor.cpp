@@ -560,6 +560,8 @@ void SensorEditor::editSensor(Sensor *sensor,
 
 void Controller::generateSimulation(){
     for(auto s : sensors){
+        qDebug() << "Generating simulation data for sensor: "
+                 << QString::fromStdString(s->getName());
         s->generateSimulationData();
     }
 }

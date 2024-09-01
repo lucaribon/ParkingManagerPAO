@@ -4,10 +4,13 @@
 #include "../Model/IConstSensorVisitor.h"
 
 #include <QChart>
+#include <QWidget>
+#include "../Model/sensor.h"
 
 class GraphPanel : public QWidget, public IConstSensorVisitor {
 private:
-    std::vector<QChart*> charts;
+    QChart* charts;
+
 public:
     GraphPanel(Sensor*);
     ~GraphPanel();

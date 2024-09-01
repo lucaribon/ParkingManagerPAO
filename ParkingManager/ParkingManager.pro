@@ -21,6 +21,7 @@ SOURCES += \
     Model/tempHumSensor.cpp \
     View/applogo.cpp \
     View/dashboardwindow.cpp \
+    View/graphpanel.cpp \
     View/graphwindow.cpp \
     View/sensoreditor.cpp \
     main.cpp \
