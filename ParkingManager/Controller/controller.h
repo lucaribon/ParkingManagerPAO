@@ -18,7 +18,7 @@ private:
     std::set<std::string> areas;
     QObject* parent;
     std::string path;
-    JSONutil jUtil;
+    //JSONutil jUtil;
 public:
     explicit Controller(QObject* =nullptr);
 

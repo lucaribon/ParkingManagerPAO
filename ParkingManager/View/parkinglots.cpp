@@ -5,7 +5,12 @@ ParkingLots::ParkingLots(QWidget *parent, std::string area, int numSlot)
     : QFrame{parent}
 {
     //TEMP PARAMETERS
-    int numSlotForColumn = numSlot / 2;
+    int numSlotForColumn;
+    if (numSlot % 2 == 0) {
+        numSlotForColumn = numSlot / 2;
+    } else {
+        numSlotForColumn = (numSlot / 2) + 1;
+    }
 
     QFrame *verticalLine = new QFrame();
     verticalLine->setFrameShape(QFrame::VLine);

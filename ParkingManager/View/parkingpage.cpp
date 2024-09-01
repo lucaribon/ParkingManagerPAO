@@ -45,7 +45,7 @@ ParkingPage::ParkingPage(Controller* con, QWidget* parent)
                     parkingCount++;
             }
         }
-
+        qDebug() << "Area: " << QString::fromStdString(area) << " - Sensors: " << parkingCount;
         parkingAreas.push_back(new ParkingLots(this, area, parkingCount));
         parkLayout->addWidget(parkingAreas.back());
     }
