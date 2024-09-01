@@ -18,5 +18,4 @@ public:
     virtual void handle(TempHumSensor*) =0;
 };
 
-
 #endif // ISENSORVISITOR_H
