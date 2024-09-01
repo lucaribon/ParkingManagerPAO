@@ -29,6 +29,8 @@ controlflow {
 <ref refid="dbab14f5-dbc1-11ee-917b-6fe649a41c00"/>
 <ref refid="266564a9-dbc3-11ee-b829-6fe649a41c00"/>
 <ref refid="a290b876-1855-11ef-819e-fb1d0593433f"/>
+<ref refid="1998b128-6887-11ef-821a-91a72f86a557"/>
+<ref refid="5bd16f8f-6887-11ef-97da-91a72f86a557"/>
 <ref refid="47aea12f-dbc2-11ee-a22c-6fe649a41c00"/>
 <ref refid="4d0623fc-dbc2-11ee-bd3a-6fe649a41c00"/>
 <ref refid="51d6b861-dbc2-11ee-b4e2-6fe649a41c00"/>
@@ -46,6 +48,28 @@ controlflow {
 <name>
 <val>Sensor</val>
 </name>
+<ownedAttribute>
+<reflist>
+<ref refid="529dc86b-6888-11ef-acb7-91a72f86a557"/>
+<ref refid="69eb414c-6888-11ef-8b07-91a72f86a557"/>
+<ref refid="6f090ef1-6888-11ef-9f73-91a72f86a557"/>
+</reflist>
+</ownedAttribute>
+<ownedOperation>
+<reflist>
+<ref refid="83df9b7c-6888-11ef-8c9d-91a72f86a557"/>
+<ref refid="904a56c1-6888-11ef-b8c3-91a72f86a557"/>
+<ref refid="d03d4971-6888-11ef-a425-91a72f86a557"/>
+<ref refid="e135da0e-6888-11ef-a808-91a72f86a557"/>
+<ref refid="e5005952-6888-11ef-9341-91a72f86a557"/>
+<ref refid="e8199bcc-6888-11ef-b563-91a72f86a557"/>
+<ref refid="11f2ebdb-6889-11ef-84d2-91a72f86a557"/>
+<ref refid="15cf7191-6889-11ef-8e15-91a72f86a557"/>
+<ref refid="1b4ee9a9-6889-11ef-8c16-91a72f86a557"/>
+<ref refid="32f6eeb2-6889-11ef-a9ec-91a72f86a557"/>
+<ref refid="43b12c16-6889-11ef-94e6-91a72f86a557"/>
+</reflist>
+</ownedOperation>
 <presentation>
 <reflist>
 <ref refid="b602376f-dbba-11ee-ba5a-6fe649a41c00"/>
@@ -54,21 +78,22 @@ controlflow {
 <supplierDependency>
 <reflist>
 <ref refid="49268dd2-dbc2-11ee-81cb-6fe649a41c00"/>
+<ref refid="e05bb15b-688d-11ef-bc7b-91a72f86a557"/>
 </reflist>
 </supplierDependency>
 </Class>
 <ClassItem id="b602376f-dbba-11ee-ba5a-6fe649a41c00">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 217.20103939944804, 180.6088785885212)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 138.20103939944832, -92.53037252543882)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
 </top-left>
 <width>
-<val>100.0</val>
+<val>259.48598002991343</val>
 </width>
 <height>
-<val>57.0</val>
+<val>295.0</val>
 </height>
 <diagram>
 <ref refid="abed2eca-dbba-11ee-a3e2-6fe649a41c00"/>
@@ -84,8 +109,24 @@ controlflow {
 </reflist>
 </clientDependency>
 <name>
-<val>SensorePresenza</val>
+<val>PresenceSensor</val>
 </name>
+<ownedAttribute>
+<reflist>
+<ref refid="d546fced-688a-11ef-bc8d-91a72f86a557"/>
+</reflist>
+</ownedAttribute>
+<ownedOperation>
+<reflist>
+<ref refid="e8379083-688a-11ef-965b-91a72f86a557"/>
+<ref refid="f3a0b025-688a-11ef-83ff-91a72f86a557"/>
+<ref refid="01d68085-688b-11ef-839d-91a72f86a557"/>
+<ref refid="08c06824-688b-11ef-919a-91a72f86a557"/>
+<ref refid="11570d64-688b-11ef-b218-91a72f86a557"/>
+<ref refid="1973624a-688b-11ef-a7f1-91a72f86a557"/>
+<ref refid="1b88cd84-688b-11ef-b0b3-91a72f86a557"/>
+</reflist>
+</ownedOperation>
 <presentation>
 <reflist>
 <ref refid="bb10eada-dbba-11ee-8728-6fe649a41c00"/>
@@ -94,16 +135,16 @@ controlflow {
 </Class>
 <ClassItem id="bb10eada-dbba-11ee-8728-6fe649a41c00">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, -2.745044857826346, 820.1752247708552)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 145.7979977185722, 461.4818406878265)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
 </top-left>
 <width>
-<val>141.0</val>
+<val>361.0</val>
 </width>
 <height>
-<val>57.0</val>
+<val>193.0</val>
 </height>
 <diagram>
 <ref refid="abed2eca-dbba-11ee-a3e2-6fe649a41c00"/>
@@ -119,8 +160,24 @@ controlflow {
 </reflist>
 </clientDependency>
 <name>
-<val>SensoreTemperatura</val>
+<val>TempHumSensor</val>
 </name>
+<ownedAttribute>
+<reflist>
+<ref refid="7e793ff8-688b-11ef-9813-91a72f86a557"/>
+</reflist>
+</ownedAttribute>
+<ownedOperation>
+<reflist>
+<ref refid="b835cafc-688b-11ef-8b4b-91a72f86a557"/>
+<ref refid="ce1eef92-688b-11ef-90fd-91a72f86a557"/>
+<ref refid="d67390d1-688b-11ef-9b6a-91a72f86a557"/>
+<ref refid="5a54cddc-688c-11ef-bbd6-91a72f86a557"/>
+<ref refid="9451c822-688c-11ef-a68e-91a72f86a557"/>
+<ref refid="9c512272-688c-11ef-95ef-91a72f86a557"/>
+<ref refid="9ec47817-688c-11ef-973c-91a72f86a557"/>
+</reflist>
+</ownedOperation>
 <presentation>
 <reflist>
 <ref refid="c80b685d-dbba-11ee-9548-6fe649a41c00"/>
@@ -129,16 +186,16 @@ controlflow {
 </Class>
 <ClassItem id="c80b685d-dbba-11ee-9548-6fe649a41c00">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 164.60697088079795, 820.175224770855)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 529.6265021307979, 461.4818406878265)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
 </top-left>
 <width>
-<val>171.0</val>
+<val>429.0</val>
 </width>
 <height>
-<val>57.0</val>
+<val>193.0</val>
 </height>
 <diagram>
 <ref refid="abed2eca-dbba-11ee-a3e2-6fe649a41c00"/>
@@ -150,14 +207,14 @@ controlflow {
 <Class id="ce542be1-dbba-11ee-a303-6fe649a41c00">
 <clientDependency>
 <reflist>
-<ref refid="59d74aad-dbc2-11ee-8d5e-6fe649a41c00"/>
+<ref refid="e05bb15b-688d-11ef-bc7b-91a72f86a557"/>
 </reflist>
 </clientDependency>
 <isAbstract>
 <val>1</val>
 </isAbstract>
 <name>
-<val>SensoreAria</val>
+<val>AirSensor</val>
 </name>
 <note>
 <val>getStatus ritorna lo stato (es. good, bad air, medium)</val>
@@ -165,11 +222,20 @@ controlflow {
 <ownedAttribute>
 <reflist>
 <ref refid="8b258716-5d38-11ef-acee-93d24b3ce7da"/>
+<ref refid="c6103379-688c-11ef-89a3-91a72f86a557"/>
+<ref refid="f9bd216a-688c-11ef-ae9e-91a72f86a557"/>
 </reflist>
 </ownedAttribute>
 <ownedOperation>
 <reflist>
-<ref refid="42c1b89c-5d38-11ef-8baf-93d24b3ce7da"/>
+<ref refid="023095e0-688d-11ef-8e6b-91a72f86a557"/>
+<ref refid="12e41bf5-688d-11ef-8b84-91a72f86a557"/>
+<ref refid="2015d85c-688d-11ef-811f-91a72f86a557"/>
+<ref refid="40d6fefe-688d-11ef-8f04-91a72f86a557"/>
+<ref refid="4bc88565-688d-11ef-b826-91a72f86a557"/>
+<ref refid="64e9c2d1-688d-11ef-9334-91a72f86a557"/>
+<ref refid="ab4de835-688d-11ef-a182-91a72f86a557"/>
+<ref refid="b668e4cb-688d-11ef-a800-91a72f86a557"/>
 </reflist>
 </ownedOperation>
 <presentation>
@@ -180,22 +246,21 @@ controlflow {
 <supplierDependency>
 <reflist>
 <ref refid="5f4f54ca-dbc2-11ee-8662-6fe649a41c00"/>
-<ref refid="52d54bcd-dbc3-11ee-b00a-6fe649a41c00"/>
 </reflist>
 </supplierDependency>
 </Class>
 <ClassItem id="ce546bb8-dbba-11ee-9b87-6fe649a41c00">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 530.0230833713306, 406.75718787548163)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 485.085698672711, -92.53037252543886)</val>
 </matrix>
 <top-left>
-<val>(0.0, 0.0)</val>
+<val>(9.340479254618913, -2.842170943040401e-14)</val>
 </top-left>
 <width>
-<val>128.0</val>
+<val>355.6595207453811</val>
 </width>
 <height>
-<val>91.0</val>
+<val>227.00000000000003</val>
 </height>
 <diagram>
 <ref refid="abed2eca-dbba-11ee-a3e2-6fe649a41c00"/>
@@ -211,8 +276,18 @@ controlflow {
 </reflist>
 </clientDependency>
 <name>
-<val>SensoreQualitaAria</val>
+<val>AirQualitySensor</val>
 </name>
+<ownedOperation>
+<reflist>
+<ref refid="7d569a53-688e-11ef-a815-91a72f86a557"/>
+<ref refid="851eccb3-688e-11ef-9bc2-91a72f86a557"/>
+<ref refid="19295d23-688f-11ef-839e-91a72f86a557"/>
+<ref refid="22a89ebc-688f-11ef-8c2e-91a72f86a557"/>
+<ref refid="6a396131-688f-11ef-a152-91a72f86a557"/>
+<ref refid="6c037f3c-688f-11ef-ba07-91a72f86a557"/>
+</reflist>
+</ownedOperation>
 <presentation>
 <reflist>
 <ref refid="db345567-dbba-11ee-b87f-6fe649a41c00"/>
@@ -221,16 +296,16 @@ controlflow {
 </Class>
 <ClassItem id="db345567-dbba-11ee-b87f-6fe649a41c00">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 384.96683609675705, 691.4399260962934)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 529.6265021307979, 204.2249827214329)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
 </top-left>
 <width>
-<val>160.0</val>
+<val>289.0</val>
 </width>
 <height>
-<val>57.0</val>
+<val>160.54612933439216</val>
 </height>
 <diagram>
 <ref refid="abed2eca-dbba-11ee-a3e2-6fe649a41c00"/>
@@ -246,8 +321,24 @@ controlflow {
 </reflist>
 </clientDependency>
 <name>
-<val>SensoreEntrataUscita</val>
+<val>InOutSensor</val>
 </name>
+<ownedAttribute>
+<reflist>
+<ref refid="5ea398bc-688a-11ef-99f0-91a72f86a557"/>
+</reflist>
+</ownedAttribute>
+<ownedOperation>
+<reflist>
+<ref refid="85d5df2a-688a-11ef-985f-91a72f86a557"/>
+<ref refid="8ea35877-688a-11ef-acab-91a72f86a557"/>
+<ref refid="9b9f794f-688a-11ef-94f9-91a72f86a557"/>
+<ref refid="b2063aef-688a-11ef-8521-91a72f86a557"/>
+<ref refid="b6b63602-688a-11ef-86f7-91a72f86a557"/>
+<ref refid="c013a045-688a-11ef-877b-91a72f86a557"/>
+<ref refid="c3282f27-688a-11ef-9900-91a72f86a557"/>
+</reflist>
+</ownedOperation>
 <presentation>
 <reflist>
 <ref refid="dbab14f5-dbc1-11ee-917b-6fe649a41c00"/>
@@ -256,16 +347,16 @@ controlflow {
 </Class>
 <ClassItem id="dbab14f5-dbc1-11ee-917b-6fe649a41c00">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, -212.90816098848416, 820.1752247708548)</val>
+<val>(1.0, 0.0, 0.0, 1.0, -172.26791640540196, 467.9773729999741)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
 </top-left>
 <width>
-<val>178.0</val>
+<val>295.0</val>
 </width>
 <height>
-<val>57.0</val>
+<val>193.0</val>
 </height>
 <diagram>
 <ref refid="abed2eca-dbba-11ee-a3e2-6fe649a41c00"/>
@@ -288,10 +379,10 @@ controlflow {
 <ref refid="49268dd2-dbc2-11ee-81cb-6fe649a41c00"/>
 </subject>
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, -177.56974996391335, 350.26027600713655)</val>
+<val>(1.0, 0.0, 0.0, 1.0, -150.86271871391313, 350.26027600713644)</val>
 </matrix>
 <points>
-<val>[(444.77078936336136, -112.65139741861535), (444.77078936336136, 26.140110681867043), (53.66158897542914, 26.140110681867043), (53.66158897542914, 469.91494876371826)]</val>
+<val>[(418.806748128318, -147.79064853257526), (418.806748128318, 26.140110681867043), (126.09480230851116, 26.140110681867043), (126.09480230851116, 117.71709699283764)]</val>
 </points>
 <head-connection>
 <ref refid="b602376f-dbba-11ee-ba5a-6fe649a41c00"/>
@@ -338,7 +429,7 @@ controlflow {
 <val>(1.0, 0.0, 0.0, 1.0, -62.05899969799783, 194.39601538243542)</val>
 </matrix>
 <points>
-<val>[(329.2600390974458, 45.136763312074805), (329.2600390974458, 182.00437130656812), (129.8139548401715, 182.00437130656812), (129.8139548401715, 625.7792093884196)]</val>
+<val>[(330.0030291124027, 10.48460546388992), (330.0030291124027, 182.00437130656812), (388.3569974165701, 182.00437130656812), (388.3569974165701, 267.08582530539104)]</val>
 </points>
 <head-connection>
 <ref refid="47aea12f-dbc2-11ee-a22c-6fe649a41c00"/>
@@ -382,7 +473,7 @@ controlflow {
 <val>(1.0, 0.0, 0.0, 1.0, 359.0287026536994, 455.41156697002066)</val>
 </matrix>
 <points>
-<val>[(-91.82766325425138, -215.87878827551037), (-91.82766325425138, -79.01118028101712), (-108.92173177290141, -79.01118028101712), (-108.92173177290141, 364.7636578008345)]</val>
+<val>[(-91.08467323929449, -250.53094612369523), (-91.08467323929449, -79.01118028101712), (385.09779947709865, -79.01118028101712), (385.09779947709865, 6.070273717805833)]</val>
 </points>
 <head-connection>
 <ref refid="4d0623fc-dbc2-11ee-bd3a-6fe649a41c00"/>
@@ -405,7 +496,7 @@ controlflow {
 </supplier>
 <supplierDependency>
 <reflist>
-<ref refid="59d74aad-dbc2-11ee-8d5e-6fe649a41c00"/>
+<ref refid="e4c3ac86-688d-11ef-ac6d-91a72f86a557"/>
 </reflist>
 </supplierDependency>
 </Dependency>
@@ -416,43 +507,22 @@ controlflow {
 <horizontal>
 <val>0</val>
 </horizontal>
-<orthogonal>
-<val>1</val>
-</orthogonal>
 <subject>
-<ref refid="59d74aad-dbc2-11ee-8d5e-6fe649a41c00"/>
+<ref refid="e05bb15b-688d-11ef-bc7b-91a72f86a557"/>
 </subject>
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 961.3893125616625, 385.56343883990723)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 990.0557023524608, 178.43618894301304)</val>
 </matrix>
 <points>
-<val>[(-694.1882731622145, -146.03066014539695), (-694.1882731622145, -9.163052150903752), (-371.5094192278149, -9.163052150903752), (-371.5094192278149, 21.1937490355744)]</val>
+<val>[(-676.4983870010857, 24.033438531548057), (-676.4983870010857, 175.59589254385182), (-522.004832391775, 175.5958925438518), (-522.004832391775, -239.18839386098156), (-495.62952442513114, -239.18839386098156)]</val>
 </points>
 <head-connection>
-<ref refid="51d6b861-dbc2-11ee-b4e2-6fe649a41c00"/>
+<ref refid="b602376f-dbba-11ee-ba5a-6fe649a41c00"/>
 </head-connection>
 <tail-connection>
 <ref refid="ce546bb8-dbba-11ee-9b87-6fe649a41c00"/>
 </tail-connection>
 </DependencyItem>
-<Dependency id="59d74aad-dbc2-11ee-8d5e-6fe649a41c00">
-<client>
-<ref refid="ce542be1-dbba-11ee-a303-6fe649a41c00"/>
-</client>
-<presentation>
-<reflist>
-<ref refid="584a9524-dbc2-11ee-ba47-6fe649a41c00"/>
-</reflist>
-</presentation>
-<supplier>
-<ref refid="55d6219f-dbc2-11ee-b3a5-6fe649a41c00"/>
-</supplier>
-<supplierDependency>
-<reflist>
-<ref refid="ab460775-1855-11ef-a466-fb1d0593433f"/>
-</reflist>
-</supplierDependency>
-</Dependency>
 <DependencyItem id="5d31e164-dbc2-11ee-938d-6fe649a41c00">
 <diagram>
 <ref refid="abed2eca-dbba-11ee-a3e2-6fe649a41c00"/>
@@ -467,10 +537,10 @@ controlflow {
 <ref refid="5f4f54ca-dbc2-11ee-8662-6fe649a41c00"/>
 </subject>
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 517.1545001236134, 607.7765172112638)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 839.6642898612679, 603.1214320123685)</val>
 </matrix>
 <points>
-<val>[(76.8685832477172, -110.01932933578217), (76.8685832477172, -53.929672687603784), (-52.18766402685645, -53.929672687603784), (-52.18766402685645, 83.66340888502964)]</val>
+<val>[(-167.4083515612474, -468.6518045378074), (-167.4083515612474, -398.8964492909355), (-165.53778773046986, -398.8964492909355)]</val>
 </points>
 <head-connection>
 <ref refid="ce546bb8-dbba-11ee-9b87-6fe649a41c00"/>
@@ -491,16 +561,31 @@ controlflow {
 <supplier>
 <ref refid="ce542be1-dbba-11ee-a303-6fe649a41c00"/>
 </supplier>
+<supplierDependency>
+<reflist>
+<ref refid="5bca6017-688e-11ef-b4e0-91a72f86a557"/>
+</reflist>
+</supplierDependency>
 </Dependency>
 <Class id="26651309-dbc3-11ee-b6ef-6fe649a41c00">
 <clientDependency>
 <reflist>
-<ref refid="52d54bcd-dbc3-11ee-b00a-6fe649a41c00"/>
+<ref refid="5bca6017-688e-11ef-b4e0-91a72f86a557"/>
 </reflist>
 </clientDependency>
 <name>
-<val>SensoreGas</val>
+<val>ExplosiveGasSensor</val>
 </name>
+<ownedOperation>
+<reflist>
+<ref refid="511f422b-688f-11ef-83a8-91a72f86a557"/>
+<ref refid="571961c3-688f-11ef-89f2-91a72f86a557"/>
+<ref refid="5f6851f6-688f-11ef-b44d-91a72f86a557"/>
+<ref refid="63c2e4d0-688f-11ef-8ef8-91a72f86a557"/>
+<ref refid="77bc8bf2-688f-11ef-8e3a-91a72f86a557"/>
+<ref refid="78662a11-688f-11ef-84c7-91a72f86a557"/>
+</reflist>
+</ownedOperation>
 <presentation>
 <reflist>
 <ref refid="266564a9-dbc3-11ee-b829-6fe649a41c00"/>
@@ -509,16 +594,16 @@ controlflow {
 </Class>
 <ClassItem id="266564a9-dbc3-11ee-b829-6fe649a41c00">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 683.5116788261869, 691.4399260962934)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 842.6228381626063, 205.77111205582509)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
 </top-left>
 <width>
-<val>100.0</val>
+<val>313.0</val>
 </width>
 <height>
-<val>57.0</val>
+<val>159.0</val>
 </height>
 <diagram>
 <ref refid="abed2eca-dbba-11ee-a3e2-6fe649a41c00"/>
@@ -534,47 +619,48 @@ controlflow {
 <horizontal>
 <val>0</val>
 </horizontal>
-<orthogonal>
-<val>1</val>
-</orthogonal>
 <subject>
-<ref refid="52d54bcd-dbc3-11ee-b00a-6fe649a41c00"/>
+<ref refid="5bca6017-688e-11ef-b4e0-91a72f86a557"/>
 </subject>
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 557.666935324694, 615.5018963560112)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 879.3681313123487, 609.7659630261873)</val>
 </matrix>
 <points>
-<val>[(36.35614804663658, -117.7447084805296), (36.35614804663658, -61.655051832351205), (175.84474350149276, -61.655051832351205), (175.84474350149276, 75.93802974028222)]</val>
+<val>[(-207.11219301232825, -475.29633555162616), (-206.8228411604764, -435.66664279368683), (119.75470685025732, -435.66664279368683), (119.75470685025732, -403.99485097036217)]</val>
 </points>
 <head-connection>
-<ref refid="ce546bb8-dbba-11ee-9b87-6fe649a41c00"/>
+<ref refid="5d31e164-dbc2-11ee-938d-6fe649a41c00"/>
 </head-connection>
 <tail-connection>
 <ref refid="266564a9-dbc3-11ee-b829-6fe649a41c00"/>
 </tail-connection>
 </DependencyItem>
-<Dependency id="52d54bcd-dbc3-11ee-b00a-6fe649a41c00">
-<client>
-<ref refid="26651309-dbc3-11ee-b6ef-6fe649a41c00"/>
-</client>
-<presentation>
-<reflist>
-<ref refid="4f488155-dbc3-11ee-8d0f-6fe649a41c00"/>
-</reflist>
-</presentation>
-<supplier>
-<ref refid="ce542be1-dbba-11ee-a303-6fe649a41c00"/>
-</supplier>
-</Dependency>
 <Class id="a290716c-1855-11ef-971a-fb1d0593433f">
 <clientDependency>
 <reflist>
-<ref refid="ab460775-1855-11ef-a466-fb1d0593433f"/>
+<ref refid="e4c3ac86-688d-11ef-ac6d-91a72f86a557"/>
 </reflist>
 </clientDependency>
 <name>
-<val>SensoreLuminosità</val>
+<val>LightSensor</val>
 </name>
+<ownedAttribute>
+<reflist>
+<ref refid="7467b49d-6889-11ef-be46-91a72f86a557"/>
+</reflist>
+</ownedAttribute>
+<ownedOperation>
+<reflist>
+<ref refid="96ede0c0-6889-11ef-aaf3-91a72f86a557"/>
+<ref refid="ae824beb-6889-11ef-ab93-91a72f86a557"/>
+<ref refid="bab39aed-6889-11ef-a2b9-91a72f86a557"/>
+<ref refid="e331ee82-6889-11ef-a419-91a72f86a557"/>
+<ref refid="0e3fda38-688a-11ef-9382-91a72f86a557"/>
+<ref refid="1adffd2b-688a-11ef-8fe7-91a72f86a557"/>
+<ref refid="35d3b9e1-688a-11ef-8a70-91a72f86a557"/>
+<ref refid="3accd75e-688a-11ef-a51d-91a72f86a557"/>
+</reflist>
+</ownedOperation>
 <presentation>
 <reflist>
 <ref refid="a290b876-1855-11ef-819e-fb1d0593433f"/>
@@ -583,16 +669,16 @@ controlflow {
 </Class>
 <ClassItem id="a290b876-1855-11ef-819e-fb1d0593433f">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, -408.8970723766245, 820.175224770855)</val>
+<val>(1.0, 0.0, 0.0, 1.0, -474.91488972556857, 467.9773729999741)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
 </top-left>
 <width>
-<val>159.0</val>
+<val>277.0</val>
 </width>
 <height>
-<val>57.0</val>
+<val>210.0</val>
 </height>
 <diagram>
 <ref refid="abed2eca-dbba-11ee-a3e2-6fe649a41c00"/>
@@ -612,22 +698,1509 @@ controlflow {
 <val>0</val>
 </orthogonal>
 <subject>
-<ref refid="ab460775-1855-11ef-a466-fb1d0593433f"/>
+<ref refid="e4c3ac86-688d-11ef-ac6d-91a72f86a557"/>
 </subject>
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, -335.27337679572884, 547.5874232831815)</val>
+<val>(1.0, 0.0, 0.0, 1.0, -196.77337679572884, 503.07263077881714)</val>
 </matrix>
 <points>
-<val>[(602.4744161951771, -308.05464458867107), (602.4744161951767, -171.18703659417793), (5.876304419104315, -171.18703659417787), (3.6979532677889893, 272.58780148767346)]</val>
+<val>[(464.71740621013373, -298.1920099324914), (464.7174062101334, -126.6722440898136), (-143.69355551965532, -126.67224408981372), (-143.43650204250855, -35.09525777884306)]</val>
 </points>
 <head-connection>
-<ref refid="584a9524-dbc2-11ee-ba47-6fe649a41c00"/>
+<ref refid="51d6b861-dbc2-11ee-b4e2-6fe649a41c00"/>
 </head-connection>
 <tail-connection>
 <ref refid="a290b876-1855-11ef-819e-fb1d0593433f"/>
 </tail-connection>
 </DependencyItem>
-<Dependency id="ab460775-1855-11ef-a466-fb1d0593433f">
+<Property id="8b258716-5d38-11ef-acee-93d24b3ce7da">
+<class_>
+<ref refid="ce542be1-dbba-11ee-a303-6fe649a41c00"/>
+</class_>
+<name>
+<val># airFlow: map&lt;time_t,float&gt;</val>
+</name>
+</Property>
+<Class id="1996f3c2-6887-11ef-a107-91a72f86a557">
+<name>
+<val>ISensorVisitor</val>
+</name>
+<ownedOperation>
+<reflist>
+<ref refid="f2726ece-688f-11ef-9c95-91a72f86a557"/>
+<ref refid="f8e37944-688f-11ef-93b2-91a72f86a557"/>
+<ref refid="19ea152d-6890-11ef-ba84-91a72f86a557"/>
+<ref refid="1d605576-6890-11ef-a26e-91a72f86a557"/>
+<ref refid="21431c2c-6890-11ef-a731-91a72f86a557"/>
+<ref refid="254a9b9f-6890-11ef-b9eb-91a72f86a557"/>
+</reflist>
+</ownedOperation>
+<presentation>
+<reflist>
+<ref refid="1998b128-6887-11ef-821a-91a72f86a557"/>
+</reflist>
+</presentation>
+</Class>
+<ClassItem id="1998b128-6887-11ef-821a-91a72f86a557">
+<matrix>
+<val>(1.0, 0.0, 0.0, 1.0, -246.9430836711266, 2.8828125)</val>
+</matrix>
+<top-left>
+<val>(0.0, 0.0)</val>
+</top-left>
+<width>
+<val>299.0</val>
+</width>
+<height>
+<val>159.0</val>
+</height>
+<diagram>
+<ref refid="abed2eca-dbba-11ee-a3e2-6fe649a41c00"/>
+</diagram>
+<subject>
+<ref refid="1996f3c2-6887-11ef-a107-91a72f86a557"/>
+</subject>
+</ClassItem>
+<Class id="5bcfc773-6887-11ef-93e5-91a72f86a557">
+<name>
+<val>IConstSensorVisitor</val>
+</name>
+<ownedOperation>
+<reflist>
+<ref refid="2eccf362-6890-11ef-91f8-91a72f86a557"/>
+<ref refid="38fc5905-6890-11ef-b1e6-91a72f86a557"/>
+<ref refid="4121be93-6890-11ef-8d25-91a72f86a557"/>
+<ref refid="45e97281-6890-11ef-aae0-91a72f86a557"/>
+<ref refid="502e3d45-6890-11ef-8053-91a72f86a557"/>
+<ref refid="5426c9a9-6890-11ef-812f-91a72f86a557"/>
+</reflist>
+</ownedOperation>
+<presentation>
+<reflist>
+<ref refid="5bd16f8f-6887-11ef-97da-91a72f86a557"/>
+</reflist>
+</presentation>
+</Class>
+<ClassItem id="5bd16f8f-6887-11ef-97da-91a72f86a557">
+<matrix>
+<val>(1.0, 0.0, 0.0, 1.0, -246.9430836711266, 174.09932023250042)</val>
+</matrix>
+<top-left>
+<val>(0.0, 0.0)</val>
+</top-left>
+<width>
+<val>299.0</val>
+</width>
+<height>
+<val>159.0</val>
+</height>
+<diagram>
+<ref refid="abed2eca-dbba-11ee-a3e2-6fe649a41c00"/>
+</diagram>
+<subject>
+<ref refid="5bcfc773-6887-11ef-93e5-91a72f86a557"/>
+</subject>
+</ClassItem>
+<Property id="529dc86b-6888-11ef-acb7-91a72f86a557">
+<class_>
+<ref refid="b60201a1-dbba-11ee-bbe1-6fe649a41c00"/>
+</class_>
+<name>
+<val>name</val>
+</name>
+<typeValue>
+<val>string</val>
+</typeValue>
+<visibility>
+<val>private</val>
+</visibility>
+</Property>
+<Property id="69eb414c-6888-11ef-8b07-91a72f86a557">
+<class_>
+<ref refid="b60201a1-dbba-11ee-bbe1-6fe649a41c00"/>
+</class_>
+<name>
+<val>area</val>
+</name>
+<typeValue>
+<val>string</val>
+</typeValue>
+<visibility>
+<val>private</val>
+</visibility>
+</Property>
+<Property id="6f090ef1-6888-11ef-9f73-91a72f86a557">
+<class_>
+<ref refid="b60201a1-dbba-11ee-bbe1-6fe649a41c00"/>
+</class_>
+<name>
+<val>id</val>
+</name>
+<typeValue>
+<val>string</val>
+</typeValue>
+<visibility>
+<val>private</val>
+</visibility>
+</Property>
+<Operation id="83df9b7c-6888-11ef-8c9d-91a72f86a557">
+<class_>
+<ref refid="b60201a1-dbba-11ee-bbe1-6fe649a41c00"/>
+</class_>
+<name>
+<val>Sensor</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="83e0bf31-6888-11ef-8f14-91a72f86a557"/>
+<ref refid="83e20578-6888-11ef-9804-91a72f86a557"/>
+<ref refid="83e30448-6888-11ef-8ace-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="83e0bf31-6888-11ef-8f14-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="83df9b7c-6888-11ef-8c9d-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Parameter id="83e20578-6888-11ef-9804-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="83df9b7c-6888-11ef-8c9d-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Parameter id="83e30448-6888-11ef-8ace-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="83df9b7c-6888-11ef-8c9d-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Operation id="904a56c1-6888-11ef-b8c3-91a72f86a557">
+<class_>
+<ref refid="b60201a1-dbba-11ee-bbe1-6fe649a41c00"/>
+</class_>
+<name>
+<val>+ ~Sensor()</val>
+</name>
+</Operation>
+<Operation id="d03d4971-6888-11ef-a425-91a72f86a557">
+<class_>
+<ref refid="b60201a1-dbba-11ee-bbe1-6fe649a41c00"/>
+</class_>
+<isAbstract>
+<val>0</val>
+</isAbstract>
+<name>
+<val>generateSimulationData</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="4c8d3fc6-6889-11ef-8b89-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Operation id="e135da0e-6888-11ef-a808-91a72f86a557">
+<class_>
+<ref refid="b60201a1-dbba-11ee-bbe1-6fe649a41c00"/>
+</class_>
+<name>
+<val>getName</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="e136fc1f-6888-11ef-8938-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="e136fc1f-6888-11ef-8938-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="e135da0e-6888-11ef-a808-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>string</val>
+</typeValue>
+</Parameter>
+<Operation id="e5005952-6888-11ef-9341-91a72f86a557">
+<class_>
+<ref refid="b60201a1-dbba-11ee-bbe1-6fe649a41c00"/>
+</class_>
+<name>
+<val>getArea</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="e501c2aa-6888-11ef-b176-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="e501c2aa-6888-11ef-b176-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="e5005952-6888-11ef-9341-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>string</val>
+</typeValue>
+</Parameter>
+<Operation id="e8199bcc-6888-11ef-b563-91a72f86a557">
+<class_>
+<ref refid="b60201a1-dbba-11ee-bbe1-6fe649a41c00"/>
+</class_>
+<name>
+<val>getId</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="e81aaf81-6888-11ef-ad0a-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="e81aaf81-6888-11ef-ad0a-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="e8199bcc-6888-11ef-b563-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>string</val>
+</typeValue>
+</Parameter>
+<Operation id="11f2ebdb-6889-11ef-84d2-91a72f86a557">
+<class_>
+<ref refid="b60201a1-dbba-11ee-bbe1-6fe649a41c00"/>
+</class_>
+<name>
+<val>setName</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="11f41971-6889-11ef-8ca4-91a72f86a557"/>
+<ref refid="49fc8666-6889-11ef-a349-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="11f41971-6889-11ef-8ca4-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="11f2ebdb-6889-11ef-84d2-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Operation id="15cf7191-6889-11ef-8e15-91a72f86a557">
+<class_>
+<ref refid="b60201a1-dbba-11ee-bbe1-6fe649a41c00"/>
+</class_>
+<name>
+<val>setArea</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="15d08fb3-6889-11ef-aa8b-91a72f86a557"/>
+<ref refid="490c1f56-6889-11ef-9cb2-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="15d08fb3-6889-11ef-aa8b-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="15cf7191-6889-11ef-8e15-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Operation id="1b4ee9a9-6889-11ef-8c16-91a72f86a557">
+<class_>
+<ref refid="b60201a1-dbba-11ee-bbe1-6fe649a41c00"/>
+</class_>
+<name>
+<val>setId</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="1b5009b3-6889-11ef-a549-91a72f86a557"/>
+<ref refid="47f6f78d-6889-11ef-885a-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="1b5009b3-6889-11ef-a549-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="1b4ee9a9-6889-11ef-8c16-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Operation id="32f6eeb2-6889-11ef-a9ec-91a72f86a557">
+<class_>
+<ref refid="b60201a1-dbba-11ee-bbe1-6fe649a41c00"/>
+</class_>
+<name>
+<val>accept</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="32f82dc3-6889-11ef-a37e-91a72f86a557"/>
+<ref refid="45f3f131-6889-11ef-8642-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="32f82dc3-6889-11ef-a37e-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>ISensorVisitor</val>
+</name>
+<ownerFormalParam>
+<ref refid="32f6eeb2-6889-11ef-a9ec-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Operation id="43b12c16-6889-11ef-94e6-91a72f86a557">
+<class_>
+<ref refid="b60201a1-dbba-11ee-bbe1-6fe649a41c00"/>
+</class_>
+<name>
+<val>accept</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="43b285ed-6889-11ef-99c2-91a72f86a557"/>
+<ref refid="43b39900-6889-11ef-8fe6-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="43b285ed-6889-11ef-99c2-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="43b12c16-6889-11ef-94e6-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Parameter id="43b39900-6889-11ef-8fe6-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>IConstSensorVisitor</val>
+</name>
+<ownerFormalParam>
+<ref refid="43b12c16-6889-11ef-94e6-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Parameter id="45f3f131-6889-11ef-8642-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="32f6eeb2-6889-11ef-a9ec-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Parameter id="47f6f78d-6889-11ef-885a-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="1b4ee9a9-6889-11ef-8c16-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Parameter id="490c1f56-6889-11ef-9cb2-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="15cf7191-6889-11ef-8e15-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Parameter id="49fc8666-6889-11ef-a349-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="11f2ebdb-6889-11ef-84d2-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Parameter id="4c8d3fc6-6889-11ef-8b89-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="d03d4971-6888-11ef-a425-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Property id="7467b49d-6889-11ef-be46-91a72f86a557">
+<class_>
+<ref refid="a290716c-1855-11ef-971a-fb1d0593433f"/>
+</class_>
+<name>
+<val>- brightness: map&lt;time_t,int&gt;</val>
+</name>
+</Property>
+<Operation id="96ede0c0-6889-11ef-aaf3-91a72f86a557">
+<class_>
+<ref refid="a290716c-1855-11ef-971a-fb1d0593433f"/>
+</class_>
+<name>
+<val>LightSensor</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="96ef48dc-6889-11ef-bcf7-91a72f86a557"/>
+<ref refid="96f088aa-6889-11ef-aa00-91a72f86a557"/>
+<ref refid="96f177d1-6889-11ef-99f6-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="96ef48dc-6889-11ef-bcf7-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="96ede0c0-6889-11ef-aaf3-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Parameter id="96f088aa-6889-11ef-aa00-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="96ede0c0-6889-11ef-aaf3-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Parameter id="96f177d1-6889-11ef-99f6-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="96ede0c0-6889-11ef-aaf3-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Operation id="ae824beb-6889-11ef-ab93-91a72f86a557">
+<class_>
+<ref refid="a290716c-1855-11ef-971a-fb1d0593433f"/>
+</class_>
+<name>
+<val>~LightSensor()</val>
+</name>
+</Operation>
+<Operation id="bab39aed-6889-11ef-a2b9-91a72f86a557">
+<class_>
+<ref refid="a290716c-1855-11ef-971a-fb1d0593433f"/>
+</class_>
+<name>
+<val>+ getBrightness(): map&lt;time_t,int&gt;</val>
+</name>
+</Operation>
+<Operation id="e331ee82-6889-11ef-a419-91a72f86a557">
+<class_>
+<ref refid="a290716c-1855-11ef-971a-fb1d0593433f"/>
+</class_>
+<name>
+<val>setBrightness</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="e3339472-6889-11ef-bde9-91a72f86a557"/>
+<ref refid="e334af07-6889-11ef-b752-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="e3339472-6889-11ef-bde9-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="e331ee82-6889-11ef-a419-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Parameter id="e334af07-6889-11ef-b752-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>map</val>
+</name>
+<ownerFormalParam>
+<ref refid="e331ee82-6889-11ef-a419-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Operation id="0e3fda38-688a-11ef-9382-91a72f86a557">
+<class_>
+<ref refid="a290716c-1855-11ef-971a-fb1d0593433f"/>
+</class_>
+<name>
+<val>lightsNeeded</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="0e411175-688a-11ef-9bee-91a72f86a557"/>
+<ref refid="0e424de2-688a-11ef-94a0-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="0e411175-688a-11ef-9bee-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="0e3fda38-688a-11ef-9382-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>bool</val>
+</typeValue>
+</Parameter>
+<Parameter id="0e424de2-688a-11ef-94a0-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>time_t</val>
+</name>
+<ownerFormalParam>
+<ref refid="0e3fda38-688a-11ef-9382-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Operation id="1adffd2b-688a-11ef-8fe7-91a72f86a557">
+<class_>
+<ref refid="a290716c-1855-11ef-971a-fb1d0593433f"/>
+</class_>
+<name>
+<val>generateSimulationData</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="2562c78a-688a-11ef-8b53-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="2562c78a-688a-11ef-8b53-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="1adffd2b-688a-11ef-8fe7-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Operation id="35d3b9e1-688a-11ef-8a70-91a72f86a557">
+<class_>
+<ref refid="a290716c-1855-11ef-971a-fb1d0593433f"/>
+</class_>
+<name>
+<val>accept</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="35d54626-688a-11ef-883a-91a72f86a557"/>
+<ref refid="35d67169-688a-11ef-a71a-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="35d54626-688a-11ef-883a-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="35d3b9e1-688a-11ef-8a70-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Parameter id="35d67169-688a-11ef-a71a-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>ISensorVisitor</val>
+</name>
+<ownerFormalParam>
+<ref refid="35d3b9e1-688a-11ef-8a70-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Operation id="3accd75e-688a-11ef-a51d-91a72f86a557">
+<class_>
+<ref refid="a290716c-1855-11ef-971a-fb1d0593433f"/>
+</class_>
+<name>
+<val>accept</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="3ace1e5e-688a-11ef-9e56-91a72f86a557"/>
+<ref refid="3acf3ac6-688a-11ef-9209-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="3ace1e5e-688a-11ef-9e56-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="3accd75e-688a-11ef-a51d-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Parameter id="3acf3ac6-688a-11ef-9209-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>IConstSensorVisitor</val>
+</name>
+<ownerFormalParam>
+<ref refid="3accd75e-688a-11ef-a51d-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Property id="5ea398bc-688a-11ef-99f0-91a72f86a557">
+<class_>
+<ref refid="dbaabfeb-dbc1-11ee-979d-6fe649a41c00"/>
+</class_>
+<name>
+<val>- inOut: map&lt;time_t,vector&lt;int&gt;&gt;</val>
+</name>
+</Property>
+<Operation id="85d5df2a-688a-11ef-985f-91a72f86a557">
+<class_>
+<ref refid="dbaabfeb-dbc1-11ee-979d-6fe649a41c00"/>
+</class_>
+<name>
+<val>InOutSensor</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="85d74d07-688a-11ef-b5c3-91a72f86a557"/>
+<ref refid="85d87a2b-688a-11ef-b5a5-91a72f86a557"/>
+<ref refid="85d9b7b5-688a-11ef-a43b-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="85d74d07-688a-11ef-b5c3-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="85d5df2a-688a-11ef-985f-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Parameter id="85d87a2b-688a-11ef-b5a5-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="85d5df2a-688a-11ef-985f-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Parameter id="85d9b7b5-688a-11ef-a43b-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="85d5df2a-688a-11ef-985f-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Operation id="8ea35877-688a-11ef-acab-91a72f86a557">
+<class_>
+<ref refid="dbaabfeb-dbc1-11ee-979d-6fe649a41c00"/>
+</class_>
+<name>
+<val>+ ~InOutSensor()</val>
+</name>
+</Operation>
+<Operation id="9b9f794f-688a-11ef-94f9-91a72f86a557">
+<class_>
+<ref refid="dbaabfeb-dbc1-11ee-979d-6fe649a41c00"/>
+</class_>
+<name>
+<val>+ getInOut(): map&lt;time_t,vector&lt;int&gt;&gt;</val>
+</name>
+</Operation>
+<Operation id="b2063aef-688a-11ef-8521-91a72f86a557">
+<class_>
+<ref refid="dbaabfeb-dbc1-11ee-979d-6fe649a41c00"/>
+</class_>
+<name>
+<val>setInOut</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="b207d1fd-688a-11ef-a5b1-91a72f86a557"/>
+<ref refid="b2091195-688a-11ef-b212-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="b207d1fd-688a-11ef-a5b1-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="b2063aef-688a-11ef-8521-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Parameter id="b2091195-688a-11ef-b212-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>map</val>
+</name>
+<ownerFormalParam>
+<ref refid="b2063aef-688a-11ef-8521-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Operation id="b6b63602-688a-11ef-86f7-91a72f86a557">
+<class_>
+<ref refid="dbaabfeb-dbc1-11ee-979d-6fe649a41c00"/>
+</class_>
+<name>
+<val>generateSimulationData</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="b6b83695-688a-11ef-a739-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="b6b83695-688a-11ef-a739-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="b6b63602-688a-11ef-86f7-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Operation id="c013a045-688a-11ef-877b-91a72f86a557">
+<class_>
+<ref refid="dbaabfeb-dbc1-11ee-979d-6fe649a41c00"/>
+</class_>
+<name>
+<val>accept</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="c0152afc-688a-11ef-b77a-91a72f86a557"/>
+<ref refid="c0167ca4-688a-11ef-9ff3-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="c0152afc-688a-11ef-b77a-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="c013a045-688a-11ef-877b-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Parameter id="c0167ca4-688a-11ef-9ff3-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>ISensorVisitor</val>
+</name>
+<ownerFormalParam>
+<ref refid="c013a045-688a-11ef-877b-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Operation id="c3282f27-688a-11ef-9900-91a72f86a557">
+<class_>
+<ref refid="dbaabfeb-dbc1-11ee-979d-6fe649a41c00"/>
+</class_>
+<name>
+<val>accept</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="c329b594-688a-11ef-be29-91a72f86a557"/>
+<ref refid="c32afa26-688a-11ef-a5c7-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="c329b594-688a-11ef-be29-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="c3282f27-688a-11ef-9900-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Parameter id="c32afa26-688a-11ef-a5c7-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>IConstSensorVisitor</val>
+</name>
+<ownerFormalParam>
+<ref refid="c3282f27-688a-11ef-9900-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Property id="d546fced-688a-11ef-bc8d-91a72f86a557">
+<class_>
+<ref refid="bb10aeaf-dbba-11ee-ad29-6fe649a41c00"/>
+</class_>
+<name>
+<val>- parkingLotsPresence: map&lt;time_t,bool&gt; </val>
+</name>
+</Property>
+<Operation id="e8379083-688a-11ef-965b-91a72f86a557">
+<class_>
+<ref refid="bb10aeaf-dbba-11ee-ad29-6fe649a41c00"/>
+</class_>
+<name>
+<val>PresenceSensor</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="e839420f-688a-11ef-ba96-91a72f86a557"/>
+<ref refid="e83af592-688a-11ef-8303-91a72f86a557"/>
+<ref refid="e83c37d3-688a-11ef-b3d4-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="e839420f-688a-11ef-ba96-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="e8379083-688a-11ef-965b-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Parameter id="e83af592-688a-11ef-8303-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="e8379083-688a-11ef-965b-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Parameter id="e83c37d3-688a-11ef-b3d4-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="e8379083-688a-11ef-965b-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Operation id="f3a0b025-688a-11ef-83ff-91a72f86a557">
+<class_>
+<ref refid="bb10aeaf-dbba-11ee-ad29-6fe649a41c00"/>
+</class_>
+<name>
+<val>~PresenceSensor</val>
+</name>
+</Operation>
+<Operation id="01d68085-688b-11ef-839d-91a72f86a557">
+<class_>
+<ref refid="bb10aeaf-dbba-11ee-ad29-6fe649a41c00"/>
+</class_>
+<name>
+<val>+ getParkingLotsPresence(): map&lt;time_t,bool&gt;()</val>
+</name>
+</Operation>
+<Operation id="08c06824-688b-11ef-919a-91a72f86a557">
+<class_>
+<ref refid="bb10aeaf-dbba-11ee-ad29-6fe649a41c00"/>
+</class_>
+<name>
+<val>setParkingLotPresence</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="08c21c15-688b-11ef-85d8-91a72f86a557"/>
+<ref refid="08c37eb4-688b-11ef-ab35-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="08c21c15-688b-11ef-85d8-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="08c06824-688b-11ef-919a-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Parameter id="08c37eb4-688b-11ef-ab35-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>map</val>
+</name>
+<ownerFormalParam>
+<ref refid="08c06824-688b-11ef-919a-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Operation id="11570d64-688b-11ef-b218-91a72f86a557">
+<class_>
+<ref refid="bb10aeaf-dbba-11ee-ad29-6fe649a41c00"/>
+</class_>
+<name>
+<val>generateSimulationData</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="1158a82f-688b-11ef-b987-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="1158a82f-688b-11ef-b987-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="11570d64-688b-11ef-b218-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Operation id="1973624a-688b-11ef-a7f1-91a72f86a557">
+<class_>
+<ref refid="bb10aeaf-dbba-11ee-ad29-6fe649a41c00"/>
+</class_>
+<name>
+<val>accept</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="1974f7c8-688b-11ef-a72c-91a72f86a557"/>
+<ref refid="19767921-688b-11ef-8d97-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="1974f7c8-688b-11ef-a72c-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="1973624a-688b-11ef-a7f1-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Parameter id="19767921-688b-11ef-8d97-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>ISensorVisitor</val>
+</name>
+<ownerFormalParam>
+<ref refid="1973624a-688b-11ef-a7f1-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Operation id="1b88cd84-688b-11ef-b0b3-91a72f86a557">
+<class_>
+<ref refid="bb10aeaf-dbba-11ee-ad29-6fe649a41c00"/>
+</class_>
+<name>
+<val>accept</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="1b8ac9eb-688b-11ef-a555-91a72f86a557"/>
+<ref refid="1b8c845f-688b-11ef-afbb-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="1b8ac9eb-688b-11ef-a555-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="1b88cd84-688b-11ef-b0b3-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Parameter id="1b8c845f-688b-11ef-afbb-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>IConstSensorVisitor</val>
+</name>
+<ownerFormalParam>
+<ref refid="1b88cd84-688b-11ef-b0b3-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Property id="7e793ff8-688b-11ef-9813-91a72f86a557">
+<class_>
+<ref refid="c80b32ef-dbba-11ee-b9e2-6fe649a41c00"/>
+</class_>
+<name>
+<val>-tempHum: map&lt;time_t, vector&lt;float&gt;&gt;</val>
+</name>
+</Property>
+<Operation id="b835cafc-688b-11ef-8b4b-91a72f86a557">
+<class_>
+<ref refid="c80b32ef-dbba-11ee-b9e2-6fe649a41c00"/>
+</class_>
+<name>
+<val>TempHumSensor</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="b8376422-688b-11ef-a5c1-91a72f86a557"/>
+<ref refid="b839a86f-688b-11ef-ae07-91a72f86a557"/>
+<ref refid="b83b0bfb-688b-11ef-b3c5-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="b8376422-688b-11ef-a5c1-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="b835cafc-688b-11ef-8b4b-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Parameter id="b839a86f-688b-11ef-ae07-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="b835cafc-688b-11ef-8b4b-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Parameter id="b83b0bfb-688b-11ef-b3c5-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="b835cafc-688b-11ef-8b4b-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Operation id="ce1eef92-688b-11ef-90fd-91a72f86a557">
+<class_>
+<ref refid="c80b32ef-dbba-11ee-b9e2-6fe649a41c00"/>
+</class_>
+<name>
+<val>TempHumSensor</val>
+</name>
+</Operation>
+<Operation id="d67390d1-688b-11ef-9b6a-91a72f86a557">
+<class_>
+<ref refid="c80b32ef-dbba-11ee-b9e2-6fe649a41c00"/>
+</class_>
+<name>
+<val>+ getTempHum(): map&lt;time_t, vector&lt;float&gt;&gt;()</val>
+</name>
+</Operation>
+<Operation id="5a54cddc-688c-11ef-bbd6-91a72f86a557">
+<class_>
+<ref refid="c80b32ef-dbba-11ee-b9e2-6fe649a41c00"/>
+</class_>
+<name>
+<val>+ setTempHum((map&lt;time_t,std::vector&lt;float&gt;&gt;)): void</val>
+</name>
+</Operation>
+<Operation id="9451c822-688c-11ef-a68e-91a72f86a557">
+<class_>
+<ref refid="c80b32ef-dbba-11ee-b9e2-6fe649a41c00"/>
+</class_>
+<name>
+<val>generateSimulationData</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="945382d9-688c-11ef-bfe6-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="945382d9-688c-11ef-bfe6-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="9451c822-688c-11ef-a68e-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Operation id="9c512272-688c-11ef-95ef-91a72f86a557">
+<class_>
+<ref refid="c80b32ef-dbba-11ee-b9e2-6fe649a41c00"/>
+</class_>
+<name>
+<val>accept</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="9c531f28-688c-11ef-a166-91a72f86a557"/>
+<ref refid="9c54b498-688c-11ef-b08b-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="9c531f28-688c-11ef-a166-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="9c512272-688c-11ef-95ef-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Parameter id="9c54b498-688c-11ef-b08b-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>ISensorVisitor</val>
+</name>
+<ownerFormalParam>
+<ref refid="9c512272-688c-11ef-95ef-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Operation id="9ec47817-688c-11ef-973c-91a72f86a557">
+<class_>
+<ref refid="c80b32ef-dbba-11ee-b9e2-6fe649a41c00"/>
+</class_>
+<name>
+<val>accept</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="9ec686c9-688c-11ef-b83e-91a72f86a557"/>
+<ref refid="9ec8485c-688c-11ef-b1e6-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="9ec686c9-688c-11ef-b83e-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="9ec47817-688c-11ef-973c-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Parameter id="9ec8485c-688c-11ef-b1e6-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>IConstSensorVisitor</val>
+</name>
+<ownerFormalParam>
+<ref refid="9ec47817-688c-11ef-973c-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Property id="c6103379-688c-11ef-89a3-91a72f86a557">
+<class_>
+<ref refid="ce542be1-dbba-11ee-a303-6fe649a41c00"/>
+</class_>
+<name>
+<val># values: map&lt;time_t,vector&lt;float&gt;&gt;</val>
+</name>
+</Property>
+<Property id="f9bd216a-688c-11ef-ae9e-91a72f86a557">
+<class_>
+<ref refid="ce542be1-dbba-11ee-a303-6fe649a41c00"/>
+</class_>
+<name>
+<val></val>
+</name>
+</Property>
+<Operation id="023095e0-688d-11ef-8e6b-91a72f86a557">
+<class_>
+<ref refid="ce542be1-dbba-11ee-a303-6fe649a41c00"/>
+</class_>
+<name>
+<val>AirSensor</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="19857046-688d-11ef-a24b-91a72f86a557"/>
+<ref refid="198787dc-688d-11ef-9539-91a72f86a557"/>
+<ref refid="198911eb-688d-11ef-8dbd-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+<visibility>
+<val>protected</val>
+</visibility>
+</Operation>
+<Operation id="12e41bf5-688d-11ef-8b84-91a72f86a557">
+<class_>
+<ref refid="ce542be1-dbba-11ee-a303-6fe649a41c00"/>
+</class_>
+<name>
+<val>+ ~AirSensor()</val>
+</name>
+</Operation>
+<Parameter id="19857046-688d-11ef-a24b-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="023095e0-688d-11ef-8e6b-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Parameter id="198787dc-688d-11ef-9539-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="023095e0-688d-11ef-8e6b-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Parameter id="198911eb-688d-11ef-8dbd-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="023095e0-688d-11ef-8e6b-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Operation id="2015d85c-688d-11ef-811f-91a72f86a557">
+<class_>
+<ref refid="ce542be1-dbba-11ee-a303-6fe649a41c00"/>
+</class_>
+<name>
+<val>airFlowToAirMass</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="2017a167-688d-11ef-a457-91a72f86a557"/>
+<ref refid="20193166-688d-11ef-8256-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+<visibility>
+<val>protected</val>
+</visibility>
+</Operation>
+<Parameter id="2017a167-688d-11ef-a457-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="2015d85c-688d-11ef-811f-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>float</val>
+</typeValue>
+</Parameter>
+<Parameter id="20193166-688d-11ef-8256-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>float</val>
+</name>
+<ownerFormalParam>
+<ref refid="2015d85c-688d-11ef-811f-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Operation id="40d6fefe-688d-11ef-8f04-91a72f86a557">
+<class_>
+<ref refid="ce542be1-dbba-11ee-a303-6fe649a41c00"/>
+</class_>
+<name>
+<val>+ getAirFlow(): map&lt;time_t, float&gt;</val>
+</name>
+</Operation>
+<Operation id="4bc88565-688d-11ef-b826-91a72f86a557">
+<class_>
+<ref refid="ce542be1-dbba-11ee-a303-6fe649a41c00"/>
+</class_>
+<name>
+<val>+ getValues(): map&lt;time_t, vector&lt;float&gt;&gt;</val>
+</name>
+</Operation>
+<Operation id="64e9c2d1-688d-11ef-9334-91a72f86a557">
+<class_>
+<ref refid="ce542be1-dbba-11ee-a303-6fe649a41c00"/>
+</class_>
+<name>
+<val>+ setAirFlow((map&lt;time_t, float&gt;)): void</val>
+</name>
+</Operation>
+<Operation id="ab4de835-688d-11ef-a182-91a72f86a557">
+<class_>
+<ref refid="ce542be1-dbba-11ee-a303-6fe649a41c00"/>
+</class_>
+<name>
+<val>+ setValues((map&lt;time_t,vector&lt;float&gt;&gt;)): void</val>
+</name>
+</Operation>
+<Operation id="b668e4cb-688d-11ef-a800-91a72f86a557">
+<class_>
+<ref refid="ce542be1-dbba-11ee-a303-6fe649a41c00"/>
+</class_>
+<name>
+<val>getAirStatus</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="b66af7ca-688d-11ef-b8dd-91a72f86a557"/>
+<ref refid="b66cb473-688d-11ef-8fc6-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="b66af7ca-688d-11ef-b8dd-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="b668e4cb-688d-11ef-a800-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>int</val>
+</typeValue>
+</Parameter>
+<Parameter id="b66cb473-688d-11ef-8fc6-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>time_t</val>
+</name>
+<ownerFormalParam>
+<ref refid="b668e4cb-688d-11ef-a800-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Dependency id="e05bb15b-688d-11ef-bc7b-91a72f86a557">
+<client>
+<ref refid="ce542be1-dbba-11ee-a303-6fe649a41c00"/>
+</client>
+<name>
+<val></val>
+</name>
+<presentation>
+<reflist>
+<ref refid="584a9524-dbc2-11ee-ba47-6fe649a41c00"/>
+</reflist>
+</presentation>
+<supplier>
+<ref refid="b60201a1-dbba-11ee-bbe1-6fe649a41c00"/>
+</supplier>
+</Dependency>
+<Dependency id="e4c3ac86-688d-11ef-ac6d-91a72f86a557">
 <client>
 <ref refid="a290716c-1855-11ef-971a-fb1d0593433f"/>
 </client>
@@ -637,23 +2210,492 @@ controlflow {
 </reflist>
 </presentation>
 <supplier>
-<ref refid="59d74aad-dbc2-11ee-8d5e-6fe649a41c00"/>
+<ref refid="55d6219f-dbc2-11ee-b3a5-6fe649a41c00"/>
 </supplier>
 </Dependency>
-<Operation id="42c1b89c-5d38-11ef-8baf-93d24b3ce7da">
+<Dependency id="5bca6017-688e-11ef-b4e0-91a72f86a557">
+<client>
+<ref refid="26651309-dbc3-11ee-b6ef-6fe649a41c00"/>
+</client>
+<presentation>
+<reflist>
+<ref refid="4f488155-dbc3-11ee-8d0f-6fe649a41c00"/>
+</reflist>
+</presentation>
+<supplier>
+<ref refid="5f4f54ca-dbc2-11ee-8662-6fe649a41c00"/>
+</supplier>
+</Dependency>
+<Operation id="7d569a53-688e-11ef-a815-91a72f86a557">
 <class_>
-<ref refid="ce542be1-dbba-11ee-a303-6fe649a41c00"/>
+<ref refid="db341e27-dbba-11ee-ad3c-6fe649a41c00"/>
+</class_>
+<name>
+<val>AirQualitySensor</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="1fe8a2c0-688f-11ef-bf39-91a72f86a557"/>
+<ref refid="200656e3-688f-11ef-889a-91a72f86a557"/>
+<ref refid="20080b2d-688f-11ef-a875-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Operation id="851eccb3-688e-11ef-9bc2-91a72f86a557">
+<class_>
+<ref refid="db341e27-dbba-11ee-ad3c-6fe649a41c00"/>
+</class_>
+<name>
+<val>+ ~AirQualitySensor()</val>
+</name>
+</Operation>
+<Operation id="19295d23-688f-11ef-839e-91a72f86a557">
+<class_>
+<ref refid="db341e27-dbba-11ee-ad3c-6fe649a41c00"/>
 </class_>
 <name>
 <val>getAirStatus</val>
 </name>
+<ownedParameter>
+<reflist>
+<ref refid="192ce632-688f-11ef-b8b0-91a72f86a557"/>
+<ref refid="192e9de7-688f-11ef-be81-91a72f86a557"/>
+</reflist>
+</ownedParameter>
 </Operation>
-<Property id="8b258716-5d38-11ef-acee-93d24b3ce7da">
+<Parameter id="192ce632-688f-11ef-b8b0-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="19295d23-688f-11ef-839e-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>int</val>
+</typeValue>
+</Parameter>
+<Parameter id="192e9de7-688f-11ef-be81-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>time_t</val>
+</name>
+<ownerFormalParam>
+<ref refid="19295d23-688f-11ef-839e-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Parameter id="1fe8a2c0-688f-11ef-bf39-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="7d569a53-688e-11ef-a815-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Parameter id="200656e3-688f-11ef-889a-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="7d569a53-688e-11ef-a815-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Parameter id="20080b2d-688f-11ef-a875-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="7d569a53-688e-11ef-a815-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Operation id="22a89ebc-688f-11ef-8c2e-91a72f86a557">
 <class_>
-<ref refid="ce542be1-dbba-11ee-a303-6fe649a41c00"/>
+<ref refid="db341e27-dbba-11ee-ad3c-6fe649a41c00"/>
 </class_>
 <name>
-<val>float airFlow</val>
+<val>generateSimualtionData</val>
 </name>
-</Property>
+<ownedParameter>
+<reflist>
+<ref refid="22aa9c38-688f-11ef-8b16-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="22aa9c38-688f-11ef-8b16-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="22a89ebc-688f-11ef-8c2e-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Operation id="511f422b-688f-11ef-83a8-91a72f86a557">
+<class_>
+<ref refid="26651309-dbc3-11ee-b6ef-6fe649a41c00"/>
+</class_>
+<name>
+<val>ExplosiveGasSensor</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="5121450c-688f-11ef-ae97-91a72f86a557"/>
+<ref refid="5124c4a0-688f-11ef-bee8-91a72f86a557"/>
+<ref refid="51267ee3-688f-11ef-bceb-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="5121450c-688f-11ef-ae97-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="511f422b-688f-11ef-83a8-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Parameter id="5124c4a0-688f-11ef-bee8-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="511f422b-688f-11ef-83a8-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Parameter id="51267ee3-688f-11ef-bceb-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>string</val>
+</name>
+<ownerFormalParam>
+<ref refid="511f422b-688f-11ef-83a8-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Operation id="571961c3-688f-11ef-89f2-91a72f86a557">
+<class_>
+<ref refid="26651309-dbc3-11ee-b6ef-6fe649a41c00"/>
+</class_>
+<name>
+<val>+ ~ExplosiveGasSensor()</val>
+</name>
+</Operation>
+<Operation id="5f6851f6-688f-11ef-b44d-91a72f86a557">
+<class_>
+<ref refid="26651309-dbc3-11ee-b6ef-6fe649a41c00"/>
+</class_>
+<name>
+<val>getAirStatus</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="5f6a655d-688f-11ef-bab6-91a72f86a557"/>
+<ref refid="5f6c3987-688f-11ef-a8e6-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="5f6a655d-688f-11ef-bab6-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="5f6851f6-688f-11ef-b44d-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>int</val>
+</typeValue>
+</Parameter>
+<Parameter id="5f6c3987-688f-11ef-a8e6-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>time_t</val>
+</name>
+<ownerFormalParam>
+<ref refid="5f6851f6-688f-11ef-b44d-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Operation id="63c2e4d0-688f-11ef-8ef8-91a72f86a557">
+<class_>
+<ref refid="26651309-dbc3-11ee-b6ef-6fe649a41c00"/>
+</class_>
+<name>
+<val>genrateSimulationData</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="63c53a7b-688f-11ef-98d9-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="63c53a7b-688f-11ef-98d9-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="63c2e4d0-688f-11ef-8ef8-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Operation id="6a396131-688f-11ef-a152-91a72f86a557">
+<class_>
+<ref refid="db341e27-dbba-11ee-ad3c-6fe649a41c00"/>
+</class_>
+<name>
+<val>accept</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="6a3b7366-688f-11ef-8320-91a72f86a557"/>
+<ref refid="6a3d2ff2-688f-11ef-a4a4-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="6a3b7366-688f-11ef-8320-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="6a396131-688f-11ef-a152-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Parameter id="6a3d2ff2-688f-11ef-a4a4-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>ISensorVisitor</val>
+</name>
+<ownerFormalParam>
+<ref refid="6a396131-688f-11ef-a152-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Operation id="6c037f3c-688f-11ef-ba07-91a72f86a557">
+<class_>
+<ref refid="db341e27-dbba-11ee-ad3c-6fe649a41c00"/>
+</class_>
+<name>
+<val>accept</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="6c057641-688f-11ef-b4be-91a72f86a557"/>
+<ref refid="6c07873d-688f-11ef-8ecf-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="6c057641-688f-11ef-b4be-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="6c037f3c-688f-11ef-ba07-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Parameter id="6c07873d-688f-11ef-8ecf-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>IConstSensorVisitor</val>
+</name>
+<ownerFormalParam>
+<ref refid="6c037f3c-688f-11ef-ba07-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Operation id="77bc8bf2-688f-11ef-8e3a-91a72f86a557">
+<class_>
+<ref refid="26651309-dbc3-11ee-b6ef-6fe649a41c00"/>
+</class_>
+<name>
+<val>accept</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="77bf0fbf-688f-11ef-a9a8-91a72f86a557"/>
+<ref refid="77c0ddaa-688f-11ef-834a-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="77bf0fbf-688f-11ef-a9a8-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="77bc8bf2-688f-11ef-8e3a-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Parameter id="77c0ddaa-688f-11ef-834a-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>ISensorVisitor</val>
+</name>
+<ownerFormalParam>
+<ref refid="77bc8bf2-688f-11ef-8e3a-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Operation id="78662a11-688f-11ef-84c7-91a72f86a557">
+<class_>
+<ref refid="26651309-dbc3-11ee-b6ef-6fe649a41c00"/>
+</class_>
+<name>
+<val>accept</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="7868562d-688f-11ef-99f1-91a72f86a557"/>
+<ref refid="786a4144-688f-11ef-a2d7-91a72f86a557"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="7868562d-688f-11ef-99f1-91a72f86a557">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="78662a11-688f-11ef-84c7-91a72f86a557"/>
+</ownerFormalParam>
+<typeValue>
+<val>void</val>
+</typeValue>
+</Parameter>
+<Parameter id="786a4144-688f-11ef-a2d7-91a72f86a557">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>IConstSensorVisitor</val>
+</name>
+<ownerFormalParam>
+<ref refid="78662a11-688f-11ef-84c7-91a72f86a557"/>
+</ownerFormalParam>
+</Parameter>
+<Operation id="f2726ece-688f-11ef-9c95-91a72f86a557">
+<class_>
+<ref refid="1996f3c2-6887-11ef-a107-91a72f86a557"/>
+</class_>
+<name>
+<val>+ handle(in (AirQualitySensor*)): void</val>
+</name>
+</Operation>
+<Operation id="f8e37944-688f-11ef-93b2-91a72f86a557">
+<class_>
+<ref refid="1996f3c2-6887-11ef-a107-91a72f86a557"/>
+</class_>
+<name>
+<val>+ handle(in (ExplosiveGasSensor*)): void</val>
+</name>
+</Operation>
+<Operation id="19ea152d-6890-11ef-ba84-91a72f86a557">
+<class_>
+<ref refid="1996f3c2-6887-11ef-a107-91a72f86a557"/>
+</class_>
+<name>
+<val>+ handle(in (InOutSensor*)): void</val>
+</name>
+</Operation>
+<Operation id="1d605576-6890-11ef-a26e-91a72f86a557">
+<class_>
+<ref refid="1996f3c2-6887-11ef-a107-91a72f86a557"/>
+</class_>
+<name>
+<val>+ handle(in (LightSensor*)): void</val>
+</name>
+</Operation>
+<Operation id="21431c2c-6890-11ef-a731-91a72f86a557">
+<class_>
+<ref refid="1996f3c2-6887-11ef-a107-91a72f86a557"/>
+</class_>
+<name>
+<val>+ handle(in (PresenceSensor*)): void</val>
+</name>
+</Operation>
+<Operation id="254a9b9f-6890-11ef-b9eb-91a72f86a557">
+<class_>
+<ref refid="1996f3c2-6887-11ef-a107-91a72f86a557"/>
+</class_>
+<name>
+<val>+ handle(in (TempHumSensor*)): void</val>
+</name>
+</Operation>
+<Operation id="2eccf362-6890-11ef-91f8-91a72f86a557">
+<class_>
+<ref refid="5bcfc773-6887-11ef-93e5-91a72f86a557"/>
+</class_>
+<name>
+<val>+ handle(in (AirQualitySensor*)): void</val>
+</name>
+</Operation>
+<Operation id="38fc5905-6890-11ef-b1e6-91a72f86a557">
+<class_>
+<ref refid="5bcfc773-6887-11ef-93e5-91a72f86a557"/>
+</class_>
+<name>
+<val>+ handle(in (ExplosiveGasSensor*)): void</val>
+</name>
+</Operation>
+<Operation id="4121be93-6890-11ef-8d25-91a72f86a557">
+<class_>
+<ref refid="5bcfc773-6887-11ef-93e5-91a72f86a557"/>
+</class_>
+<name>
+<val>+ handle(in (InOutSensor*)): void</val>
+</name>
+</Operation>
+<Operation id="45e97281-6890-11ef-aae0-91a72f86a557">
+<class_>
+<ref refid="5bcfc773-6887-11ef-93e5-91a72f86a557"/>
+</class_>
+<name>
+<val>+ handle(in (LightSensor*)): void</val>
+</name>
+</Operation>
+<Operation id="502e3d45-6890-11ef-8053-91a72f86a557">
+<class_>
+<ref refid="5bcfc773-6887-11ef-93e5-91a72f86a557"/>
+</class_>
+<name>
+<val>+ handle(in (PresenceSensor*)): void</val>
+</name>
+</Operation>
+<Operation id="5426c9a9-6890-11ef-812f-91a72f86a557">
+<class_>
+<ref refid="5bcfc773-6887-11ef-93e5-91a72f86a557"/>
+</class_>
+<name>
+<val>+ handle(in (TempHumSensor*)): void</val>
+</name>
+</Operation>
 </gaphor>
