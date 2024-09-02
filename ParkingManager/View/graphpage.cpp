@@ -20,7 +20,6 @@ GraphPage::GraphPage(Sensor* sen, QWidget* parent)
     , IConstSensorVisitor()
 {}
 
-/*
 void GraphPage::handle(const TempHumSensor* sensor)
 {
     QVBoxLayout* lay = new QVBoxLayout;
@@ -95,4 +94,4 @@ void GraphPage::handle(const TempHumSensor* sensor)
     humidityView->setChart(humidityChart);
     lay->addWidget(humidityView);
 }
-*/
+
