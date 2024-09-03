@@ -24,11 +24,11 @@ public:
     virtual ~GraphPage() = default;
 
     virtual void handle(const TempHumSensor *) override;
-    // virtual void handle(const AirQualitySensor *) override;
-    // virtual void handle(const ExplosiveGasSensor *) override;
-    // virtual void handle(const InOutSensor *) override;
-    // virtual void handle(const LightSensor *) override;
-    // virtual void handle(const PresenceSensor *) override;
+    virtual void handle(const AirQualitySensor *) override;
+    virtual void handle(const ExplosiveGasSensor *) override;
+    virtual void handle(const InOutSensor *) override;
+    virtual void handle(const LightSensor *) override;
+    virtual void handle(const PresenceSensor *) override;
 signals:
 };
 

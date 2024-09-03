@@ -2,6 +2,7 @@
 #include <QLabel>
 #include <QListWidget>
 #include <QVBoxLayout>
+#include "graphpage.h"
 
 GraphWindow::GraphWindow(Controller* con, QWidget* parent)
     : QWidget(parent)
@@ -20,11 +21,26 @@ GraphWindow::GraphWindow(Controller* con, QWidget* parent)
     QHBoxLayout* hLayout = new QHBoxLayout(graphFrame);
 
     sensorList = new QListWidget();
+    sensorList->setMaximumWidth(200);
     for (Sensor* sensor : controller->getSensors()) {
         sensorList->addItem(QString::fromStdString(sensor->getName()));
     }
 
+    QFrame* graphPageFrame = new QFrame();
+    graphPageFrame->setStyleSheet("background-color: green; border: none; border-radius: 5px;");
+    QVBoxLayout* vLayout = new QVBoxLayout(graphPageFrame);
+    connect(sensorList, &QListWidget::itemClicked, [=](QListWidgetItem* item) {
+        qDebug() << "Item clicked: " << item;
+        //get sensor obj
+        for (Sensor* sensor : controller->getSensors()) {
+            if (sensor->getName() == item->text().toStdString()) {
+                vLayout->addWidget(new GraphPage(sensor));
+            }
+        }
+    });
+
     hLayout->addWidget(sensorList);
+    hLayout->addWidget(graphPageFrame);
     layout->addWidget(graphFrame);
 }
 

@@ -18,10 +18,15 @@
 GraphPage::GraphPage(Sensor* sen, QWidget* parent)
     : QWidget{parent}
     , IConstSensorVisitor()
-{}
+{
+    //find sensor type
+
+    sen->accept(this);
+}
 
 void GraphPage::handle(const TempHumSensor* sensor)
 {
+    qDebug() << "GraphPage::handle TempHumSensor";
     QVBoxLayout* lay = new QVBoxLayout;
     setLayout(lay);
     //Grafico Temperatura
@@ -95,3 +100,8 @@ void GraphPage::handle(const TempHumSensor* sensor)
     lay->addWidget(humidityView);
 }
 
+void GraphPage::handle(const AirQualitySensor* sensor) {}
+void GraphPage::handle(const ExplosiveGasSensor* sensor) {}
+void GraphPage::handle(const InOutSensor* sensor) {}
+void GraphPage::handle(const LightSensor* sensor) {}
+void GraphPage::handle(const PresenceSensor* sensor) {}
