@@ -39,12 +39,14 @@ void GraphPage::handle(const TempHumSensor* sensor)
     std::vector<time_t> timeTH;
     std::vector<float> hum;
     for (auto i : tempHumVal) {
+        qDebug() << i.second[0] << " : " << i.second[1] << Qt::endl;
         temp.push_back(i.second[0]);
         hum.push_back(i.second[1]);
         timeTH.push_back(i.first);
     }
     QLineSeries* tempSeries = new QLineSeries();
     for (int i = 0; i < temp.size(); i++) {
+        //qDebug() << timeTH[i] << " : " << temp[i] << Qt::endl;
         tempSeries->append(timeTH[i], temp[i]);
     }
     tempChart->addSeries(tempSeries);
@@ -76,7 +78,8 @@ void GraphPage::handle(const TempHumSensor* sensor)
 
     QLineSeries* humSeries = new QLineSeries();
     for (int i = 0; i < hum.size(); i++) {
-        humSeries->append(timeTH[i], temp[i]);
+        //qDebug() << timeTH[i] << " : " << hum[i] << Qt::endl;
+        humSeries->append(timeTH[i], hum[i]);
     }
     humidityChart->addSeries(humSeries);
 
