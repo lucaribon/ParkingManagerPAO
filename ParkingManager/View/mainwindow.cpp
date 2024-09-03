@@ -45,6 +45,12 @@ MainWindow::MainWindow(QWidget* parent)
     // CONNESSIONE SIDEMENU -> STACKED WIDGET
     sideMenu->connect(sideMenu, &SideMenu::currentRowChanged, contentWindow, &QStackedWidget::setCurrentIndex);
 
+    sideMenu->connect(sideMenu, &SideMenu::currentRowChanged, [=](int index) {
+        if (index == 1) {
+            graphWindow->refreshSensorList(graphWindow->getSensorList());
+        }
+    });
+
     this->setCentralWidget(central);
     setWindowTitle("Parking Manager");
 }

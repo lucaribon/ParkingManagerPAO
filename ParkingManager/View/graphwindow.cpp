@@ -19,11 +19,36 @@ GraphWindow::GraphWindow(Controller* con, QWidget* parent)
     QFrame* graphFrame = new QFrame();
     QHBoxLayout* hLayout = new QHBoxLayout(graphFrame);
 
-    QListWidget* sensorList = new QListWidget();
+    sensorList = new QListWidget();
     for (Sensor* sensor : controller->getSensors()) {
         sensorList->addItem(QString::fromStdString(sensor->getName()));
     }
 
     hLayout->addWidget(sensorList);
     layout->addWidget(graphFrame);
+}
+
+void GraphWindow::refreshSensorList(QListWidget* sensorList)
+{
+    //show the new areas
+    if (sensorList->count() > 0)
+        sensorList->clear();
+
+    for (Sensor* sensor : controller->getSensors()) {
+        sensorList->addItem(QString::fromStdString(sensor->getName()));
+    }
+
+    sensorList->update();
+    sensorList->repaint();
+    sensorList->show();
+}
+
+QListWidget* GraphWindow::getSensorList()
+{
+    return sensorList;
+}
+
+void GraphWindow::setSensorList(QListWidget* list)
+{
+    sensorList = list;
 }
