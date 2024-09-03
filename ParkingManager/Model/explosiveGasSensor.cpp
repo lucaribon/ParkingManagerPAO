@@ -40,13 +40,13 @@ void ExplosiveGasSensor::generateSimulationData() {
         for(int j=0; j<24; j++){
             time_t tempT = mktime(date);
 
-            airflow[tempT] = 0.9 + (float)((std::rand()) / (1.1 - 0.9 + 1));
+            airflow[tempT] = (std::rand() / (double)RAND_MAX) * (1.1 - 0.9) + 0.9;
 
             std::vector<float> tempVal = std::vector<float>(4);
-            tempVal[0] = (float)(std::rand()) / (7);
-            tempVal[1] = (float)(std::rand()) / (4);
-            tempVal[2] = (float)(std::rand()) / (3.2);
-            tempVal[3] = (float)(std::rand()) / (6);
+            tempVal[0] = (std::rand() / (double)RAND_MAX) * 7.0;
+            tempVal[1] = (std::rand() / (double)RAND_MAX) * 4.0;
+            tempVal[2] = (std::rand() / (double)RAND_MAX) * 3.2;
+            tempVal[3] = (std::rand() / (double)RAND_MAX) * 6.0;
             values[tempT] = tempVal;
 
             date->tm_hour += 1;
