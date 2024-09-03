@@ -39,7 +39,6 @@ void GraphPage::handle(const TempHumSensor* sensor)
     std::vector<time_t> timeTH;
     std::vector<float> hum;
     for (auto i : tempHumVal) {
-        qDebug() << i.second[0] << " : " << i.second[1] << Qt::endl;
         temp.push_back(i.second[0]);
         hum.push_back(i.second[1]);
         timeTH.push_back(i.first);
