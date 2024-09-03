@@ -1,4 +1,5 @@
 #include "explosiveGasSensor.h"
+#include <QDebug>
 
 ExplosiveGasSensor::ExplosiveGasSensor(std::string n, std::string a, std::string i) : AirSensor(n,a, i!="" ? i : (QUuid::createUuid().toString()).toStdString()) {}
 ExplosiveGasSensor::~ExplosiveGasSensor() =default;
