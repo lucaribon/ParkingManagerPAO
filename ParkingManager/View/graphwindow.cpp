@@ -27,7 +27,7 @@ GraphWindow::GraphWindow(Controller* con, QWidget* parent)
     }
 
     QFrame* graphPageFrame = new QFrame();
-    graphPageFrame->setStyleSheet("background-color: green; border: none; border-radius: 5px;");
+    graphPageFrame->setStyleSheet("background-color: #f0f0f0; border: none; border-radius: 5px;");
     QVBoxLayout* vLayout = new QVBoxLayout(graphPageFrame);
     connect(sensorList, &QListWidget::itemClicked, [=](QListWidgetItem* item) {
         qDebug() << "Item clicked: " << item;
