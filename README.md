@@ -1,4 +1,8 @@
 # Parking Manager PAO
+Progetto del corso di Programmazione ad Oggetti (PAO), UniPD 2023/24.
+
+# TODO
+
 ## Model
 - [x] creare classe astratta sensore
 - [x] creare classi concrete sensori
@@ -9,28 +13,28 @@
   - [x] getAirStatus per sensoreAria
 - [x] sensore posto auto occupato ~~con tre stati: libero, in attesa, occupato~~
 - [x] gestire correlazione: sensore presenza -> posto auto
-  - [ ] ~~aggiunta dei sensori di parcheggio a zone (tot di posti ogni zona) -> aggiungere a destra nella~~
+  - [x] ~~aggiunta dei sensori di parcheggio a zone (tot di posti ogni zona) -> aggiungere a destra nella~~
   - [x] possibilità di aggiungere, rimuovere zone (attributo area negli oggetti)
 
 ## Controller
-- [ ] vettore di sensori
-- [ ] passaggio dati view<->model (gestione dei sensori)
-- [ ] gestione json (salvataggio, apertura, creazione)
-- [ ] ricerca (chiamata a funzione di ricerca nel model)
+- [x] vettore di sensori
+- [x] passaggio dati view<->model (gestione dei sensori)
+- [x] gestione json (salvataggio, apertura, creazione)
+- [x] ricerca (chiamata a funzione di ricerca nel model)
 - [ ] autosave json (non necessario)
 
 ## View
 ### Creazione sensori
-- [ ] pannello con form per inserimento e modifica dei sensori
-- [ ] quando si clicka in un area vengono visualizzati solo i sensori per quell'area (forse anche con multiselezione delle aree)
+- [x] pannello con form per inserimento e modifica dei sensori
+- [x] quando si clicka in un area vengono visualizzati solo i sensori per quell'area (forse anche con multiselezione delle aree)
 ### Report
 - [ ] tabella log, tipo lista (dati json)
 ### Grafici
 - [ ] grafico giornaliero presenze
-- [ ] qualità aria
-- [ ] temperatura
+- [x] qualità aria
+- [x] temperatura
 ### Dashboard
-- [ ] dati su presenza, temperatura ecc..
+- [x] dati su presenza, temperatura ecc..
 - [ ] parcheggio si popola in base ai sensori di presenza
   - [ ] ~~oppure layout preimpostati?~~
   - [ ] creiamo noi dei json di esempio da poter caricare
